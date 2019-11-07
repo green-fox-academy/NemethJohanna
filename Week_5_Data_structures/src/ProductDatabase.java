@@ -60,7 +60,7 @@ public class ProductDatabase {
 
 
         //Is there anything we can buy for exactly 125?
-            if (products.containsKey(125)) {
+            if (products.containsValue(125)) {
                 System.out.println("We can buy" + products.get(125) + " for exactly 125.");
             }
             else {

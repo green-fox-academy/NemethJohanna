@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0a525951-0d6b-4aee-a21f-6df92dae2033" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/ProductDatabase2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProductDatabase2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShoppingList2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShoppingList2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gitignore" beforeDir="false" />
+    <list default="true" id="0a525951-0d6b-4aee-a21f-6df92dae2033" name="Default Changelist" comment="Data structures - practise">
+      <change beforePath="$PROJECT_DIR$/../../My app.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../index" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +22,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1StT6HeakRXFsIOPnHovw4ojEey" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -29,6 +31,8 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -42,6 +46,52 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="Application.MapIntroduction1">
+    <configuration name="MapIntroduction1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MapIntroduction1" />
+      <module name="DataStructures" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersonalFinance" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PersonalFinance" />
+      <module name="DataStructures" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductDatabase" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ProductDatabase" />
+      <module name="DataStructures" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductDatabase2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ProductDatabase2" />
+      <module name="DataStructures" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShoppingList2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ShoppingList2" />
+      <module name="DataStructures" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MapIntroduction1" />
+        <item itemvalue="Application.ShoppingList2" />
+        <item itemvalue="Application.ProductDatabase2" />
+        <item itemvalue="Application.ProductDatabase" />
+        <item itemvalue="Application.PersonalFinance" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -53,6 +103,9 @@
       <option name="presentableId" value="Default" />
       <updated>1572381715377</updated>
       <workItem from="1572381718611" duration="203000" />
+      <workItem from="1572516807512" duration="13606000" />
+      <workItem from="1572780273416" duration="22948000" />
+      <workItem from="1572815873894" duration="14000" />
     </task>
     <servers />
   </component>
@@ -64,10 +117,16 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Data structures - practise" />
+    <option name="LAST_COMMIT_MESSAGE" value="Data structures - practise" />
   </component>
 </project>
