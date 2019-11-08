@@ -26,9 +26,9 @@ public class LinePlay2 {
         graphics.drawLine(WIDTH / 2 / 10 * 3, HEIGHT / 2, WIDTH / 2, HEIGHT / 2 / 10 * 7);
         graphics.drawLine(WIDTH / 2 / 10 * 4, HEIGHT / 2, WIDTH / 2, HEIGHT / 2 / 10 * 6);*/
 
-        //for (int i = 0; i < 10; i++) {
-          //  graphics.drawLine(WIDTH / 2 ,HEIGHT / 2 / 10 * (10 - i), HEIGHT / 2 * i, HEIGHT / 2);
-        //}
+        for (int i = 0; i < 10; i++) {
+            graphics.drawLine(WIDTH / 2 ,HEIGHT / 2 / 10 * (10 - i), HEIGHT / 2 + HEIGHT / 2 / 10 * (10 - i), HEIGHT / 2);
+        }
 
 
     }
