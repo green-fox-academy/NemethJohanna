@@ -26,8 +26,14 @@ public class LinePlay2 {
         graphics.drawLine(WIDTH / 2 / 10 * 3, HEIGHT / 2, WIDTH / 2, HEIGHT / 2 / 10 * 7);
         graphics.drawLine(WIDTH / 2 / 10 * 4, HEIGHT / 2, WIDTH / 2, HEIGHT / 2 / 10 * 6);*/
 
+        graphics.setColor(Color.BLUE);
         for (int i = 0; i < 10; i++) {
             graphics.drawLine(WIDTH / 2 ,HEIGHT / 2 / 10 * (10 - i), HEIGHT / 2 + HEIGHT / 2 / 10 * (10 - i), HEIGHT / 2);
+        }
+
+        graphics.setColor(Color.GREEN);
+        for (int i = 0; i < 10; i++) {
+            graphics.drawLine(HEIGHT / 2 + HEIGHT / 2 / 10 * (10 - i), HEIGHT / 2, WIDTH / 2, HEIGHT / 2 + HEIGHT / 2 / 10 * i);
         }
 
 
