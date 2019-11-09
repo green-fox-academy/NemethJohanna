@@ -10,7 +10,9 @@ public class LinePlay2 {
 
     public static void mainDraw(Graphics graphics) {
         graphics.setColor(Color.RED);
-        graphics.drawLine(WIDTH / 2, 0, WIDTH / 2 , HEIGHT);
+        graphics.drawLine(WIDTH / 2, 0, WIDTH / 2 , HEIGHT / 2);
+        graphics.setColor(Color.GREEN);
+        graphics.drawLine(WIDTH / 2, HEIGHT / 2, WIDTH / 2 , HEIGHT );
         graphics.drawLine(0, HEIGHT / 2, WIDTH, HEIGHT / 2);
 
 
@@ -19,12 +21,6 @@ public class LinePlay2 {
             graphics.drawLine(WIDTH / 2 / 10 * i, HEIGHT / 2, WIDTH / 2,HEIGHT / 2 / 10 * (10 - i));
 
         }
-        /*graphics.setColor(Color.BLUE);
-        graphics.drawLine(0, HEIGHT / 2, WIDTH / 2, HEIGHT / 2 / 10 * 10);
-        graphics.drawLine(WIDTH / 2 / 10, HEIGHT / 2, WIDTH / 2, HEIGHT / 2 / 10 * 9);
-        graphics.drawLine(WIDTH / 2 / 10 * 2, HEIGHT / 2, WIDTH / 2, HEIGHT / 2 / 10 * 8);
-        graphics.drawLine(WIDTH / 2 / 10 * 3, HEIGHT / 2, WIDTH / 2, HEIGHT / 2 / 10 * 7);
-        graphics.drawLine(WIDTH / 2 / 10 * 4, HEIGHT / 2, WIDTH / 2, HEIGHT / 2 / 10 * 6);*/
 
         graphics.setColor(Color.BLUE);
         for (int i = 0; i < 10; i++) {
@@ -34,6 +30,11 @@ public class LinePlay2 {
         graphics.setColor(Color.GREEN);
         for (int i = 0; i < 10; i++) {
             graphics.drawLine(HEIGHT / 2 + HEIGHT / 2 / 10 * (10 - i), HEIGHT / 2, WIDTH / 2, HEIGHT / 2 + HEIGHT / 2 / 10 * i);
+        }
+
+        graphics.setColor(Color.cyan);
+        for (int i = 0; i < 10; i++) {
+            graphics.drawLine(WIDTH / 2, HEIGHT / 2 + HEIGHT / 2 / 10 * i, WIDTH / 2 / 10 * i, HEIGHT / 2);
         }
 
 
