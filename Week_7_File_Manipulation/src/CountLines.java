@@ -1,6 +1,3 @@
-import com.oracle.xmlns.internal.webservices.jaxws_databinding.ExistingAnnotationsType;
-import sun.invoke.empty.Empty;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
