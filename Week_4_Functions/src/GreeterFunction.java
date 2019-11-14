@@ -8,13 +8,14 @@
 // - Greet `al`
 
 public class GreeterFunction {
-    public static void main(String[] args) {
-        String al = "Green fox";
-        greet (al);
-    }
-
-    public static void greet (String name) {
-        System.out.println("Greetings dear, " + name + "!");
-    }
+//    public static void main(String[] args) {
+//        String al = "Green fox";
+//        greet (al);
+//    }
+//
+//    public static void greet (String name) {
+//        System.out.println("Greetings dear, " + name + "!");
+//
+//    }
 }
 

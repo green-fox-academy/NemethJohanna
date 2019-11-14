@@ -17,5 +17,4 @@ public class Doubling {
         return output;
     }
 
-
 }
