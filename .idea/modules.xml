@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Foundation_practice/Arrays/Arrays.iml" filepath="$PROJECT_DIR$/Foundation_practice/Arrays/Arrays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Foundation_practice/DataStructures/DataStructures.iml" filepath="$PROJECT_DIR$/Foundation_practice/DataStructures/DataStructures.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Foundation_practice/ExpressionsControllFlow/ExpressionsControllFlow.iml" filepath="$PROJECT_DIR$/Foundation_practice/ExpressionsControllFlow/ExpressionsControllFlow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Foundation_practice/Functions/Functions.iml" filepath="$PROJECT_DIR$/Foundation_practice/Functions/Functions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week_3_Expressions_and_control_flow/Week_3_Expressions_and_control_flow.iml" filepath="$PROJECT_DIR$/Week_3_Expressions_and_control_flow/Week_3_Expressions_and_control_flow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week_4_Arrays/Week_4_Arrays.iml" filepath="$PROJECT_DIR$/Week_4_Arrays/Week_4_Arrays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week_4_Functions/Week_4_Functions.iml" filepath="$PROJECT_DIR$/Week_4_Functions/Week_4_Functions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week_5_Data_structures/Week_5_Data_structures.iml" filepath="$PROJECT_DIR$/Week_5_Data_structures/Week_5_Data_structures.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week_5_Data_structures_Optional/Week_5_Data_structures_Optional.iml" filepath="$PROJECT_DIR$/Week_5_Data_structures_Optional/Week_5_Data_structures_Optional.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week_5_Strings/Week_5_Strings.iml" filepath="$PROJECT_DIR$/Week_5_Strings/Week_5_Strings.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week_6_Drawing/Week_6_Drawing.iml" filepath="$PROJECT_DIR$/Week_6_Drawing/Week_6_Drawing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week_6_DrawingProject/Week_6_DrawingProject.iml" filepath="$PROJECT_DIR$/Week_6_DrawingProject/Week_6_DrawingProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week_7_File_Manipulation/Week_7_File_Manipulation.iml" filepath="$PROJECT_DIR$/Week_7_File_Manipulation/Week_7_File_Manipulation.iml" />
+    </modules>
+  </component>
+</project>
