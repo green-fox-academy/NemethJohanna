@@ -8,5 +8,6 @@ public class A1_Third {
         int[] q = {4, 5, 6, 7};
         System.out.println(q[2]);
         System.out.println("kkkk");
+        System.out.println("kirakva az asztalra");
     }
 }
