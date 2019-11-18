@@ -1,22 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a0709746-628e-428d-bc84-1f981e54b90c" name="Default Changelist" comment="" />
+    <list default="true" id="4ceaded8-ab6c-4564-9766-ede70afe2da3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/src.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E06_CodingHours.java" beforeDir="false" afterPath="$PROJECT_DIR$/E06_CodingHours.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trees.java" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectId" id="1TehdZ31y5OZlA3vtaC7m7G6LWN" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1Thap3hzVmzOaUtrRKtp0Ef54w2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -30,17 +45,63 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="Application.E10_VariableMutation">
+    <configuration name="E06_CodingHours" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="E06_CodingHours" />
+      <module name="ExpressionsControllFlow" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="E07_FavoriteNumber" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="E07_FavoriteNumber" />
+      <module name="ExpressionsControllFlow" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="E08_Swap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="E08_Swap" />
+      <module name="ExpressionsControllFlow" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="E09_DefineBasicInfo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="E09_DefineBasicInfo" />
+      <module name="ExpressionsControllFlow" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="E10_VariableMutation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="E10_VariableMutation" />
+      <module name="ExpressionsControllFlow" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.E10_VariableMutation" />
+        <item itemvalue="Application.E09_DefineBasicInfo" />
+        <item itemvalue="Application.E08_Swap" />
+        <item itemvalue="Application.E07_FavoriteNumber" />
+        <item itemvalue="Application.E06_CodingHours" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a0709746-628e-428d-bc84-1f981e54b90c" name="Default Changelist" comment="" />
-      <created>1573826556270</created>
+      <changelist id="4ceaded8-ab6c-4564-9766-ede70afe2da3" name="Default Changelist" comment="" />
+      <created>1573914960839</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1573826556270</updated>
-      <workItem from="1573826557636" duration="15000" />
+      <updated>1573914960839</updated>
+      <workItem from="1573914962243" duration="4933000" />
     </task>
     <servers />
   </component>
