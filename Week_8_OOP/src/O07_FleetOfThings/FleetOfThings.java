@@ -16,7 +16,16 @@ public class FleetOfThings {
         // 3. [x] Stand up
         // 4. [x] Eat lunch
 
+        fleet.add(new Thing("Get milk"));
+        fleet.add(new Thing("Remove the obstacles"));
+        Thing stand = new Thing("Stand up");
+        stand.complete();
+        fleet.add(stand);
+        Thing eat = new Thing("Eat lunch");
+        eat.complete();
+        fleet.add(eat);
+
+
         System.out.println(fleet);
     }
-
 }
