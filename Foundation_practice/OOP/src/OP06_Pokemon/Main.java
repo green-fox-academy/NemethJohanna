@@ -17,13 +17,14 @@ public class Main {
         Pokemon wildPokemon = new Pokemon("Oddish", "leaf", "water");
 
         // Which pokemon should Ash use?
+        // for loop > keresse meg azt a pokemon nevét, amelyik egyenlő a wildpokemon typejával.
 
-        
+        for (int i = 0; i < pokemonOfAsh.size(); i++) {
+            if (pokemonOfAsh.get(i).effectiveAgainst.equals(wildPokemon.type)){
+                System.out.print("I choose you, " + pokemonOfAsh.get(i).name);
+            }
+        }
 
-
-
-
-        System.out.print("I choose you, ");
     }
 
     private static List<Pokemon> initializePokemons() {
@@ -36,7 +37,6 @@ public class Main {
         pokemon.add(new Pokemon("Kingler", "water", "fire"));
 
         return pokemon;
-
 
     }
 }
