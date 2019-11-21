@@ -10,6 +10,7 @@ public class A10_AppendA {
         for (int i = 0; i < animals.length; i++) {
             System.out.println(animals[i] + "a");
         }
+        System.out.println();
 
     }
 }

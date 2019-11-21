@@ -22,5 +22,7 @@ public class A9_Colors {
             }
             System.out.println();
         }
+        System.out.println();
+
     }
 }

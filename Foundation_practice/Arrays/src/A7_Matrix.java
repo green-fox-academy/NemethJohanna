@@ -23,5 +23,7 @@ public class A7_Matrix {
             }
             System.out.println();
         }
+        System.out.println();
+
     }
 }

@@ -11,6 +11,8 @@ public class A13_ReverseList {
         for (int i = aj.length - 1; i >= 0; i--) {
             System.out.println(aj[i]);
         }
+        System.out.println();
+
 
     }
 }

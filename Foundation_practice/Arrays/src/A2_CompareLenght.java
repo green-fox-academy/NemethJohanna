@@ -12,6 +12,7 @@ public class A2_CompareLenght {
         if (p2.length > p1.length){
             System.out.println("p2 is longer");
         }
+        System.out.println();
 
     }
 }

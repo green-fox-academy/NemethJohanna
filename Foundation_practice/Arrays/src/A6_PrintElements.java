@@ -10,6 +10,7 @@ public class A6_PrintElements {
         for (int i = 0; i < numbers.length; i++) {
             System.out.println(numbers[i]);
         }
+        System.out.println();
 
     }
 }

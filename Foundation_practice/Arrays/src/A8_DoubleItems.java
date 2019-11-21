@@ -12,6 +12,7 @@ public class A8_DoubleItems {
             numList[i] *= 2;
             System.out.println(numList [i]);
         }
+        System.out.println();
 
     }
 }

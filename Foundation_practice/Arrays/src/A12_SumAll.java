@@ -10,5 +10,7 @@ public class A12_SumAll {
         for (int i = 0; i < ai.length; i++) {
             System.out.println(ai[i]);
         }
+        System.out.println();
+
     }
 }

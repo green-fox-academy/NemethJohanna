@@ -19,5 +19,7 @@ public class A11_SwapElements {
         for (int i = 0; i < abc.length; i++) {
             System.out.println(abc[i]);
         }
+        System.out.println();
+
     }
 }
