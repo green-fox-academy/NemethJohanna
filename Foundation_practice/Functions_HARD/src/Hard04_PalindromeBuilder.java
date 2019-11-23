@@ -23,7 +23,7 @@ return it.
 |    "123"   |      "123321"      |*/
 
     public static void main(String[] args) {
-        String input = "greenfox";
+        String input = "GreenFox";
         System.out.println(palindromeBuilder(input));
     }
     public static String palindromeBuilder (String input){
@@ -32,7 +32,7 @@ return it.
         for (int i = 0; i < chars.length; i++) {
             input += chars[chars.length - 1 - i];
         }
-        
+
         return input;
     }
 
