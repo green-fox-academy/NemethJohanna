@@ -10,4 +10,15 @@ public class ElementFinder{
         // Do this again with a different solution using different list methods!
 
     }
+
+    public static boolean containsSeven(ArrayList<Integer> arrayList){
+        boolean result = arrayList.contains(7);
+        if(result){
+            System.out.println("Hoorray");
+        } else {
+            System.out.println("Nooooooo");
+        }
+
+        return result;
+    }
 }

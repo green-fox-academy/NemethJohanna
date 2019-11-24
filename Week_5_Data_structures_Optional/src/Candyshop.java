@@ -14,7 +14,13 @@ public class Candyshop{
         // No, don't just remove the lines
         // Create a method called sweets() which takes the list as a parameter.
 
-       // System.out.println(sweets(arrayList));
+        System.out.println(sweets(arrayList));
         // Expected output: "Cupcake", "Croissant", "Brownie", "Ice cream"
+    }
+    public static ArrayList<Object> sweets(ArrayList<Object> arrayList){
+        arrayList.set(1, "Croissant");
+        arrayList.set(3, "Ice cream");
+
+        return arrayList;
     }
 }

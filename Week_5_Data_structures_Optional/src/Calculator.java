@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Calculator {
     public static void main(String... args) {
         // Create a simple calculator application which reads the parameters from the prompt
@@ -8,13 +10,29 @@ public class Calculator {
         // The format of the expressions must be: {operation} {operand} {operand}.
         // Examples: "+ 3 3" (the result will be 6) or "* 4 4" (the result will be 16)
 
-        // You can use the Scanner class
-        // It should work like this:
+        Scanner Scanner = new Scanner(System.in);
+        System.out.println("Please type in the expression (f.e.: + 2 3): ");
+        String input = Scanner.nextLine();
+        System.out.println("The result is: " + calculate(input));
+    }
+    public static int calculate (String input){
+        String[] splitInput = input.split(" ", 3);
+        String operation = splitInput[0];
+        int operand1 = Integer.valueOf(splitInput[1]);
+        int operand2 = Integer.valueOf(splitInput[2]);
 
-        // Start the program
-        // It prints: "Please type in the expression:"
-        // Waits for the user input
-        // Print the result to the prompt
-        // Exit
+        int result = 0;
+        if (operation.equals("+")){
+            result = operand1 + operand2;
+        } else if (operation.equals("-")){
+            result = operand1 - operand2;
+        } else if (operation.equals("*")){
+            result = operand1 * operand2;
+        } else if (operation.equals("/")){
+            result = operand1 / operand2;
+        } else {
+            System.out.println("Invalid operation!");
+        }
+        return result;
     }
 }
