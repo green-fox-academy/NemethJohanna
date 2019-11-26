@@ -15,7 +15,7 @@ public class Main {
         Teacher teacher = new Teacher("Paula");
         Student student = new Student("Otto");
 
-        teacher.teach(student); 
+        teacher.teach(student);
         student.learn();
         student.question(teacher);
         teacher.answer();

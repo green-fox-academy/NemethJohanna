@@ -12,21 +12,21 @@ public class R06_BunniesAgain {
 
     }
 
-    // 6 bunnies
-    //  bunnies line 1.  2.  3.  4.  5.  6.
-    // ears number:  2   3   2   3   2   3
+    // 4 bunnies --> 2 * 2 + 2 * 3 = 10 ears
+    // 10 bunnies --> 5 * 2 + 5 * 3 = 25 ears
+    //  bunnies line    1.  2.  3.  4.
+    // nr of ears :     2   3   2   3
 
-    // 5 bunnies
-    //  bunnies line 1.  2.  3.  4.  5.
-    // ears number:  2   3   2   3   2
-
-//         return 2 + bunnyEar(n - 1);
+    // 5 bunnies --> 2 * 2 + 3 * 3 --> 12 ears
+    // 7 bunnies --> 3 * 2 + 4 * 3 --> 18 ears
+    //  bunnies line    1.  2.  3.  4.  5.
+    // nr of ears :     2   3   2   3   2
 
     public static int bunnyEars (int n) {
         if (n == 0) {
             return 0;
         } else if (n % 2 == 0) {
-            return 2 + bunnyEars(n - 1) + 3 + bunnyEars(n - 1);
+            return n / 2 * bunnyEars(n - 1)  + n / 2 * bunnyEars(n - 2);
         } else {
            // return 3 + bunnyEars( n - 1);
         }

@@ -3,9 +3,9 @@ package O03_Animal;
 public class Main {
     public static void main(String[] args) {
 
-        Animal dog = new Animal();
-        Animal cat = new Animal();
-        Animal monkey = new Animal();
+        Animal dog = new Animal(10);
+        Animal cat = new Animal(10);
+        Animal monkey = new Animal(10);
 
         dog.eat();
         dog.drink();

@@ -17,10 +17,12 @@ public class H10_ParametricAverage_EXAM {
             scanner.nextInt();
         }
 
+
+
         int sum;
         int average;
 
-        System.out.println("The sum of the: " + nr + " number is: " + sum + ", the average is: " + average);
+        System.out.println("The sum of the: " + nr + " number is: " + ", the average is: " );
 
     }
 }

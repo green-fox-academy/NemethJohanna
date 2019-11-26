@@ -1,6 +1,8 @@
 package O04_Sharpie;
 
 public class Sharpie {
+    public int inkAmount;
+
     /*Create Sharpie class
 We should know about each sharpie their
  - color (which should be a string),
@@ -15,7 +17,6 @@ which decreases inkAmount*/
 
         String color;
         float width;
-        float inkAmount;
 
         public Sharpie(){
             this.inkAmount = 100;
