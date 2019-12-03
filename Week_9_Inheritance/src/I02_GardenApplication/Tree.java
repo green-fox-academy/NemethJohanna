@@ -2,16 +2,15 @@ package I02_GardenApplication;
 
 public class Tree extends Plant {
 
-    private double absorbLevel;
-
-    public Tree(String color, int currentWaterAmount){
-        super(color, currentWaterAmount);
-        this.absorbLevel = 0.4;
+    public Tree (String color){
+        super();
     }
 
-    public void watering (int wateringAmount) {
-
-        super.watering();
+    public Tree (String color, int currentWaterAmount, double absorbLevel, int needWateringLimit) {
+        super(color, currentWaterAmount, absorbLevel, needWateringLimit);
+        this.setAbsorbLevel(0.4);
+        this.setNeedWateringLimit(10);
+        this.setType("tree");
     }
 
 

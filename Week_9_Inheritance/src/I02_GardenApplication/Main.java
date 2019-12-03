@@ -4,21 +4,23 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        //ArrayList<Garden> garden = new ArrayList<>();
+        ArrayList<Garden> garden = new ArrayList<>();
 
-        Tree purpleTree = new Tree("purple", 7);
-        Tree orangeTree = new Tree("orange", 8);
-        Flower yellowFlower = new Flower("yellow", 2);
-        Flower blueFlower = new Flower("blue", 3);
+        Tree purpleTree = new Tree("purple");
+        Tree orangeTree = new Tree("orange");
+        Flower yellowFlower = new Flower("yellow");
+        Flower blueFlower = new Flower("blue");
 
+        Garden annaGarden = new Garden("Anna Garden");
+        annaGarden.addPlants(yellowFlower);
+        annaGarden.addPlants(blueFlower);
+        annaGarden.addPlants(purpleTree);
+        annaGarden.addPlants(orangeTree);
 
-        Garden liliGarden = new Garden("Lili Garden");
-        liliGarden.addFlowers(yellowFlower);
-        liliGarden.addFlowers(blueFlower);
-        liliGarden.addTrees(purpleTree);
-        liliGarden.addTrees(orangeTree);
+        annaGarden.getInfo();
 
-        liliGarden.watering();
+        annaGarden.watering(40);
 
+        annaGarden.watering(70);
     }
 }
