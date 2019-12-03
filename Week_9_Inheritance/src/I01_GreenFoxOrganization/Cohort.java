@@ -18,9 +18,11 @@ public class Cohort {
     public void addStudent (Student studentMember){
         students.add(studentMember);
     }
+
     public void addMentor (Mentor mentorMember){
         mentors.add(mentorMember);
     }
+
     public void info(){
         System.out.printf("The %s cohort has %d students and %d mentors.", name, students.size(), mentors.size());
     }
