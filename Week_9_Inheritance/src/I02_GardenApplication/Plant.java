@@ -3,40 +3,40 @@ package I02_GardenApplication;
 public class Plant {
 
     private String color;
+    private String type;
     private int currentWaterAmount;
     private double absorbLevel;
-    private int needWateringLimit;
+    private boolean isThirsty;
+    private int thirstyLevel;
 
-    public void getType() {
-        this.type = type;
+    public Plant(String color) {
+        this.color = color;
+        this.currentWaterAmount = 0;
+    }
+
+    public boolean setIsThirsty() {
+        if (currentWaterAmount < this.thirstyLevel) {
+            this.isThirsty = true;
+        } else {
+            this.isThirsty = false;
+        }
+        return this.isThirsty;
+    }
+
+    public String thirstyLevelToPrint() {
+        if (this.setIsThirsty()) {
+            return "needs water";
+        } else {
+            return "doesn't need water";
+        }
+    }
+
+    public void introduce() {
+        System.out.printf("The %s %s and %s\n", color, type, thirstyLevelToPrint());
     }
 
     public void setType(String type) {
         this.type = type;
-    }
-
-    private String type;
-
-    public Plant (String color, int currentWaterAmount, double absorbLevel, int needWateringLimit){
-        this.color = color;
-        this.currentWaterAmount = 0;
-        this.absorbLevel = absorbLevel;
-        this.needWateringLimit = needWateringLimit;
-    }
-
-    public Plant() {
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public int getCurrentWaterAmount() {
-        return currentWaterAmount;
     }
 
     public void setCurrentWaterAmount(int currentWaterAmount) {
@@ -51,26 +51,16 @@ public class Plant {
         this.absorbLevel = absorbLevel;
     }
 
-    public int getNeedWateringLimit() {
-        return needWateringLimit;
-    }
-
-    public int setNeedWateringLimit(int wateringLimit) {
-        return wateringLimit;
-    }
-
-    public void introduce (){
-        System.out.printf("The %s %s and ", color, type);
-    }
-
-    public int watering (int wateringAmount){
-        if (getCurrentWaterAmount() < setNeedWateringLimit()){
-            return getCurrentWaterAmount() += wateringAmount;
+    public boolean isThirsty() {
+        if (currentWaterAmount < thirstyLevel) {
+            this.isThirsty = true;
+        } else {
+            this.isThirsty = false;
         }
-        return getCurrentWaterAmount() += wateringAmount;
+        return this.isThirsty;
     }
 
-    public int setNeedWateringLimit() {
-        return 0;
+    public void setThirstyLevel(int thirstyLevel) {
+        this.thirstyLevel = thirstyLevel;
     }
 }

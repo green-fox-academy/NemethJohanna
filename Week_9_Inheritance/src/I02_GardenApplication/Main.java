@@ -1,10 +1,7 @@
 package I02_GardenApplication;
 
-import java.util.ArrayList;
-
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Garden> garden = new ArrayList<>();
 
         Tree purpleTree = new Tree("purple");
         Tree orangeTree = new Tree("orange");
@@ -18,9 +15,9 @@ public class Main {
         annaGarden.addPlants(orangeTree);
 
         annaGarden.getInfo();
-
         annaGarden.watering(40);
-
+        annaGarden.getInfo();
         annaGarden.watering(70);
+        annaGarden.getInfo();
     }
 }

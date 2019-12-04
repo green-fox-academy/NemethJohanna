@@ -6,32 +6,39 @@ import java.util.List;
 public class Garden {
 
     private String name;
-    private List<Tree> trees;
-    private List<Flower> flowers;
     private List<Plant> plants;
 
-    public Garden(String name){
+    public Garden(String name) {
         this.name = name;
         plants = new ArrayList<>();
-        trees = new ArrayList<>();
-        flowers = new ArrayList<>();
     }
 
-    public void addPlants (Plant plants) {
+    public void addPlants(Plant plant) {
+        this.plants.add(plant);
+    }
 
-        if (plants instanceof Tree){
-            trees.add((Tree)plants);
-        } else if (plants instanceof Flower){
-            flowers.add((Flower)plants);
+    public void getInfo() {
+        for (int i = 0; i < this.plants.size(); i++) {
+            plants.get(i).introduce();
         }
     }
 
-    public void getInfo(){
+    public void watering(int wateringAmount) {
+        System.out.printf("\nWatering with %d\n", wateringAmount);
+
+        List<Plant> thirstyPlants = new ArrayList<>();
+
         for (int i = 0; i < plants.size(); i++) {
+            if (plants.get(i).setIsThirsty()) {
+                thirstyPlants.add(plants.get(i));
+            }
         }
+
+        for (int i = 0; i < thirstyPlants.size(); i++) {
+            int waterForOnePlant = wateringAmount / thirstyPlants.size();
+            thirstyPlants.get(i).setCurrentWaterAmount((int) (waterForOnePlant * thirstyPlants.get(i).getAbsorbLevel()));
+        }
+
     }
 
-    public int watering (int wateringAmount){
-
-    }
 }
