@@ -44,6 +44,16 @@ public class Main {
         awesome.addMentor(mentor);
         awesome.addMentor(gandhi);
         awesome.info();
+
+        System.out.println();
+        Student johnTheClone = new Student();
+        try {
+            johnTheClone = (Student) john.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("The cloned John name is: " + johnTheClone.getName());
+        johnTheClone.introduce();
     }
 
 }

@@ -1,6 +1,6 @@
 package I01_GreenFoxOrganization;
 
-public class Person {
+public class Person implements java.lang.Cloneable {
 
     private String name;
     private int age;
@@ -25,4 +25,13 @@ public class Person {
         System.out.println("My goal is: Live for the moment!\n");
     }
 
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        System.out.println("Hello, I am cloning!!");
+        return super.clone();
+    }
+
+    public String getName() {
+        return name;
+    }
 }
