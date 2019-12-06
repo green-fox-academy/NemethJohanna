@@ -9,16 +9,16 @@ public class App {
 
         System.out.println("Test 1 Play");
         guitar.play();
-        //bassGuitar.play();
-        //violin.play();
+        bassGuitar.play();
+        violin.play();
 
-        //System.out.println("Test 2, create Electric Guitar, Bass Guitar with 7 and 5 strings .");
-        //ElectricGuitar guitar2 = new ElectricGuitar(7);
-        //BassGuitar bassGuitar2 = new BassGuitar(5);
+        System.out.println("\nTest 2, create Electric Guitar, Bass Guitar with 7 and 5 strings .");
+        ElectricGuitar guitar2 = new ElectricGuitar(7);
+        BassGuitar bassGuitar2 = new BassGuitar(5);
 
-        //System.out.println("Test 2 Play");
-        //guitar2.play();
-        //bassGuitar2.play();
+        System.out.println("Test 2 Play");
+        guitar2.play();
+        bassGuitar2.play();
 
 
     }
