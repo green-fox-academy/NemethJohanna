@@ -16,7 +16,7 @@ public class App {
         ElectricGuitar guitar2 = new ElectricGuitar(7);
         BassGuitar bassGuitar2 = new BassGuitar(5);
 
-        System.out.println("Test 2 Play");
+        System.out.println("\nTest 2 Play");
         guitar2.play();
         bassGuitar2.play();
 
