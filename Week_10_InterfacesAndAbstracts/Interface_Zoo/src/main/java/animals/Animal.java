@@ -8,14 +8,9 @@ public abstract class Animal {
     private int weight;
     private int height;
 
-    public void breed(){
-    }
+    //public abstract void Animal (String name);
 
-    public boolean canFly(){
-        return true;
-    }
-
-    public abstract void breeding();
+    public abstract String breed();
 
     public String getName() {
         return name;

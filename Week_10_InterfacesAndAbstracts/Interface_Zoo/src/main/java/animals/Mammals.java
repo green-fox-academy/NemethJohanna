@@ -2,11 +2,19 @@ package main.java.animals;
 
 public class Mammals extends Animal {
 
-    public Mammals() {
+    private String name;
+
+    public Mammals(String name) {
+        this.name = name;
     }
 
     @Override
-    public void breeding() {
+    public String breed() {
+        return "pushing miniature versions out.";
+    }
 
+    @Override
+    public String getName() {
+        return name;
     }
 }
