@@ -2,20 +2,19 @@ package main.java.music;
 
 public class ElectricGuitar extends StringedInstrument {
 
-    private String name = "Electric guitar";
-    private int numberOfStrings = 6;
+    private static String name = "Electric guitar";
+    private static int numberOfStrings = 6;
 
     public ElectricGuitar() {
-        super();
+        super(name, numberOfStrings);
     }
 
     public ElectricGuitar(int numberOfStrings){
-        super();
-        setNumberOfStrings(numberOfStrings);
+        super(name, numberOfStrings);
     }
 
     public void sound() {
-        System.out.print("Twang");
+        System.out.print("Twang\n");
     }
 
     @Override

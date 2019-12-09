@@ -2,14 +2,14 @@ package main.java.music;
 
 public class BassGuitar extends StringedInstrument {
 
-    private String name = "\nBass guitar";
-    private int numberOfStrings = 4;
+    private static String name = "Bass guitar";
+    private static int numberOfStrings = 4;
 
     public BassGuitar() {
+        super(name, numberOfStrings);
     }
     public BassGuitar(int numberOfStrings){
-        super();
-        setNumberOfStrings(numberOfStrings);
+        super(name, numberOfStrings);
     }
 
     @Override
@@ -29,9 +29,5 @@ public class BassGuitar extends StringedInstrument {
 
     public String getName() {
         return name;
-    }
-
-    public void setNumberOfStrings(int numberOfStrings) {
-        this.numberOfStrings = numberOfStrings;
     }
 }

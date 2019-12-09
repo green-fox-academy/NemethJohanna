@@ -8,9 +8,6 @@ public abstract class Instrument {
         this.name = name;
     }
 
-    public Instrument() {
-    }
-
     public abstract void play();
 
 }
