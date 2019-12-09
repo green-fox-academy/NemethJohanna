@@ -14,18 +14,18 @@ public class Plant {
         this.currentWaterAmount = 0;
     }
 
-    public boolean setIsThirsty() {
-        if (currentWaterAmount < this.thirstyLevel) {
-            this.isThirsty = true;
+    public boolean setIsThirsty() {                         // public boolean isThirsty (){
+        if (currentWaterAmount < this.thirstyLevel) {       //   return currentWaterAmount < absorbLevel;
+            this.isThirsty = true;                          // }
         } else {
             this.isThirsty = false;
         }
         return this.isThirsty;
     }
 
-    public String thirstyLevelToPrint() {
-        if (this.setIsThirsty()) {
-            return "needs water";
+    public String thirstyLevelToPrint() {                   // @Override
+        if (this.setIsThirsty()) {                          // public String toString(){
+            return "needs water";                           //
         } else {
             return "doesn't need water";
         }

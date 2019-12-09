@@ -9,7 +9,7 @@ public class Main {
         Flower blueFlower = new Flower("blue");
 
         Garden annaGarden = new Garden("Anna Garden");
-        annaGarden.addPlants(yellowFlower);
+        annaGarden.addPlants(yellowFlower);                 // annaGarden.addPlants(new Flower("yellow"));
         annaGarden.addPlants(blueFlower);
         annaGarden.addPlants(purpleTree);
         annaGarden.addPlants(orangeTree);

@@ -6,7 +6,7 @@ import java.util.List;
 public class Garden {
 
     private String name;
-    private List<Plant> plants;
+    private List<I02_GardenApplication.Plant> plants;
 
     public Garden(String name) {
         this.name = name;
@@ -23,6 +23,7 @@ public class Garden {
         }
     }
 
+    // a plant osztályba kellene rakni, hogy máshonnan is lehessen locsolni!
     public void watering(int wateringAmount) {
         System.out.printf("\nWatering with %d\n", wateringAmount);
 
