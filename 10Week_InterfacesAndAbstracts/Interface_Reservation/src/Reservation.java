@@ -4,17 +4,29 @@ import java.util.List;
 
 public class Reservation implements Reservationy {
 
-    private int numberOfCharacters;
+    private int lengthOfCode;
 
+    public Reservation(int lengthOfCode) {
+        this.lengthOfCode = 8;
+    }
+
+    //Also, the DOW is randomly ordered to the bookings from an array.
+    //DOW stands for Day of the Week (MON, TUE, etc.)
     @Override
-    public String getDowBooking() {         // Day Of The Week (MON, THU, WED...)
-        List<DayOfWeek> days = new ArrayList<>();
+    public String getDowBooking() {
 
-        return days.toString();
+
+        return String;
     }
 
     @Override
     public String getCodeBooking() {
-        generateCode();
+        String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "0123456789";
+        StringBuilder sb = new StringBuilder(lengthOfCode);
+        for (int i = 0; i < lengthOfCode; i++) {
+            int index = (int)(AlphaNumericString.length() * Math.random());
+            sb.append(AlphaNumericString.charAt(i));
+        }
+        return sb.toString();
     }
 }
