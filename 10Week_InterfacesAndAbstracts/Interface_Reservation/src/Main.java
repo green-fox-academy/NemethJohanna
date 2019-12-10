@@ -19,7 +19,7 @@ public class Main {
         reservation.add(reservation5);
 
         for (Reservation r : reservation){
-            System.out.printf("Booking# %s for %s\n", getCodeBooking, getDowBooking());
+            System.out.printf("Booking# %s for %s\n", r.getCodeBooking(), r.getDowBooking());;
         }
 
 
