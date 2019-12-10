@@ -9,11 +9,11 @@ public class Domino implements Printable{
     }
 
     public int getaSide() {
-        return 0;
+        return aSide;
     }
 
-    public int getbSide(){
-        return 0;
+    public int getbSide() {
+        return bSide;
     }
 
     @Override

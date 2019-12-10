@@ -11,15 +11,15 @@ public class Todo implements Printable{
     }
 
     public String getTask() {
-        return "";
+        return task;
     }
 
     public String getPriority() {
-        return "";
+        return priority;
     }
 
     public boolean isDone() {
-        return true;
+        return isDone;
     }
 
     @Override
