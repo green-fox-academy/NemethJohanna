@@ -9,6 +9,8 @@ public class Main {
         Reservation reservation3 = new Reservation();
         Reservation reservation4 = new Reservation();
         Reservation reservation5 = new Reservation();
+        Reservation reservation6 = new Reservation();
+        Reservation reservation7 = new Reservation();
 
         List<Reservation> reservation = new ArrayList<>();
 
@@ -17,11 +19,11 @@ public class Main {
         reservation.add(reservation3);
         reservation.add(reservation4);
         reservation.add(reservation5);
+        reservation.add(reservation6);
+        reservation.add(reservation7);
 
-        for (Reservation r : reservation){
-            System.out.printf("Booking# %s for %s\n", r.getCodeBooking(), r.getDowBooking());;
+        for (Reservation r : reservation) {
+            System.out.println(String.format("Booking# %s for %s", r.getCodeBooking(), r.getDowBooking()));
         }
-
-
     }
 }
