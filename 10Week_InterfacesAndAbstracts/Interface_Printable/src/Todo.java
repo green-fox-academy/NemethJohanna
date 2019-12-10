@@ -4,12 +4,18 @@ public class Todo implements Printable{
     private String priority;
     private boolean isDone;
 
+    public Todo(String task, String priority, boolean isDone) {
+        this.task = task;
+        this.priority = priority;
+        this.isDone = isDone;
+    }
+
     public String getTask() {
-        return "Buy milk";
+        return "";
     }
 
     public String getPriority() {
-        return "high";
+        return "";
     }
 
     public boolean isDone() {
@@ -18,6 +24,6 @@ public class Todo implements Printable{
 
     @Override
     public void printAllFields() {
-        System.out.printf("Task: %s | Priority: %s | Done: %s", getTask(), getPriority(), isDone());
+        System.out.printf("Task: %s | Priority: %s | Done: %s\n", getTask(), getPriority(), isDone());
     }
 }
