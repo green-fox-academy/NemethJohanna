@@ -9,11 +9,13 @@ public class AnagramTest {
 
         Anagram anagram = new Anagram();
 
-        String wordIsAnagram = "madam";
+        String word1 = "madam";
+        String word2 = "madam";
 
         boolean expectedResult = true;
 
-        boolean result = 
+        boolean result = anagram.isAnagram(word1, word2);
+        assertEquals(expectedResult, result);
 
     }
 }
