@@ -37,9 +37,7 @@ public class SumTest {
     //a list that has one element in it
     @Test
     public void sumOfElements_should_returnTheElement_when_arrayHasOneElement(){
-        Sum sum = new Sum();
         int[] numbers = {5};
-
         int expectedResult = 5;
 
         int result = sum.sumOfElements(numbers);
