@@ -11,7 +11,7 @@ public class CountLettersTest {
 
         CountLetters countLetters = new CountLetters();
 
-        String countTheLetters = "GreenFox";
+        String wordToCount = "GreenFox";
 
         HashMap<Character, Integer> expectedResult = new HashMap<>();
         expectedResult.put('G', 1);
@@ -22,8 +22,6 @@ public class CountLettersTest {
         expectedResult.put('o', 1);
         expectedResult.put('x', 1);
 
-       String result = countLetters.letterCount(countTheLetters);
-
-        assertEquals(expectedResult, result);
+        assertEquals(expectedResult, countLetters.letterCount(wordToCount));
     }
 }

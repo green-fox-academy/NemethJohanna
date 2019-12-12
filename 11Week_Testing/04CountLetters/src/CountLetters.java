@@ -1,9 +1,8 @@
 import java.util.HashMap;
-import java.util.Map;
 
 public class CountLetters {
 
-    public String letterCount (String wordToCount){
+    public HashMap<Character, Integer> letterCount (String wordToCount){
         char[] wordToCharacterList = wordToCount.toCharArray();
 
         HashMap<Character, Integer> charCountMap = new HashMap<Character, Integer>();
@@ -16,10 +15,7 @@ public class CountLetters {
                 charCountMap.put(c, 1);
             }
         }
-        for (Map.Entry<Character, Integer> letters : charCountMap.entrySet()) {
-            System.out.printf("%s occurance %t times.\n"), charCountMap.get, charCountMap.getKey());
-        }
-        return;
+        return charCountMap;
     }
 
 }
