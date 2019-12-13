@@ -38,18 +38,18 @@ public class Extension {
         } else return false;
     }
 
-    String translate(String hungarian) {
-        String teve = hungarian;
-        int length = teve.length();
+    String translate(String wordToTranslate) {
+        String translate = wordToTranslate;
+        int length = translate.length();
         for (int i = 0; i < length; i++) {
-            char c = teve.charAt(i);
-            if (isVowel(c)) {
-                teve = String.join(c + "v" + c, teve.split(""+c));
-                i+=2;
-                length+=2;
+            char inputsCharacters = translate.charAt(i);
+            if (isVowel(inputsCharacters)) {
+                translate = String.join(inputsCharacters + "v" + inputsCharacters, translate.split("" + inputsCharacters));
+                i += 2;
+                length += 2;
             }
         }
-        return teve;
+        return translate;
     }
 }
 
