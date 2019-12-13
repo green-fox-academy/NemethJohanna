@@ -60,12 +60,12 @@ public class ExtensionTest {
     }
 
     @Test
-    public void testMedian_four() {
-        assertEquals(5, extension.median(Arrays.asList(7,5,3,5)));
+    public void testMedian_should_return_withTheMediumNumber_whenTheListIsEvenLong() {
+        assertEquals(5.5, extension.median(Arrays.asList(1, 3, 8, 3, 10, 15)));
     }
 
     @Test
-    public void testMedian_five() {
+    public void testMedian_should_return_withTheMediumNumber_whenTheListIsOddLong() {
         assertEquals(3, extension.median(Arrays.asList(1,2,3,4,5)));
     }
 
