@@ -23,7 +23,7 @@ public class ExtensionTest {
 
         assertEquals(expectedResult, result);
     }
-    
+
     @Test
     public void testAdd_1and4is5() {
         assertEquals(5, extension.add(1, 4));

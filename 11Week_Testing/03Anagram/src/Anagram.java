@@ -2,6 +2,7 @@ public class Anagram {
 
     public boolean isAnagram(String word1, String word2) {
 
+        // wrong solution...arrgghh
         char[] chars1 = word1.toCharArray();
         char[] chars2 = word2.toCharArray();
 
@@ -11,5 +12,9 @@ public class Anagram {
             }
         }
         return true;
+
+        // correct solution would this -->
+        // madam == mamad
+        // greenfox == forexgen
     }
 }
