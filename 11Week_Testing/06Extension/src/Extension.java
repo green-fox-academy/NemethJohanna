@@ -45,8 +45,8 @@ public class Extension {
             char inputsCharacters = translate.charAt(i);
             if (isVowel(inputsCharacters)) {
                 translate = String.join(inputsCharacters + "v" + inputsCharacters, translate.split("" + inputsCharacters));
-                i += 2;
-                length += 2;
+                i += length;
+                length ++;
             }
         }
         return translate;
