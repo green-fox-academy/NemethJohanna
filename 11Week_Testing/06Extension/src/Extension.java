@@ -24,14 +24,18 @@ public class Extension {
         Collections.sort(list);
         if (list.size() % 2 == 1) {
             return list.get(list.size() / 2);
+        } else if ((list.size() == 0)) {
+            return 0;
         } else {
             double medianPart = ((list.get((list.size() / 2) - 1)) + (list.get(list.size() / 2)));
             return medianPart / 2;
         }
     }
 
-    boolean isVowel(char c) {
-        return Arrays.asList('a', 'u', 'o', 'e', 'i').contains(c);
+    boolean isVowel(char character) {
+        if (Arrays.asList('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U').contains(character)){
+            return true;
+        } else return false;
     }
 
     String translate(String hungarian) {

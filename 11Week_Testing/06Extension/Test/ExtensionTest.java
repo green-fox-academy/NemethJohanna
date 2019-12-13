@@ -29,6 +29,8 @@ public class ExtensionTest {
         assertEquals(5, extension.add(1, 4));
     }
 
+
+
     @Test
     public void testMaxOfThree_first() {
         assertEquals(5, extension.maxOfThree(5, 4, 3));
@@ -59,6 +61,9 @@ public class ExtensionTest {
         assertEquals(5, extension.maxOfThree(3, 4, 5));
     }
 
+
+
+
     @Test
     public void testMedian_should_return_withTheMediumNumber_whenTheListIsEvenLong() {
         assertEquals(5.5, extension.median(Arrays.asList(1, 3, 8, 3, 10, 15)));
@@ -70,14 +75,47 @@ public class ExtensionTest {
     }
 
     @Test
-    public void testIsVowel_a() {
+    public void testMedian_should_return_withTheMediumNumber_whenTheListContainsNegativeElement() {
+        assertEquals(-0.5, extension.median(Arrays.asList(1, -2, -5, 7)));
+    }
+
+    @Test
+    public void testMedian_should_return_withTheNumber_whenTheListHasOneElement() {
+        assertEquals(5, extension.median(Arrays.asList(5)));
+    }
+
+    @Test
+    public void testMedian_should_return0_whenTheListIsEmpty() {
+        assertEquals(0, extension.median(Arrays.asList()));
+    }
+
+
+
+
+    @Test
+    public void testIsVowel_shouldReturnTrue_whenTheCharacterIsVowel() {
         assertTrue(extension.isVowel('a'));
     }
 
     @Test
-    public void testIsVowel_u() {
-        assertTrue(extension.isVowel('u'));
+    public void testIsVowel_shouldReturnTrue_whenTheCharacterIsVowelAndUpperCase() {
+        assertTrue(extension.isVowel('A'));
     }
+
+    @Test
+    public void testIsVowel_shouldReturnFalse_whenTheCharacterIsConsonant() {
+        assertFalse(extension.isVowel('b'));
+    }
+
+    @Test
+    public void testIsVowel_shouldReturnFalse_whenTheCharacterIsNotALetter() {
+        assertFalse(extension.isVowel('?'));
+    }
+
+
+
+
+
 
     @Test
     public void testTranslate_bemutatkozik() {
