@@ -14,6 +14,17 @@ public class ExtensionTest {
     }
 
     @Test
+    public void add_should_returnIntegerMaxValue_when_sumIsBiggerThanMaximum() {
+        int max = Integer.MAX_VALUE;
+        int number = 5;
+        int expectedResult = Integer.MAX_VALUE;
+
+        int result = extension.add(max, number);
+
+        assertEquals(expectedResult, result);
+    }
+    
+    @Test
     public void testAdd_1and4is5() {
         assertEquals(5, extension.add(1, 4));
     }

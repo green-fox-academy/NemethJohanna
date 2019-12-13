@@ -2,8 +2,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Extension {
-    int add(int a, int b) {
-        return 5;
+    int add(int number1, int number2) {
+        if (Integer.MAX_VALUE - number1 < number2) {
+            System.err.printf("%d + %d is bigger than Integer max value\n", number1, number2);
+            return Integer.MAX_VALUE;
+        }
+        return number1 + number2;
     }
 
     int maxOfThree(int a, int b, int c) {
