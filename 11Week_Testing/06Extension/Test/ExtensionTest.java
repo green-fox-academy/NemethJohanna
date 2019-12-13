@@ -34,7 +34,7 @@ public class ExtensionTest {
 
 // MAX OF THREE TESTS
     @Test
-    public void testMaxOfThree_first() {
+    public void testMaxOfThree_returnMAx_whenThreeDifferentNumberAdded() {
         assertEquals(5, extension.maxOfThree(5, 4, 3));
     }
 
@@ -56,11 +56,6 @@ public class ExtensionTest {
     @Test
     public void testMaxOfThree_returnTheNumber_whenEveryNumbersAreEquals (){
         assertEquals(5, extension.maxOfThree(5, 5, 5));
-    }
-
-    @Test
-    public void testMaxOfThree_third() {
-        assertEquals(5, extension.maxOfThree(3, 4, 5));
     }
 
 
@@ -117,7 +112,7 @@ public class ExtensionTest {
         assertFalse(extension.isVowel(' '));
     }
 
-    
+
 // TRANSLATE TESTS
     @Test
     public void testTranslate_shouldWorkCorrectly_whenASimpleWordAdded() {
