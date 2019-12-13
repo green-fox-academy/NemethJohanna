@@ -116,7 +116,7 @@ public class ExtensionTest {
 // TRANSLATE TESTS
     @Test
     public void testTranslate_shouldWorkCorrectly_whenASimpleWordAdded() {
-        assertEquals("tevelevefovon", extension.translate("telefon"));
+        assertEquals("ivitaval", extension.translate("ital"));
     }
 
     @Test

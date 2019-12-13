@@ -48,6 +48,9 @@ public class Extension {
                 i += length;
                 length ++;
             }
+            if (!isVowel(inputsCharacters)){
+                return "Error";
+            }
         }
         return translate;
     }
