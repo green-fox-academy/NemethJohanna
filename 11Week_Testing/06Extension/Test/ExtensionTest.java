@@ -8,6 +8,8 @@ public class ExtensionTest {
 
     Extension extension = new Extension();
 
+
+// ADD TESTS
     @Test
     public void testAdd_2and3is5() {
         assertEquals(5, extension.add(2, 3));
@@ -30,7 +32,7 @@ public class ExtensionTest {
     }
 
 
-
+// MAX OF THREE TESTS
     @Test
     public void testMaxOfThree_first() {
         assertEquals(5, extension.maxOfThree(5, 4, 3));
@@ -62,8 +64,7 @@ public class ExtensionTest {
     }
 
 
-
-
+// MEDIAN TESTS
     @Test
     public void testMedian_should_return_withTheMediumNumber_whenTheListIsEvenLong() {
         assertEquals(5.5, extension.median(Arrays.asList(1, 3, 8, 3, 10, 15)));
@@ -90,8 +91,7 @@ public class ExtensionTest {
     }
 
 
-
-
+// VOWEL TESTS
     @Test
     public void testIsVowel_shouldReturnTrue_whenTheCharacterIsVowel() {
         assertTrue(extension.isVowel('a'));
@@ -117,8 +117,8 @@ public class ExtensionTest {
         assertFalse(extension.isVowel(' '));
     }
 
-
-
+    
+// TRANSLATE TESTS
     @Test
     public void testTranslate_shouldWorkCorrectly_whenASimpleWordAdded() {
         assertEquals("tevelevefovon", extension.translate("telefon"));
