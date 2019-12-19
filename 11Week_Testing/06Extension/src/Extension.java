@@ -39,19 +39,15 @@ public class Extension {
     }
 
     String translate(String wordToTranslate) {
-        String translate = wordToTranslate;
-        int length = translate.length();
-        for (int i = 0; i < length; i++) {
-            char inputsCharacters = translate.charAt(i);
-            if (isVowel(inputsCharacters)) {
-                translate = String.join(inputsCharacters + "v" + inputsCharacters, translate.split("" + inputsCharacters));
-                i += length;
-                length ++;
-            }
-            if (!isVowel(inputsCharacters)){
-                return "Error";
+        String temp = "";
+        for (int i = 0; i < wordToTranslate.length(); i++) {
+            char c = wordToTranslate.charAt(i);
+            if (isVowel(c)) {
+                temp += c + "v" + c;
+            } else {
+                temp += c;
             }
         }
-        return translate;
+        return temp;
     }
 }
