@@ -119,19 +119,4 @@ public class ExtensionTest {
         assertEquals("tevelevefovon", extension.translate("telefon"));
     }
 
-    @Test
-    public void testTranslate_shouldReturnError_when_theWordDoesNotContainVowel() {
-        assertEquals("Error", extension.translate("lkj"));
-    }
-
-    @Test
-    public void testTranslate_shouldReturnError_when_theWordIsEmpty() {
-        assertEquals("Error", extension.translate(" "));
-    }
-
-    @Test
-    public void testTranslate_shouldReturnError_when_theWordToTranslateContainsSpace() {
-        assertEquals("Error", extension.translate("Green Fox Academy"));
-    }
-
 }
