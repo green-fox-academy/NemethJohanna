@@ -33,21 +33,19 @@ public class Extension {
     }
 
     boolean isVowel(char character) {
-        if (Arrays.asList('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U').contains(character)){
-            return true;
-        } else return false;
+        return Arrays.asList('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U').contains(character);
     }
 
     String translate(String wordToTranslate) {
-        String temp = "";
+        StringBuilder temp = new StringBuilder();
         for (int i = 0; i < wordToTranslate.length(); i++) {
             char c = wordToTranslate.charAt(i);
             if (isVowel(c)) {
-                temp += c + "v" + c;
+                temp.append(c).append("v").append(c);
             } else {
-                temp += c;
+                temp.append(c);
             }
         }
-        return temp;
+        return temp.toString();
     }
 }
