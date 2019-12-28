@@ -31,7 +31,7 @@ public class Carrier {
     public void fight(Carrier carrier) {
         for (Aircraft aircraft : aircrafts) {
             totalDamage = aircraft.getActualAmmo();
-            healthPoints -= totalDamage;
+            carrier.healthPoints -= totalDamage;
             aircraft.setActualAmmo(0);
         }
     }
@@ -46,6 +46,5 @@ public class Carrier {
             }
         }
     }
-
 
 }
