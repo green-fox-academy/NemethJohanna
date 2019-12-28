@@ -6,6 +6,6 @@ public class F35 extends Aircraft {
         super();
         this.setMaxAmmo(12);
         this.setBaseDamage(50);
-        this.setPriority(false);
+        this.setPriority(true);
     }
 }
