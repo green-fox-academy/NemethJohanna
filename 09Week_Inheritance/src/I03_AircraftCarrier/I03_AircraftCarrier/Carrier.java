@@ -6,6 +6,7 @@ import java.util.List;
 public class Carrier {
 
     private String name;
+    private int healthPoints;
     private List<Aircraft> aircrafts;
 
     public Carrier(String name) {
@@ -27,11 +28,17 @@ public class Carrier {
 
     // It should take another carrier as a reference parameter and fire all the ammo from the aircrafts to it,
     // then subtract all the damage from its health points
-    public void fight(String carrier){}
+    public void fight(Carrier carrier){
+        carrier.
+    }
 
 
     // It should return a string about itself and all of its aircrafts' statuses in the following format:
-    public void getStatus(){}
+    public void getStatus(){
+        for (int i = 0; i < aircrafts.size(); i++) {
+            aircrafts.get(i).getStatus();
+        }
+    }
 
 
 }
