@@ -31,7 +31,6 @@ public class Aircraft {
         It should return the remaining ammo
         Eg. Filling an empty F35 with 300 would completely fill the storage of the aircraft and would return the remaining 288*/
         int remainingAmmo = 0;
-        actualAmmo += (ammoToFill - maxAmmo);
         if (ammoToFill >= maxAmmo){
             actualAmmo += getMaxAmmo();
             remainingAmmo = ammoToFill - getMaxAmmo();

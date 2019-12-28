@@ -1,9 +1,9 @@
 package I03_AircraftCarrier;
 
 public class Main {
-    public static void main(String[] args) {
-        Carrier carrier1 = new Carrier("carrier1", 200, 500);
-        Carrier carrier2 = new Carrier("carrier2", 300, 600);
+    public static void main(String[] args) throws NoAmmoException {
+        Carrier carrier1 = new Carrier(200, 500);
+        Carrier carrier2 = new Carrier(300, 600);
 
         F16 sas = new F16();
         F35 tiger = new F35();
@@ -18,7 +18,14 @@ public class Main {
         carrier1.getStatus();
         carrier2.getStatus();
 
+        carrier1.fill();
+        carrier2.fill();
+
+        System.out.println("\nFirst fight");
         carrier1.fight(carrier2);
+        carrier1.getStatus();
+        carrier2.getStatus();
+
 
     }
 }
