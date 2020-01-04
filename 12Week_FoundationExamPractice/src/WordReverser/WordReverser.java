@@ -13,19 +13,16 @@ public class WordReverser {
 
         String[] split = sentenceToReverse.split(" ");
         ArrayList stringList = new ArrayList();
-        stringList.add(split);
+        //stringList.add(split);
 
-        for (int i = 0; i < stringList.size(); i++) {
-            reverseWord(stringList.get(i).toString());
-        }
         System.out.println(Arrays.toString(split));
-
+        
     }
 
     private static void reverseWord(String wordToReverse){
         char [] reverse = wordToReverse.toCharArray();
         for (int i = wordToReverse.length() - 1; i >= 0 ; i--) {
-            System.out.print(Arrays.toString(reverse[i]));
+            System.out.print(reverse[i]);
         }
     }
 }
