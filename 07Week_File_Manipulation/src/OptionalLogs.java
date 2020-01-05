@@ -16,6 +16,7 @@ public class OptionalLogs {
 
         Path path = Paths.get("C:\\Users\\Johanna Németh\\Desktop\\NemethJohanna\\07Week_File_Manipulation\\Log.txt");
         findUniqueIpAddresses(path);
+        System.out.println();
         getPostRatio(path);
 
     }
@@ -38,7 +39,7 @@ public class OptionalLogs {
         for (int i = 0; i < uniqueIpAddresses.size(); i++) {
             int j;
             for (j = 0; j < i; j++)
-                if (uniqueIpAddresses.get(i) == uniqueIpAddresses.get(j))
+                if (uniqueIpAddresses.get(i).equals(uniqueIpAddresses.get(j)))
                 break;
             if (i == j)
                 System.out.print(uniqueIpAddresses.get(i) + "\n");
@@ -64,8 +65,13 @@ public class OptionalLogs {
         int postSize = 0;
 
         for (int i = 0; i < getPost.size(); i++) {
-            
+            if (getPost.get(i).equals("GET")){
+                getSize++;
+            } else if (getPost.get(i).equals("POST")){
+                postSize++;
+            }
         }
+        System.out.printf("The GET / POST ratio is: %d / %d", getSize, postSize);
     }
 
 }
