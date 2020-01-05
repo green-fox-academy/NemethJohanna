@@ -46,7 +46,7 @@ public class OptionalLogs {
         }
     }
 
-    public static void getPostRatio (Path path){
+    public static void getPostRatio(Path path) {
         List<String> lines = new ArrayList<>();
         try {
             lines = Files.readAllLines(path);
@@ -65,9 +65,9 @@ public class OptionalLogs {
         int postSize = 0;
 
         for (int i = 0; i < getPost.size(); i++) {
-            if (getPost.get(i).equals("GET")){
+            if (getPost.get(i).equals("GET")) {
                 getSize++;
-            } else if (getPost.get(i).equals("POST")){
+            } else if (getPost.get(i).equals("POST")) {
                 postSize++;
             }
         }
