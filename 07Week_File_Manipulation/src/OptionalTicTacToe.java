@@ -1,25 +1,54 @@
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 public class OptionalTicTacToe {
 
     public static void main(String[] args) {
-        // Write a function that takes a filename as a parameter
-        // The file contains an ended Tic-Tac-Toe match
-        // We have provided you some example files (draw.txt, win-x.txt, win-o.txt)
-        // Return "X", "O" or "Draw" based on the input file
 
-        System.out.println(ticTacResult("win-o.txt"));
-        // Should print "O"
+        System.out.println(ticTacResult(Paths.get("win-o.txt")));
+        System.out.println(ticTacResult(Paths.get("win-x.txt")));
+        System.out.println(ticTacResult(Paths.get("draw.txt")));
 
-        System.out.println(ticTacResult("win-x.txt"));
-        // Should print "X"
-
-        System.out.println(ticTacResult("draw.txt"));
-        // Should print "Draw"
     }
 
-    public static void ticTacResult (Path path){
+    public static String ticTacResult(Path path) {
+        List<String> lines = new ArrayList<>();
+        try {
+            lines = Files.readAllLines(path);
+        } catch (IOException e) {
+            System.out.println("Unable to read file");
+        }
 
+        String[][] matrix;
+        matrix = new String[lines.size()][];
+        for (int i = 0; i < lines.size(); i++) {
+            matrix[i] = lines.get(i).split("");
+        }
+
+        String result = "";
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[0][j].equals(matrix[1][j]) && matrix[1][j].equals(matrix[2][j])) {
+                    result = matrix[0][j];
+                    break;
+                } else if (matrix[i][0].equals(matrix[i][1]) && matrix[i][1].equals(matrix[i][2])) {
+                    result = matrix[i][0];
+                    break;
+                } else if (matrix[2][j].equals(matrix[1][j]) && matrix[1][j].equals(matrix[0][j])) {
+                    result = matrix[2][j];
+                    break;
+                } else if (matrix[0][0].equals(matrix[1][1]) && matrix[1][1].equals(matrix[2][2])) {
+                    result = matrix[0][0];
+                } else
+                    result = "Draw";
+            }
+        }
+        return result;
     }
 
 }
