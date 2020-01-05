@@ -2,28 +2,18 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class OptionalBirths {
 
-    // Create a function that
-    // - takes the name of a CSV file as a parameter,
-    //   - every row is in the following format: <person name>;<birthdate in YYYY-MM-DD format>;<city name>
-    // - returns the year when the most births happened.
-    //   - if there were multiple years with the same number of births then return any one of them
-
-    // You can find such a CSV file in this directory named births.csv
-    // If you pass "births.csv" to your function, then the result should be either 2006, or 2016.
-
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         Path path = Paths.get("C:\\Users\\Johanna Németh\\Desktop\\NemethJohanna\\07Week_File_Manipulation\\births.txt");
         mostBirthHappened(path);
 
     }
 
-    public static void mostBirthHappened (Path path){
+    public static Integer mostBirthHappened(Path path) {
 
         List<String> lines = new ArrayList<>();
         try {
@@ -33,25 +23,35 @@ public class OptionalBirths {
         }
 
         ArrayList<String> birthDates = new ArrayList<>();
-        for (int i = 0; i < lines.size(); i++) {                                    // added the full dates to the list
+        for (int i = 0; i < lines.size(); i++) {
             String[] splitTheLinesBySemicolon = lines.get(i).split(";");
-            birthDates.add(i, splitTheLinesBySemicolon[2]);
+            birthDates.add(i, splitTheLinesBySemicolon[1]);
         }
 
-        ArrayList<String> birthYears = new ArrayList<>();                           // add the years to a new list!!!
-        for (int i = 0; i < birthDates.size(); i++) {                               // hyphen = kötőjel
+        ArrayList<String> birthYears = new ArrayList<>();
+        for (int i = 0; i < birthDates.size(); i++) {
             String[] splitTheLinesByHyphen = birthDates.get(i).split("-");
-            birthYears.add(i, splitTheLinesByHyphen[1]);
+            birthYears.add(i, splitTheLinesByHyphen[0]);
         }
 
-        for (int i = 0; i < birthYears.size(); i++) {
-            int j;
-            for (j = 0; j < i; j++)
-                if (birthYears.get(i).equals(birthYears.get(j)))
-                    break;
-            if (i == j)
-                System.out.print(birthDates.get(i) + "\n");
+        Map<String, Integer> mostCommonYearMap = new HashMap<>();
+        for (String years : birthYears) {
+            if (!mostCommonYearMap.containsKey(years)) {
+                mostCommonYearMap.put(years, 1);
+            } else {
+                mostCommonYearMap.replace(years, mostCommonYearMap.get(years) + 1);
+            }
         }
+
+        int maxYear = Collections.max(mostCommonYearMap.values());
+
+        for (Map.Entry<String, Integer> yearCount : mostCommonYearMap.entrySet()) {
+            if (yearCount.getValue() == maxYear) {
+                System.out.println(yearCount.getKey());
+            }
+        }
+
+        return maxYear;
     }
 
 }
