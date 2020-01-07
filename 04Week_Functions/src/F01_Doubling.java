@@ -2,7 +2,7 @@
 // - Create a function called `doubling` that doubles it's input parameter and returns with an integer
 // - Print the result of `doubling(baseNum)`
 
-public class Doubling {
+public class F01_Doubling {
     public static void main(String[] args) {
         int baseNum = 123;
 

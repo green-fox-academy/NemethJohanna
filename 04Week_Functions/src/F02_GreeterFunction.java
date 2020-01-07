@@ -7,15 +7,15 @@
 // - Greeting is printing e.g. `Greetings dear, Green Fox`
 // - Greet `al`
 
-public class GreeterFunction {
-//    public static void main(String[] args) {
-//        String al = "Green fox";
-//        greet (al);
-//    }
-//
-//    public static void greet (String name) {
-//        System.out.println("Greetings dear, " + name + "!");
-//
-//    }
+public class F02_GreeterFunction {
+    public static void main(String[] args) {
+        String al = "Green fox";
+        greet (al);
+    }
+
+    public static void greet (String name) {
+        System.out.println("Greetings dear, " + name + "!");
+
+    }
 }
 

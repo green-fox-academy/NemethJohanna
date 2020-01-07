@@ -1,24 +1,21 @@
 public class Hard_03_Anagram {
-//    # Anagram
-//
-//## What the hell is an anagram?
-//
-//            > An anagram is direct word switch or word play, the result of rearranging the
-//> letters of a word or phrase to produce a new word or phrase, using all the
-//> original letters exactly once; for example, the word anagram can be rearranged
-//> into nag-a-ram. *\[for more detail check
-//> [anagram](https://en.wikipedia.org/wiki/Anagram) on Wikipedia]*
-//
-//            ### Exercise
-//
-//    Create a function named **is anagram** following your current language's style
-//    guide. It should take two strings and return a boolean value depending on
-//    whether its an anagram or not.
-//
-//            ### Examples
-//
-//| input 1 | input 2 | output |
-//            | :-----: | :-----: | :----: |
-//            |  "dog"  |  "god"  |  true  |
-//            | "green" |  "fox"  |  false |
+
+    public static void main(String[] args) {
+
+        String word = "dog";
+        String word2 = "god";
+
+        System.out.println(isAnagram(word, word2));
+
+    }
+    public static boolean isAnagram (String word, String word2){
+        for (int i = 0; i < word.length(); i++) {
+            for (int j = 0; j < word2.length(); j++) {
+                if (word.charAt(i) == word2.charAt(word2.length() - (i + 1))){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }
