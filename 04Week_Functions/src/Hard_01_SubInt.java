@@ -14,7 +14,6 @@ public class Hard_01_SubInt {
         for (int i = 0; i < listToCheck.length; i++) {
             char[] chars = String.valueOf(listToCheck[i]).toCharArray();
 
-
         }
 
         return indexes;
