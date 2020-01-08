@@ -40,7 +40,7 @@ public class Optional01_Logs {
             int j;
             for (j = 0; j < i; j++)
                 if (uniqueIpAddresses.get(i).equals(uniqueIpAddresses.get(j)))
-                break;
+                    break;
             if (i == j)
                 System.out.print(uniqueIpAddresses.get(i) + "\n");
         }
@@ -64,10 +64,10 @@ public class Optional01_Logs {
         int getSize = 0;
         int postSize = 0;
 
-        for (int i = 0; i < getPost.size(); i++) {
-            if (getPost.get(i).equals("GET")) {
+        for (String s : getPost) {
+            if (s.equals("GET")) {
                 getSize++;
-            } else if (getPost.get(i).equals("POST")) {
+            } else if (s.equals("POST")) {
                 postSize++;
             }
         }
