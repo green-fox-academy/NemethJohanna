@@ -16,10 +16,7 @@ public class F05_CopyFile {
     }
 
     public static boolean copyContents (String copyFrom, String copyTo) {
-
-//        Path pathCopyFrom = Paths.get("CopyFrom.txt.txt");
-//        Path pathCopyTo = Paths.get("CopyTo.txt");
-
+        
         try {
             Files.copy(Paths.get(copyFrom), Paths.get(copyTo));
         } catch (IOException e) {
