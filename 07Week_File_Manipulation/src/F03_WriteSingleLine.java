@@ -20,5 +20,5 @@ public class F03_WriteSingleLine {
             System.out.println("Unable to write file: my-file.txt");
         }
     }
-    
+
 }
