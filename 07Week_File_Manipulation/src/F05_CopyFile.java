@@ -2,7 +2,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class CopyFile {
+public class F05_CopyFile {
 
     // Write a function that copies the contents of a file into another
 // It should take the filenames as parameters

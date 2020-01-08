@@ -5,7 +5,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReversedOrder {
+public class F07_ReversedOrder {
     // Create a method that decrypts reversed-order.txt
 
     public static void main(String[] args) throws IOException {

@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReversedLines {
+public class F06_ReversedLines {
 
     public static void main(String[] args) throws IOException {
         // Create a method that decrypts reversed-lines.txt

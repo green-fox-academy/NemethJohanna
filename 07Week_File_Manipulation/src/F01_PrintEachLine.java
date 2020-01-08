@@ -5,7 +5,7 @@ import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PrintEachLine {
+public class F01_PrintEachLine {
     public static void main(String[] args) {
         // Write a program that opens a file called "my-file.txt", then prints
         // each line from the file.

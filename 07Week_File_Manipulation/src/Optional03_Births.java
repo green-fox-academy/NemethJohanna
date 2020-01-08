@@ -4,7 +4,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 
-public class OptionalBirths {
+public class Optional03_Births {
 
     public static void main(String[] args) {
 

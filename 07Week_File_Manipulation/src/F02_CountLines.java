@@ -9,7 +9,7 @@ import java.util.*;
 // It should return zero if it can't open the file, and
 // should not raise any error.
 
-public class CountLines {
+public class F02_CountLines {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please write here a filename: ");

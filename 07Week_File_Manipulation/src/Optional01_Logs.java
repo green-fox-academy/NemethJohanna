@@ -5,7 +5,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OptionalLogs {
+public class Optional01_Logs {
 
     // Read all data from 'log.txt'.
     // Each line represents a log message from a web server

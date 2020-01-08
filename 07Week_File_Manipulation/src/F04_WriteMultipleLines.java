@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class WriteMultipleLines {
+public class F04_WriteMultipleLines {
     public static void main(String[] args) {
 
 

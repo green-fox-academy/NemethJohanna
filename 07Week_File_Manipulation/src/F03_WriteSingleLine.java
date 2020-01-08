@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class WriteSingleLine {
+public class F03_WriteSingleLine {
     public static void main(String[] args) {
         // Write a function that is able to manipulate a file
         // By writing your name into it as a single line

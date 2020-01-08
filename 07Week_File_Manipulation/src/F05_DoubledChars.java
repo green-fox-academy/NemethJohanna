@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.List;
 
 
-public class DoubledChars {
+public class F05_DoubledChars {
         public static void main(String[] args) throws IOException {
             // Create a method that decrypts the duplicated-chars.txt
 
