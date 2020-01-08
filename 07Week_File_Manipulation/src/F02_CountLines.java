@@ -2,33 +2,28 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.*;
-
-// Write a function that takes a filename as string,
-// then returns the number of lines the file contains.
-// It should return zero if it can't open the file, and
-// should not raise any error.
+import java.util.List;
 
 public class F02_CountLines {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please write here a filename: ");
-        String userInput = scanner.nextLine();
 
-        Path paths = Paths.get(userInput);
+        Path path = Paths.get("my-file.txt");
+        System.out.println(numberOfLines(path));
 
-        List<String> inputSize = new ArrayList<>();
-
-        try {
-            inputSize = Files.readAllLines(paths);
-            System.out.println(inputSize.size());
-        } catch (IOException e) {
-            System.out.println("zero");
-        }
     }
 
-
-
+    public static int numberOfLines(Path path){
+        int numberOfLines = 0;
+        try{
+            List<String> lines = Files.readAllLines(path);
+            for (int i = 0; i < lines.size(); i++) {
+                numberOfLines += i;
+            }
+        } catch (IOException e) {
+            return 0;
+        }
+        return numberOfLines;
+    }
 
 }
 
