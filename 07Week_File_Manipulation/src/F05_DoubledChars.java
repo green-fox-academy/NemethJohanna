@@ -1,3 +1,4 @@
+import javax.imageio.IIOException;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -9,22 +10,25 @@ import java.util.List;
 
 
 public class F05_DoubledChars {
-        public static void main(String[] args) throws IOException {
-            // Create a method that decrypts the duplicated-chars.txt
+    public static void main(String[] args) throws IOException {
 
-            Path path = Paths.get("duplicated-chars.txt");
-            List<String> wrongText = new ArrayList<>();
+        Path path = Paths.get("duplicated-chars.txt");
+        decryptDuplicatedChars(path);
 
-            try {
-            wrongText = Files.readAllLines(path);
-                    for (int i = 0; i < wrongText.size(); i++) {
-                            for (int j = 0; j < wrongText.get(i).length(); j += 2) {
-                                    System.out.print(wrongText.get(i).charAt(j));
-                            }
-                            System.out.println();
-                    }
-            } catch (IOException ex) {
-                ex.getStackTrace();
+    }
+
+    private static void decryptDuplicatedChars(Path path) {
+        try {
+            List <String> lines = Files.readAllLines(path);
+            for (int i = 0; i < lines.size(); i++) {
+                for (int j = 0; j < lines.get(i).length(); j += 2) {
+                    System.out.print(lines.get(i).charAt(j));
+                }
+                System.out.println();
             }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+    }
+
 }
