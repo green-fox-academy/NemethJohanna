@@ -5,37 +5,31 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Optional02_TicTacToe {
+public class Optional02_TicTacToe2 {
 
     public static void main(String[] args) {
-
-        // Write a function that takes a filename as a parameter
-        // The file contains an ended Tic-Tac-Toe match
-        // We have provided you some example files (draw.txt, win-x.txt, win-o.txt)
-        // Return "X", "O" or "Draw" based on the input file
-
-        System.out.println(ticTacResult(Paths.get("win-o.txt")));
-        System.out.println(ticTacResult(Paths.get("win-x.txt")));
-        System.out.println(ticTacResult(Paths.get("draw.txt")));
-
+        System.out.println(ticTacResult("win-o.txt"));
+        System.out.println(ticTacResult("win-x.txt"));
+        System.out.println(ticTacResult("draw.txt"));
     }
 
-    public static String ticTacResult(Path path) {
+    public static String ticTacResult(String filename){
+        Path filePath = Paths.get(filename);
         List<String> lines = new ArrayList<>();
+
         try {
-            lines = Files.readAllLines(path);
-        } catch (IOException e) {
-            System.out.println("Unable to read file");
+            lines = Files.readAllLines(filePath);
+        } catch (IOException e){
+            e.getStackTrace();
         }
 
-        String[][] matrix;
-        matrix = new String[lines.size()][];
+        String [][] matrix = new String[lines.size()][];
+
         for (int i = 0; i < lines.size(); i++) {
             matrix[i] = lines.get(i).split("");
         }
 
         String result = "";
-
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 if (matrix[0][j].equals(matrix[1][j]) && matrix[1][j].equals(matrix[2][j])) {
@@ -54,6 +48,6 @@ public class Optional02_TicTacToe {
             }
         }
         return result;
-    }
 
+    }
 }
