@@ -16,10 +16,24 @@ which decreases inkAmount*/
 
         sharpie.use();
         sharpie2.use();
-        sharpie3.use();
+
+        for (int i = 0; i < 100; i++) {
+            sharpie3.use();
+        }
 
         System.out.println(sharpie.inkAmount);
         System.out.println(sharpie2.inkAmount);
         System.out.println(sharpie3.inkAmount);
+
+        SharpieSet sharpieSet = new SharpieSet();
+
+        sharpieSet.add(sharpie);
+        sharpieSet.add(sharpie2);
+        sharpieSet.add(sharpie3);
+
+        System.out.println(sharpieSet.countUsable());
+        sharpieSet.removeTrash();
+        System.out.println(sharpieSet.countUsable());
+
     }
 }
