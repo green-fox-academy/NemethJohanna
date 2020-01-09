@@ -3,6 +3,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Optional01_Logs {
@@ -36,13 +37,18 @@ public class Optional01_Logs {
             uniqueIpAddresses.add(i, splitTheLinesBySpace[8]);
         }
 
+        ArrayList<String> uniqueUnique = new ArrayList<>();
+        Collections.sort(uniqueIpAddresses);
         for (int i = 0; i < uniqueIpAddresses.size(); i++) {
-            int j;
-            for (j = 0; j < i; j++)
-                if (uniqueIpAddresses.get(i).equals(uniqueIpAddresses.get(j)))
+            int k;
+            for (k = 0; k < i; k++) {
+                if (uniqueIpAddresses.get(i).equals(uniqueIpAddresses.get(k))){
                     break;
-            if (i == j)
-                System.out.print(uniqueIpAddresses.get(i) + "\n");
+                }
+            }
+            if (i == k){
+                uniqueUnique.add(uniqueIpAddresses.get(i));
+            }
         }
     }
 
