@@ -19,6 +19,7 @@ public class DrawImage implements Drawable{
     }
 
     public DrawImage() {
+
     }
 
     @Override

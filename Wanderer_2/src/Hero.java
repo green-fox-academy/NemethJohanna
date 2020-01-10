@@ -33,7 +33,7 @@ public class Hero extends Character implements Drawable {
     @Override
     public void draw(Graphics graphics) {
         if (drawImage != null) {
-            graphics.drawImage(drawImage, xCoordinate, yCoordinate,null);
+            graphics.drawImage(drawImage, xCoordinate * 72, yCoordinate * 72,null);
         }
     }
 
