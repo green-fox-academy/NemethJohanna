@@ -1,6 +1,15 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Skeleton extends Character {
 
-    public Skeleton(String filename) {
-        super(filename);
+    List<Skeleton> skeletonList;
+
+    public Skeleton() {
+        skeletonList = new ArrayList<>();
+    }
+
+    public void add(Skeleton skeleton){
+        this.skeletonList.add(skeleton);
     }
 }

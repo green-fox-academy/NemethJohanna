@@ -5,15 +5,15 @@ import java.awt.event.KeyListener;
 
 public class Main extends JComponent implements KeyListener {
 
-    int testBoxX;
-    int testBoxY;
+    private int testBoxX, testBoxY, tileSize;
 
-    Grid grid = new Grid();
-    Hero hero = new Hero();
+    private Grid grid = new Grid();
+    private Hero hero = new Hero();
 
     public Main() {
         testBoxX = 1;
         testBoxY = 1;
+        tileSize = 72;
         setPreferredSize(new Dimension(1100, 864));
         setVisible(true);
     }
@@ -47,21 +47,21 @@ public class Main extends JComponent implements KeyListener {
     @Override
     public void keyReleased(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_UP) {
-            hero.move("up");
+            hero.turn("up");
             if (grid.grid[testBoxX][testBoxY - 1] != grid.wall)
-                testBoxY -= 1;
+                hero.yCoordinate -= 1;
         } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-            hero.move("down");
+            hero.turn("down");
             if (grid.grid[testBoxX][testBoxY + 1] != grid.wall)
-                testBoxY += 1;
+                hero.yCoordinate += 1;
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            hero.move("right");
+            hero.turn("right");
             if (grid.grid[testBoxX + 1][testBoxY] != grid.wall)
-                testBoxX += 1;
+                hero.xCoordinate += 1;
         } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            hero.move("left");
+            hero.turn("left");
             if (grid.grid[testBoxX - 1][testBoxY] != grid.wall)
-                testBoxX -= 1;
+                hero.xCoordinate -= 1;
         } //else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
         //}
         repaint();

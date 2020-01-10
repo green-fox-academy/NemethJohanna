@@ -2,10 +2,7 @@ import java.awt.image.BufferedImage;
 
 public class Character extends DrawImage {
 
-    int xCoordinate;
-    int yCoordinate;
-
-    BufferedImage drawImage;
+    int xCoordinate, yCoordinate;
 
     public Character(String filename) {
         super(filename);

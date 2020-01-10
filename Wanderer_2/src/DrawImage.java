@@ -4,10 +4,13 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class DrawImage implements Drawable{
+public class DrawImage implements Drawable {
 
     BufferedImage image;
     int posX, posY;
+
+    public DrawImage() {
+    }
 
     public DrawImage(String filename) {
         try {
@@ -18,8 +21,10 @@ public class DrawImage implements Drawable{
 
     }
 
-    public DrawImage() {
-
+    public void draw(Graphics graphics, int posX, int posY) {
+        if (image != null) {
+            graphics.drawImage(image, posX, posY, null);
+        }
     }
 
     @Override
@@ -28,11 +33,4 @@ public class DrawImage implements Drawable{
             graphics.drawImage(image, posX, posY, null);
         }
     }
-
-    public void draw(Graphics graphics, int posX, int posY) {
-        if (image != null) {
-            graphics.drawImage(image, posX, posY, null);
-        }
-    }
-
 }
