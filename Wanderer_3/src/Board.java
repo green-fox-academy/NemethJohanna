@@ -8,9 +8,8 @@ public class Board extends JComponent implements KeyListener {
     int testBoxX, testBoxY;
     Grid grid = new Grid();
     Hero hero = new Hero();
-    Skeleton skeleton = new Skeleton();
-    Skeleton skeleton2 = new Skeleton();
-    Skeleton skeleton3 = new Skeleton();
+    SkeletonList skeletonList = new SkeletonList();
+
 
     public Board() {
         testBoxX = 1;
@@ -24,9 +23,7 @@ public class Board extends JComponent implements KeyListener {
         super.paint(graphics);
         grid.draw(graphics);
         hero.draw(graphics, testBoxX * 72, testBoxY * 72);
-        skeleton.draw(graphics);
-        skeleton2.draw(graphics);
-        skeleton3.draw(graphics);
+        skeletonList.draw(graphics);
     }
 
     public static void main(String[] args) {

@@ -3,15 +3,12 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SkeletonList extends Character {
+public class SkeletonList extends Skeleton {
 
     BufferedImage drawImage;
-
     Skeleton skeleton1 = new Skeleton();
     Skeleton skeleton2 = new Skeleton();
     Skeleton skeleton3 = new Skeleton();
-
-
     List<Skeleton> skeletonList;
 
     public SkeletonList(){
@@ -20,14 +17,21 @@ public class SkeletonList extends Character {
         skeletonList.add(skeleton1);
         skeletonList.add(skeleton2);
         skeletonList.add(skeleton3);
-        xCoordinate = (int) (Math.random() * 11);
-        yCoordinate = (int) (Math.random() * 11);
+        for (int i = 0; i < skeletonList.size(); i++) {
+            drawImage = skeletonList.get(i).skeleton.image;
+        }
     }
 
     public void draw(Graphics graphics) {
-        if (drawImage != null) {
-            graphics.drawImage(drawImage, xCoordinate, yCoordinate,null);
+        for (int i = 0; i < skeletonList.size(); i++) {
+            skeletonList.get(i);
+            if (drawImage != null) {
+                int xCoordinate = (int)((Math.random() * 10) + 1) * 72;
+                int yCoordinate = (int)((Math.random() * 10) + 1) * 72;
+                graphics.drawImage(drawImage, xCoordinate, yCoordinate,null);
+            }
         }
+
     }
 
 }
