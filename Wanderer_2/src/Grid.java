@@ -1,5 +1,6 @@
 import java.awt.*;
 
+
 public class Grid extends DrawImage {
 
     DrawImage floor = new DrawImage("img/floor.png");

@@ -48,20 +48,20 @@ public class Main extends JComponent implements KeyListener {
     public void keyReleased(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_UP) {
             hero.turn("up");
-            if (grid.grid[testBoxX][testBoxY - 1] != grid.wall)
-                hero.yCoordinate -= 1;
-        } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+            if (grid.grid[testBoxX][testBoxY - 1] != grid.wall){
+                hero.yCoordinate -= 1;}
+        } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {            // working
             hero.turn("down");
-            if (grid.grid[testBoxX][testBoxY + 1] != grid.wall)
-                hero.yCoordinate += 1;
-        } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+            if (grid.grid[testBoxX][testBoxY + 1] != grid.wall){
+                hero.yCoordinate += 1;}
+        } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {           // working
             hero.turn("right");
-            if (grid.grid[testBoxX + 1][testBoxY] != grid.wall)
-                hero.xCoordinate += 1;
+            if (grid.grid[testBoxX + 1][testBoxY] != grid.wall){
+                hero.xCoordinate += 1;}
         } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
             hero.turn("left");
-            if (grid.grid[testBoxX - 1][testBoxY] != grid.wall)
-                hero.xCoordinate -= 1;
+            if (grid.grid[testBoxX - 1][testBoxY] != grid.wall){
+                hero.xCoordinate -= 1;}
         } //else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
         //}
         repaint();
