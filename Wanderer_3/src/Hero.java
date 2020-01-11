@@ -8,8 +8,8 @@ public class Hero extends Character {
 
     public Hero(){
         super();
-        this.x = 1;
-        this.y = 1;
+        this.xCoordinate = 1;
+        this.Coordinate = 1;
         drawImage = hero.image;
     }
 
@@ -32,12 +32,6 @@ public class Hero extends Character {
     public void draw(Graphics graphics, int x, int y) {
         if (drawImage != null) {
             graphics.drawImage(drawImage, x, y,null);
-        }
-    }
-
-    public void draw(Graphics graphics) {
-        if (drawImage != null) {
-            graphics.drawImage(drawImage, x * 72, y * 72,null);
         }
     }
 

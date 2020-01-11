@@ -8,6 +8,7 @@ public class Board extends JComponent implements KeyListener {
     int testBoxX, testBoxY;
     Grid grid = new Grid();
     Hero hero = new Hero();
+    SkeletonList skeletons = new SkeletonList();
 
     public Board() {
         testBoxX = 1;
@@ -21,10 +22,11 @@ public class Board extends JComponent implements KeyListener {
         super.paint(graphics);
         grid.draw(graphics);
         hero.draw(graphics, testBoxX * 72, testBoxY * 72);
+        //skeletons.draw(graphics, 144, 144);
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("RPG Game");
+        JFrame frame = new JFrame("WANDERER Game");
         Board board = new Board();
         frame.add(board);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -50,18 +52,18 @@ public class Board extends JComponent implements KeyListener {
                 testBoxY -= 1;
         } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
             hero.turn("down");
-            if ( grid.grid[testBoxX][testBoxY + 1] != grid.wall)
+            if (grid.grid[testBoxX][testBoxY + 1] != grid.wall)
                 testBoxY += 1;
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
             hero.turn("right");
-            if ( grid.grid[testBoxX + 1][testBoxY] != grid.wall)
+            if (grid.grid[testBoxX + 1][testBoxY] != grid.wall)
                 testBoxX += 1;
         } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
             hero.turn("left");
-            if ( grid.grid[testBoxX - 1][testBoxY] != grid.wall)
-                testBoxX -= 1;        }
+            if (grid.grid[testBoxX - 1][testBoxY] != grid.wall)
+                testBoxX -= 1;
+        }
         repaint();
-
     }
 
 }
