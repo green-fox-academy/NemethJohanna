@@ -8,14 +8,16 @@ public class Skeleton extends Character {
 
     public Skeleton(){
         super();
-        this.xCoordinate = (int) (Math.random() * 720);
-        this.yCoordinate = (int) (Math.random() * 720);
+        //this.xCoordinate = (int) (Math.random() * 11);
+        //this.yCoordinate = (int) (Math.random() * 11);
         drawImage = skeleton.image;
     }
 
-    public void draw(Graphics graphics, int xCoordinate, int yCoordinate) {
+    public void draw(Graphics graphics) {
         if (drawImage != null) {
-            graphics.drawImage(drawImage, this.xCoordinate, this.yCoordinate,null);
+            int xCoordinate = (int)((Math.random() * 10) + 1) * 72;
+            int yCoordinate = (int)((Math.random() * 10) + 1) * 72;
+            graphics.drawImage(drawImage, xCoordinate, yCoordinate,null);
         }
     }
 
