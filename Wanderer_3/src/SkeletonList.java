@@ -18,20 +18,22 @@ public class SkeletonList extends Skeleton {
         skeletonList.add(skeleton2);
         skeletonList.add(skeleton3);
         for (int i = 0; i < skeletonList.size(); i++) {
+            skeletonList.get(i).xRandomCoordinate = (int)((Math.random() * 10) + 1) * 72;
+            skeletonList.get(i).yRandomCoordinate = (int)((Math.random() * 10) + 1) * 72;
             drawImage = skeletonList.get(i).skeleton.image;
         }
     }
 
     public void draw(Graphics graphics) {
         for (int i = 0; i < skeletonList.size(); i++) {
-            skeletonList.get(i);
+            //skeletonList.get(i).xRandomCoordinate = (int)((Math.random() * 10) + 1) * 72;
+            //skeletonList.get(i).yRandomCoordinate = (int)((Math.random() * 10) + 1) * 72;
             if (drawImage != null) {
-                int xCoordinate = (int)((Math.random() * 10) + 1) * 72;
-                int yCoordinate = (int)((Math.random() * 10) + 1) * 72;
-                graphics.drawImage(drawImage, xCoordinate, yCoordinate,null);
+                //int xRandomCoordinate = (int)((Math.random() * 10) + 1) * 72;
+                //int yRandomCoordinate = (int)((Math.random() * 10) + 1) * 72;
+                graphics.drawImage(drawImage, xRandomCoordinate, yRandomCoordinate,null);
             }
         }
-
     }
 
 }
