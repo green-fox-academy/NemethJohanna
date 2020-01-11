@@ -7,7 +7,6 @@ import java.io.IOException;
 public class PositionedImage {
 
     BufferedImage image;
-    int posX, posY;
 
     public PositionedImage(String filename) {
         try {
@@ -15,6 +14,9 @@ public class PositionedImage {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public PositionedImage() {
 
     }
 
@@ -22,7 +24,6 @@ public class PositionedImage {
         if (image != null) {
             graphics.drawImage(image, posX, posY, null);
         }
-
     }
 
 

@@ -8,11 +8,11 @@ public class Board extends JComponent implements KeyListener {
     int testBoxX;
     int testBoxY;
     Grid grid = new Grid();
+    Hero hero = new Hero();
 
     public Board() {
         testBoxX = 1;
         testBoxY = 1;
-
         setPreferredSize(new Dimension(1100, 864));
         setVisible(true);
     }
