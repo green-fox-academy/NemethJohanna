@@ -5,8 +5,7 @@ import java.awt.event.KeyListener;
 
 public class Board extends JComponent implements KeyListener {
 
-    int testBoxX;
-    int testBoxY;
+    int testBoxX, testBoxY;
     Grid grid = new Grid();
     Hero hero = new Hero();
 
@@ -21,7 +20,7 @@ public class Board extends JComponent implements KeyListener {
     public void paint(Graphics graphics) {
         super.paint(graphics);
         grid.draw(graphics);
-        hero.draw(graphics);
+        hero.draw(graphics, testBoxX * 72, testBoxY * 72);
     }
 
     public static void main(String[] args) {
@@ -46,10 +45,21 @@ public class Board extends JComponent implements KeyListener {
     @Override
     public void keyReleased(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_UP) {
-            testBoxY -= 100;
-        } else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
-            testBoxY += 100;
-        }
+            hero.turn("up");
+            if (grid.grid[testBoxX][testBoxY - 1] != grid.wall)
+                testBoxY -= 1;
+        } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+            hero.turn("down");
+            if ( grid.grid[testBoxX][testBoxY + 1] != grid.wall)
+                testBoxY += 1;
+        } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+            hero.turn("right");
+            if ( grid.grid[testBoxX + 1][testBoxY] != grid.wall)
+                testBoxX += 1;
+        } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+            hero.turn("left");
+            if ( grid.grid[testBoxX - 1][testBoxY] != grid.wall)
+                testBoxX -= 1;        }
         repaint();
 
     }
