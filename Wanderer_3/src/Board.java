@@ -21,12 +21,10 @@ public class Board extends JComponent implements KeyListener {
     public void paint(Graphics graphics) {
         super.paint(graphics);
         grid.draw(graphics);
-        graphics.fillRect(testBoxX, testBoxY, 100, 100);
-        PositionedImage image = new PositionedImage("yourimage.png");
+        hero.draw(graphics);
     }
 
     public static void main(String[] args) {
-        // Here is how you set up a new window and adding our board to it
         JFrame frame = new JFrame("RPG Game");
         Board board = new Board();
         frame.add(board);

@@ -17,7 +17,6 @@ public class PositionedImage {
     }
 
     public PositionedImage() {
-
     }
 
     public void draw(Graphics graphics, int posX, int posY) {
