@@ -8,8 +8,8 @@ public class Hero extends Character {
 
     public Hero(){
         super();
-        this.xCoordinate = 1;
-        this.Coordinate = 1;
+        //this.xCoordinate = 1;
+        //this.yCoordinate = 1;
         drawImage = hero.image;
     }
 

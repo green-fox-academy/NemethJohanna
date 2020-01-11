@@ -8,14 +8,14 @@ public class Skeleton extends Character {
 
     public Skeleton(){
         super();
-        this.xCoordinate = 1;
-        this.Coordinate = 1;
+        this.xCoordinate = (int) (Math.random() * 720);
+        this.yCoordinate = (int) (Math.random() * 720);
         drawImage = skeleton.image;
     }
 
-    public void draw(Graphics graphics, int x, int y) {
+    public void draw(Graphics graphics, int xCoordinate, int yCoordinate) {
         if (drawImage != null) {
-            graphics.drawImage(drawImage, x, y,null);
+            graphics.drawImage(drawImage, this.xCoordinate, this.yCoordinate,null);
         }
     }
 

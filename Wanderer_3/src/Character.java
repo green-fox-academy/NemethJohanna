@@ -1,7 +1,7 @@
 public class Character extends PositionedImage {
 
     int xCoordinate;
-    int Coordinate;
+    int yCoordinate;
 
     public Character(String filename) {
         super(filename);
