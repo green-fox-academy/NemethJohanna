@@ -40,7 +40,7 @@ public class WeeklyFeedback {
             averagePreSkills += ((Float.parseFloat(matrix[i][1])) / matrix[i].length);
             averageHelpfulness += ((Float.parseFloat(matrix[i][2])) / matrix[i].length);
             averageExplanations += ((Float.parseFloat(matrix[i][3])) / matrix[i].length);
-            
+
         }
 
         HashMap<String, Float> ratings = new HashMap<>();
@@ -50,7 +50,7 @@ public class WeeklyFeedback {
         ratings.put("explanations", averageExplanations);
 
         for (Map.Entry<String, Float> entry : ratings.entrySet()) {
-            System.out.println(entry);
+            System.out.printf("%s: %f\n", entry.getKey(), entry.getValue());
         }
     }
 
