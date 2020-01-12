@@ -11,9 +11,10 @@ public class Skeleton extends Character {
     public Skeleton() {
         super();
         drawImage = skeleton.image;
-        this.xRandomCoordinate = (int) ((Math.random() * 10) + 1) * 72;
-        this.yRandomCoordinate = (int) ((Math.random() * 10) + 1) * 72;
-        
+        while (this.xRandomCoordinate == 0 && this.yRandomCoordinate == 0) {
+            this.xRandomCoordinate = (int) ((Math.random() * 10) + 1) * 72;
+            this.yRandomCoordinate = (int) ((Math.random() * 10) + 1) * 72;
+        }
     }
 
 }

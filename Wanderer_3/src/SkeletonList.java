@@ -9,6 +9,7 @@ public class SkeletonList extends Skeleton {
     Skeleton skeleton1 = new Skeleton();
     Skeleton skeleton2 = new Skeleton();
     Skeleton skeleton3 = new Skeleton();
+    // Boss boss = new Boss();
     List<Skeleton> skeletonList;
     int level;
 

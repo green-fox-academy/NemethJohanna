@@ -5,14 +5,16 @@ import java.awt.event.KeyListener;
 
 public class Board extends JComponent implements KeyListener {
 
-    int testBoxX, testBoxY;
+    int testBoxX, testBoxY, randomCoordinate;
     Grid grid = new Grid();
     Hero hero = new Hero();
     SkeletonList skeletonList = new SkeletonList(1);
+    Boss boss = new Boss();
 
     public Board() {
         testBoxX = 1;
         testBoxY = 1;
+        randomCoordinate = (int) ((Math.random() * 10) + 1) * 72;
         setPreferredSize(new Dimension(1100, 864));
         setVisible(true);
     }
@@ -23,6 +25,7 @@ public class Board extends JComponent implements KeyListener {
         grid.draw(graphics);
         hero.draw(graphics, testBoxX * 72, testBoxY * 72);
         skeletonList.draw(graphics);
+        boss.draw(graphics, randomCoordinate, randomCoordinate);
     }
 
     public static void main(String[] args) {
