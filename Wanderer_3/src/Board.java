@@ -8,7 +8,7 @@ public class Board extends JComponent implements KeyListener {
     int testBoxX, testBoxY;
     Grid grid = new Grid();
     Hero hero = new Hero();
-    SkeletonList skeletonList = new SkeletonList();
+    SkeletonList skeletonList = new SkeletonList(1);
 
     public Board() {
         testBoxX = 1;

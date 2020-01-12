@@ -6,6 +6,7 @@ public class Skeleton extends Character {
     Character skeleton = new Character("img/skeleton.png");
     int xRandomCoordinate;
     int yRandomCoordinate;
+    boolean hasKey;
 
     public Skeleton() {
         super();
