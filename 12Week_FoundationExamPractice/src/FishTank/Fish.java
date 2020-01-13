@@ -6,7 +6,6 @@ public abstract class Fish {
     String color;
     boolean shortTermMemoryLoss;
 
-
     public abstract void feed ();
 
     public void status (){

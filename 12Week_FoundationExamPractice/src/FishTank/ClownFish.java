@@ -2,6 +2,8 @@ package FishTank;
 
 public class ClownFish extends Fish {
 
+    String stripeColor;
+
     public ClownFish(String name) {
         this.name = name;
         this.weight = 0;
@@ -13,7 +15,7 @@ public class ClownFish extends Fish {
         // ClownFish, gains 1 gram when fed and
         // has an additional color (color of the stripes).
         this.weight ++;
-
+        this.stripeColor = "orange";
 
     }
 }
