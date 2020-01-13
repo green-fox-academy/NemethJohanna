@@ -3,25 +3,24 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SkeletonList extends Skeleton {
+public class SkeletonList {
 
     BufferedImage drawImage;
-    Skeleton skeleton1 = new Skeleton();
-    Skeleton skeleton2 = new Skeleton();
-    Skeleton skeleton3 = new Skeleton();
-    // Boss boss = new Boss();
     List<Skeleton> skeletonList;
     int level;
+    boolean hasKey = false;
 
-    public SkeletonList(int level){
-        super();
-        this.level = level;
+    public SkeletonList(int level, Grid grid){
         skeletonList = new ArrayList<>();
-        skeletonList.add(skeleton1);
-        skeletonList.add(skeleton2);
-        skeletonList.add(skeleton3);
+        skeletonList.add(new Skeleton(grid));
+        skeletonList.add(new Skeleton(grid));
+        skeletonList.add(new Skeleton(grid));
         for (int i = 0; i < skeletonList.size(); i++) {
             drawImage = skeletonList.get(i).skeleton.image;
+        }
+        for (int i = 0; i < skeletonList.size(); i++) {
+            skeletonList.get((int)(Math.random() * skeletonList.size())).hasKey = true;
+            break;
         }
     }
 

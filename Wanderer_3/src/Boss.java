@@ -9,17 +9,19 @@ public class Boss extends Character {
     int yRandomCoordinate;
     boolean hasKey;
 
-    public Boss() {
+    public Boss(Grid grid) {
         super();
         drawImage = boss.image;
-        this.xRandomCoordinate = (int) ((Math.random() * 10) + 1) * 72;
-        this.yRandomCoordinate = (int) ((Math.random() * 10) + 1) * 72;
         this.hasKey = true;
+        //while (grid.grid[xRandomCoordinate / 72][yRandomCoordinate / 72] == grid.wall) {
+            this.xRandomCoordinate = (int) (Math.random() * 11) * 72;
+            this.yRandomCoordinate = (int) (Math.random() * 11) * 72;
+        //}
     }
 
-    public void draw(Graphics graphics, int xRandomCoordinate, int yRandomCoordinate) {
+    public void draw(Graphics graphics) {
         if (image != null) {
-            graphics.drawImage(image, xRandomCoordinate, yRandomCoordinate, null);
+            graphics.drawImage(drawImage, this.xRandomCoordinate, this.yRandomCoordinate, null);
         }
     }
 
