@@ -2,10 +2,10 @@ package FishTank;
 
 public class ClownFish extends Fish {
 
-    public ClownFish(String color) {
-        this.name = "ClownFish";
+    public ClownFish(String name) {
+        this.name = name;
         this.weight = 0;
-        this.color = color;
+        this.color = "red";
     }
 
     @Override

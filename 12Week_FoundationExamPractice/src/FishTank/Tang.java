@@ -1,8 +1,9 @@
 package FishTank;
 
 public class Tang extends Fish {
-    public Tang() {
-        this.name = "Tang";
+
+    public Tang(String name) {
+        this.name = name;
         this.weight = 0;
         this.color = "blue";
     }

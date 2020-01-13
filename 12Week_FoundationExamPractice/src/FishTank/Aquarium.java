@@ -5,10 +5,8 @@ import java.util.List;
 
 public class Aquarium {
     List<Fish> aquarium;
-    String name;
 
-    public Aquarium(String name) {
-        this.name = name;
+    public Aquarium() {
         aquarium = new ArrayList<>();
     }
 
@@ -28,7 +26,10 @@ public class Aquarium {
         }
     }
 
-    public void feed() {
+    public void feedAquarium() {
+        for (int i = 0; i < aquarium.size(); i++) {
+            aquarium.get(i).feed();
+        }
         //It has a feed() method that feeds all the fishes in the aquarium:
         //  Increases the weight of every fish with the amount of grams they gain when fed.
 
@@ -36,7 +37,9 @@ public class Aquarium {
 
     public void getStatus() {
         //The aquarium has a getStatus() method it should print the status for each fish.
-
+        for (int i = 0; i < aquarium.size(); i++) {
+            aquarium.get(i).status();
+        }
     }
 
 

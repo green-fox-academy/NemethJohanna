@@ -9,8 +9,8 @@ public abstract class Fish {
 
     public abstract void feed ();
 
-    public void status (Fish fishType){
+    public void status (){
         //or example: Dory, weight: 9, color: blue, short-term memory loss: true
-        System.out.printf("%s, weight: %d, color: %d, short-term memory loss: %b", this.name, this.weight, this.color, this.shortTermMemoryLoss);
+        System.out.printf("%s, weight: %d, color: %s, short-term memory loss: %b\n", this.name, this.weight, this.color, this.shortTermMemoryLoss);
     }
 }

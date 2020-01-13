@@ -2,8 +2,8 @@ package FishTank;
 
 public class Kong extends Fish {
 
-    public Kong() {
-        this.name = "Kong";
+    public Kong(String name) {
+        this.name = name;
         this.weight = 0;
         this.color = "green";
     }
