@@ -9,6 +9,9 @@ public class Hero extends Character {
     public Hero(){
         super();
         drawImage = hero.image;
+        this.healthPoint = 20 + 3 * d6;
+        this.defendPoint = 2 * d6;
+        this.strikePoint = 5 + d6;
     }
 
     public void turn(String toTurn){
@@ -31,6 +34,9 @@ public class Hero extends Character {
         if (drawImage != null) {
             graphics.drawImage(drawImage, x, y,null);
         }
+    }
+    public String status (){
+        return "HERO (Level " + hero.level + ") HP: " + hero.healthPoint + "/" + hero.maxHealthPoint + " | DP: " + hero.defendPoint + " | SP: " + hero.strikePoint + "\n";
     }
 
 }

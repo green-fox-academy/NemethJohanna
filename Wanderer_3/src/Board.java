@@ -14,7 +14,7 @@ public class Board extends JComponent implements KeyListener {
     public Board() {
         testBoxX = 1;
         testBoxY = 1;
-        setPreferredSize(new Dimension(864, 1000));
+        setPreferredSize(new Dimension(1100, 864));
         setVisible(true);
     }
 
@@ -25,6 +25,13 @@ public class Board extends JComponent implements KeyListener {
         hero.draw(graphics, testBoxX * 72, testBoxY * 72);
         skeletonList.draw(graphics);
         boss.draw(graphics);
+        graphics.drawString(hero.status(), 850, 85);
+        graphics.drawString(boss.status(), 850, 115);
+        int x = 850;
+        int y = 145;
+        for (int i = 0; i < skeletonList.list.size(); i++) {
+            graphics.drawString(skeletonList.list.get(i).status(), x, y + i * 30);
+        }
     }
 
     public static void main(String[] args) {
@@ -64,6 +71,8 @@ public class Board extends JComponent implements KeyListener {
             hero.turn("left");
             if (grid.grid[testBoxX - 1][testBoxY] != grid.wall)
                 testBoxX -= 1;
+        } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+
         }
         repaint();
     }
