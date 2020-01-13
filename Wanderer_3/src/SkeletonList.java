@@ -8,7 +8,6 @@ public class SkeletonList {
     BufferedImage drawImage;
     List<Skeleton> skeletonList;
     int level;
-    boolean hasKey = false;
 
     public SkeletonList(int level, Grid grid){
         skeletonList = new ArrayList<>();

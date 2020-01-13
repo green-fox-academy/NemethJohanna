@@ -13,7 +13,7 @@ public class Boss extends Character {
         super();
         drawImage = boss.image;
         this.hasKey = true;
-        while (grid.grid[xRandomCoordinate / 72][yRandomCoordinate / 72] == grid.wall) {
+        while (grid.grid[xRandomCoordinate / 72][yRandomCoordinate / 72] == grid.wall || (grid.grid[xRandomCoordinate / 72][yRandomCoordinate / 72] != (grid.grid[1][1]))) {
             this.xRandomCoordinate = (int) (Math.random() * 11) * 72;
             this.yRandomCoordinate = (int) (Math.random() * 11) * 72;
         }
