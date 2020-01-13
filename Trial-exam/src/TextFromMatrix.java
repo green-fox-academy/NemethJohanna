@@ -1,4 +1,5 @@
 public class TextFromMatrix {
+
     public static void main(String[] args) {
         String [][] matrix;
         matrix = new String[][]{{"h", "t", "e"}, {"k", "l", "p"}, {"l", "b", "o"}};
