@@ -25,8 +25,8 @@ public class Boss extends Character {
     public void draw(Graphics graphics) {
         if (drawImage != null) {
             graphics.drawImage(drawImage, this.xRandomCoordinate, this.yRandomCoordinate, null);
-        }
 
+        }
     }
 
     public String status() {

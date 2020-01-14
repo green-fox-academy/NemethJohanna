@@ -24,13 +24,14 @@ public class Character extends PositionedImage {
         After a won battle if the character is a hero, it levels up.*/
 
     public void battle(Character defender) {
-        //if ((this.xRandomCoordinate == defender.xRandomCoordinate) && (this.yRandomCoordinate == defender.yRandomCoordinate) && ((this.strikePoint + 2 * d6) > defender.healthPoint)) {
+        //if (((this.strikePoint + 2 * d6) > defender.healthPoint) && (this.xRandomCoordinate == defender.xRandomCoordinate) && (this.yRandomCoordinate == defender.yRandomCoordinate)) {
             this.strike(defender);
             defender.strike(this);
             if (this.healthPoint <= 0) {
                 System.out.println(this.getClass() + " GAME OVER");
             } else if (defender.healthPoint <= 0) {
                 defender.isAlive = false;
+                System.out.println(defender.getClass() + " dead");
             }
         //}
     }

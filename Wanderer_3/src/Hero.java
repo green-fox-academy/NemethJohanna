@@ -11,7 +11,7 @@ public class Hero extends Character {
         drawImage = hero.image;
         this.healthPoint = 50 + 3 * d6;
         this.defendPoint = 2 * d6;
-        this.strikePoint = 10 + d6;
+        this.strikePoint = 10 * d6;
         this.hasKey = false;
         this.isAlive = true;
     }

@@ -5,15 +5,15 @@ import java.awt.event.KeyListener;
 
 public class Board extends JComponent implements KeyListener {
 
-    int testBoxX, testBoxY;
+    int xHero, yHero;
     Grid grid = new Grid();
     Hero hero = new Hero();
     SkeletonList skeletonList = new SkeletonList(1, grid);
     Boss boss = new Boss(grid);
 
     public Board() {
-        testBoxX = 1;
-        testBoxY = 1;
+        xHero = 1;
+        yHero = 1;
         setPreferredSize(new Dimension(1200, 864));
         setVisible(true);
     }
@@ -22,7 +22,7 @@ public class Board extends JComponent implements KeyListener {
     public void paint(Graphics graphics) {
         super.paint(graphics);
         grid.draw(graphics);
-        hero.draw(graphics, testBoxX * 72, testBoxY * 72);
+        hero.draw(graphics, xHero * 72, yHero * 72);
         skeletonList.draw(graphics);
         boss.draw(graphics);
         graphics.drawString(hero.status(), 850, 85);
@@ -57,24 +57,28 @@ public class Board extends JComponent implements KeyListener {
     public void keyReleased(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_UP) {
             hero.turn("up");
-            if (grid.grid[testBoxX][testBoxY - 1] != grid.wall)
-                testBoxY -= 1;
+            if (grid.grid[xHero][yHero - 1] != grid.wall)
+                yHero -= 1;
         } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
             hero.turn("down");
-            if (grid.grid[testBoxX][testBoxY + 1] != grid.wall)
-                testBoxY += 1;
+            if (grid.grid[xHero][yHero + 1] != grid.wall)
+                yHero += 1;
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
             hero.turn("right");
-            if (grid.grid[testBoxX + 1][testBoxY] != grid.wall)
-                testBoxX += 1;
+            if (grid.grid[xHero + 1][yHero] != grid.wall)
+                xHero += 1;
         } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
             hero.turn("left");
-            if (grid.grid[testBoxX - 1][testBoxY] != grid.wall)
-                testBoxX -= 1;
+            if (grid.grid[xHero - 1][yHero] != grid.wall)
+                xHero -= 1;
         } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-            hero.battle(boss);
+            if (xHero == boss.xRandomCoordinate / 72 && yHero == boss.yRandomCoordinate / 72) {
+                hero.battle(boss);
+            }
             for (int i = 0; i < skeletonList.list.size(); i++) {
-                hero.battle(skeletonList.list.get(i));
+                if ((xHero == skeletonList.list.get(i).xRandomCoordinate / 72) && (yHero == skeletonList.list.get(i).yRandomCoordinate / 72)) {
+                    hero.battle(skeletonList.list.get(i));
+                }
             }
         }
         repaint();
