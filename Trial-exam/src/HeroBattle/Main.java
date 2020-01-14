@@ -17,7 +17,6 @@ public class Main {
         hero1.punch(hero2);
         System.out.println(hero1);
         System.out.println(hero2);
-
     }
 
 }

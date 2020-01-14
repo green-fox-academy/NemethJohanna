@@ -9,9 +9,11 @@ public class Hero extends Character {
     public Hero(){
         super();
         drawImage = hero.image;
-        this.healthPoint = 20 + 3 * d6;
+        this.healthPoint = 50 + 3 * d6;
         this.defendPoint = 2 * d6;
-        this.strikePoint = 5 + d6;
+        this.strikePoint = 10 + d6;
+        this.hasKey = false;
+        this.isAlive = true;
     }
 
     public void turn(String toTurn){
@@ -36,7 +38,7 @@ public class Hero extends Character {
         }
     }
     public String status (){
-        return "HERO (Level " + hero.level + ") HP: " + hero.healthPoint + "/" + hero.maxHealthPoint + " | DP: " + hero.defendPoint + " | SP: " + hero.strikePoint + "\n";
+        return "HERO      (Level " + this.level + ") HP: " + this.healthPoint + " | DP: " + this.defendPoint + " | SP: " + this.strikePoint + "\n";
     }
 
 }

@@ -14,7 +14,7 @@ public class Board extends JComponent implements KeyListener {
     public Board() {
         testBoxX = 1;
         testBoxY = 1;
-        setPreferredSize(new Dimension(1100, 864));
+        setPreferredSize(new Dimension(1200, 864));
         setVisible(true);
     }
 
@@ -72,7 +72,10 @@ public class Board extends JComponent implements KeyListener {
             if (grid.grid[testBoxX - 1][testBoxY] != grid.wall)
                 testBoxX -= 1;
         } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-
+            hero.battle(boss);
+            for (int i = 0; i < skeletonList.list.size(); i++) {
+                hero.battle(skeletonList.list.get(i));
+            }
         }
         repaint();
     }

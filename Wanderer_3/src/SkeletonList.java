@@ -7,7 +7,7 @@ public class SkeletonList {
 
     BufferedImage drawImage;
     List<Skeleton> list;
-    int level;
+    // int level;
 
     public SkeletonList(int level, Grid grid){
         list = new ArrayList<>();
@@ -25,18 +25,12 @@ public class SkeletonList {
 
     public void draw(Graphics graphics) {
         for (int i = 0; i < list.size(); i++) {
-            if (drawImage != null) {
-                graphics.drawImage(drawImage, list.get(i).xRandomCoordinate, list.get(i).yRandomCoordinate,null);
-            }
+            //if (list.get(i).isDead = false) {
+                if (drawImage != null) {
+                    graphics.drawImage(drawImage, list.get(i).xRandomCoordinate, list.get(i).yRandomCoordinate, null);
+                }
+            //}
         }
-    }
-
-    public String status(){
-        String status = "";
-        for (int i = 0; i < list.size(); i++) {
-            status = "SKELETON (Level " + list.get(i).level + ") HP: " + list.get(i).healthPoint + "/" + list.get(i).maxHealthPoint + " | DP: " + list.get(i).defendPoint + " | SP: " + list.get(i).strikePoint + "\n";
-        }
-        return status;
     }
 
 }
