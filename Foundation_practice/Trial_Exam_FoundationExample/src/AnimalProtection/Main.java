@@ -46,5 +46,6 @@ Budget: <budget>€,
 There are <animals.count> animal(s) and <potentionalAdopters.count> potential adopter(s)
 <name> is not healthy (healing would cost: <heal cost> €) and not adoptable
 <name> is healthy and adoptable*/
+
     }
 }
