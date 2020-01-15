@@ -1,7 +1,5 @@
 package Pirates;
 
-import java.util.Arrays;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -16,7 +14,10 @@ public class Main {
         ship.addPirate(pirate3);
 
         pirate1.work();
+        pirate1.work();
         pirate2.work();
+        pirate2.work();
+        pirate3.work();
         pirate3.work();
         pirate2.work();
 
@@ -24,10 +25,7 @@ public class Main {
         System.out.println(pirate2);
         System.out.println(pirate3);
         System.out.println();
-        System.out.println(ship.getPoorPirates());
-
-       // ship.getGolds();
-
+        //System.out.println(ship.getPoorPirates());
 
 
     }

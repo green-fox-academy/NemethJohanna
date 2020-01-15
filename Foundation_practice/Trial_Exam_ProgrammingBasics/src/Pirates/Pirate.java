@@ -6,13 +6,34 @@ public class Pirate {
     private int goldAmount;
     private int healthPoints;
     private boolean isCaptain;
+    private boolean haveWoodenLeg;
+
+    public Pirate(String name) {
+        this.name = name;
+        this.healthPoints = 10;
+    }
+
+    public void work() {
+        if (this.isCaptain) {
+            this.goldAmount += 10;
+            this.healthPoints -= 5;
+        }
+        else {
+            this.goldAmount++;
+            this.healthPoints--;
+        }
+    }
+
+    public void party(){
+        if (this.isCaptain == true){
+            this.healthPoints += 10;
+        } else {
+            this.healthPoints++;
+        }
+    }
 
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getGoldAmount() {
@@ -45,32 +66,6 @@ public class Pirate {
 
     public void setHaveWoodenLeg(boolean haveWoodenLeg) {
         this.haveWoodenLeg = haveWoodenLeg;
-    }
-
-    private boolean haveWoodenLeg;
-
-    public Pirate(String name) {
-        this.name = name;
-        this.healthPoints = 10;
-    }
-
-    public void work() {
-        if (this.isCaptain == true) {
-            this.goldAmount += 10;
-            this.healthPoints -= 5;
-        }
-        else {
-            this.goldAmount++;
-            this.healthPoints--;
-        }
-    }
-
-    public void party(){
-        if (this.isCaptain == true){
-            this.healthPoints += 10;
-        } else {
-            this.healthPoints++;
-        }
     }
 
     @Override

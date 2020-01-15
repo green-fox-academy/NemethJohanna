@@ -18,7 +18,6 @@ public class Ship {
             }
             pirateList.add(pirateToAdd);
         }
-        pirateList.add(pirateToAdd);
     }
 
     public List<String> getPoorPirates() {
