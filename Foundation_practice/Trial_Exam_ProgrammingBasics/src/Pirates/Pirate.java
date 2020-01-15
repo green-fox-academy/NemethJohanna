@@ -1,49 +1,86 @@
 package Pirates;
 
-import java.util.Random;
-
 public class Pirate {
-    String name;
-    int goldAmount;
-    int healthPoint; //def 10
-    boolean haveWoodenLeg;
 
-    public Pirate (){
+    private String name;
+    private int goldAmount;
+    private int healthPoints;
+    private boolean isCaptain;
+
+    public String getName() {
+        return name;
     }
 
-    public Pirate (String name){
-        Random random = new Random();
-        this.haveWoodenLeg = random.nextBoolean();
+    public void setName(String name) {
         this.name = name;
-        this.healthPoint = 10;
     }
 
-    public int captainWork (){   //if the pirate is a captain
-        goldAmount += 10;
-        healthPoint -= 5;
-        return goldAmount + healthPoint;
-    }
-    public int captainParty (){  // if the pirate is a captain
-        healthPoint += 10;
-        return healthPoint;
+    public int getGoldAmount() {
+        return goldAmount;
     }
 
-    public int notCaptainWork (){   //if the pirate is a captain
-        goldAmount++;
-        healthPoint--;
-        return goldAmount + healthPoint;
-    }
-    public int notCaptainParty (){  // if the pirate is a captain
-        healthPoint--;
-        return healthPoint;
+    public void setGoldAmount(int goldAmount) {
+        this.goldAmount = goldAmount;
     }
 
-    public String toString (){
-        if (haveWoodenLeg){
-            return "Hello, I am " + this.name + ". I have a wooden leg and " + this.goldAmount + " golds.";
-        } else {
-            return "Hello, I am " + this.name + ". I have my legs and " + this.goldAmount + " golds.";
+    public int getHealthPoints() {
+        return healthPoints;
+    }
+
+    public void setHealthPoints(int healthPoints) {
+        this.healthPoints = healthPoints;
+    }
+
+    public boolean isCaptain() {
+        return isCaptain;
+    }
+
+    public void setCaptain(boolean captain) {
+        isCaptain = captain;
+    }
+
+    public boolean isHaveWoodenLeg() {
+        return haveWoodenLeg;
+    }
+
+    public void setHaveWoodenLeg(boolean haveWoodenLeg) {
+        this.haveWoodenLeg = haveWoodenLeg;
+    }
+
+    private boolean haveWoodenLeg;
+
+    public Pirate(String name) {
+        this.name = name;
+        this.healthPoints = 10;
+    }
+
+    public void work() {
+        if (this.isCaptain == true) {
+            this.goldAmount += 10;
+            this.healthPoints -= 5;
+        }
+        else {
+            this.goldAmount++;
+            this.healthPoints--;
         }
     }
 
+    public void party(){
+        if (this.isCaptain == true){
+            this.healthPoints += 10;
+        } else {
+            this.healthPoints++;
+        }
+    }
+
+    @Override
+    public String toString(){
+        String toString = "";
+            if (this.haveWoodenLeg == true){
+                toString += "Hello, I'm " + this.name + ". I have a wooden leg and " + this.goldAmount + " golds.";
+            } else {
+                toString += "Hello, I'm " + this.name + ". I still have my real legs and " + this.goldAmount + " golds.";
+            }
+        return toString;
+    }
 }

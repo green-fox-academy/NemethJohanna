@@ -2,68 +2,57 @@ package Pirates;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class Ship {
 
-    /*Ship
-It should have a list of pirates.
-You must be able to add new pirates to the ship. It must have only one captain!
-You must create the following methods:
-getPoorPirates() which returns a list of names containing the pirates that
-    have a wooden leg and have less than 15 golds
-getGolds() which returns the sum of gold owned by the pirates of that particular ship
-lastDayOnTheShip() which calls the pirates' party() method.
-prepareForBattle() which calls
-    - the pirates' work() method 5 times
-    - then the ship's lastDayOnTheShip() method.*/
+    private List<Pirate> pirateList;
 
-    public List<Pirate> pirateList;
-    Pirate captain = new Pirate();
-
-    public Ship(){
+    public Ship() {
         this.pirateList = new ArrayList<>();
     }
 
-    public void addPirates(){               // a hajó kap egy kapitányt és több kalózt
-        this.captain = new Pirate();
-        this.pirateList = new ArrayList<>();
-        for (int i = 0; i < (int)(Math.random() * 50); i++) {
-            this.pirateList.add(new Pirate());
-        }
-    }
-
-    //getPoorPirates() which returns a list of names containing the pirates that
-    //    have a wooden leg and have less than 15 golds
-    public List<String> getPoorPirates(){
-        List<String> poorPirates = new ArrayList<>();
+    public void addPirate(Pirate pirateToAdd) {
         for (int i = 0; i < pirateList.size(); i++) {
-            if (pirateList.get(i).haveWoodenLeg && pirateList.get(i).goldAmount < 15){
-                poorPirates.add(pirateList.get(i).name);
+            if (pirateList.get(i).isCaptain() == false){
+                pirateToAdd.setCaptain(true);
+            }
+            pirateList.add(pirateToAdd);
+        }
+        pirateList.add(pirateToAdd);
+    }
+
+    public List<String> getPoorPirates() {
+        List<String> poorPiratesList = new ArrayList<>();
+        for (int i = 0; i < pirateList.size(); i++) {
+            if (pirateList.get(i).isHaveWoodenLeg() && pirateList.get(i).getGoldAmount() < 15) {
+                poorPiratesList.add(pirateList.get(i).getName());
             }
         }
-        return poorPirates;
+        return poorPiratesList;
     }
 
-    //getGolds() which returns the sum of gold owned by the pirates of that particular ship
-    public int getGolds(String shipName){
+    public int getGolds() {
         int sumOfGold = 0;
-        for (int i = 0; i < shipName.length(); i++) {
-            sumOfGold++;
+        for (int i = 0; i < pirateList.size(); i++) {
+            sumOfGold += pirateList.get(i).getGoldAmount();
         }
         return sumOfGold;
     }
 
-    //lastDayOnTheShip() which calls the pirates' party() method.
-    public void lastDayOnTheShip (){
-        //party()
+    public void lastDayOnTheShip(){
+        for (int i = 0; i < pirateList.size(); i++) {
+            pirateList.get(i).party();
+        }
     }
-//    public void prepareForBattle (){
-//        for (int i = 0; i <= 5; i++) {
-//            Pirate.work;
-//        }
-//        for (int i = 0; i <= 1; i++) {
-//            lastDayOnTheShip();
-//        }
-//    }
+
+    public void prepareForBattle(){
+        for (int i = 0; i < pirateList.size(); i++) {
+            for (int j = 0; j < 5; j++) {
+                pirateList.get(i).work();
+            }
+           this.lastDayOnTheShip();
+        }
+    }
+
+
 }
