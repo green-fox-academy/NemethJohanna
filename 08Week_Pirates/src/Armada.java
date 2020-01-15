@@ -1,27 +1,27 @@
 import java.util.ArrayList;
 
 public class Armada {
-  /*Create an Armada class
-Contains Ship-s as a list
-Have an armada.war(otherArmada) method where two armada can engage in war
-    it should work like merge sort
-    first ship from the first armada battles the first of the other
-    the loser gets skipped so the next ship comes in play from that armada
-    whichever armada gets to the end of its ships loses the war
-    return true if this is the winner*/
 
-    ArrayList<Integer> ships = new ArrayList<Integer>();
+    ArrayList<Ship> ships;
 
     public Armada(){
-
-    }
-    public void Armada (ArrayList<Integer> ships){
-        //this.ships.add(7);
-
+        ships = new ArrayList<>();
     }
 
+    public boolean war(Armada otherArmada){
+        for (int i = 0; i < this.ships.size(); i++) {
+            for (int j = 0; j < otherArmada.ships.size(); j++) {
+                this.ships.get(i).battle(otherArmada.ships.get(i));
+            }
+        }
 
-    public void Armada.war(otherArmada){
+        if (this.ships.size() > otherArmada.ships.size()){
+            System.out.println(this.toString() + " won");
+            return true;
+        } else {
+            System.out.println(this.toString() + " lost");
+            return false;
+        }
 
     }
 

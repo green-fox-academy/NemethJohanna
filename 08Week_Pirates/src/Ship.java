@@ -1,45 +1,61 @@
-import com.sun.org.apache.xerces.internal.xs.LSInputList;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Ship {
-/*
-The place for the Pirates
 
-Create a Ship class.
-
-The Ship stores Pirate-s instances in a list as the crew and has one captain who is also a Pirate.
-When a ship is created it doesn't have a crew or a captain.
-The ship can be filled with pirates and a captain via fillShip() method.
-    - Filling the ship with a captain and random number of pirates.
-Ships should be represented in a nice way on command line including information about
-    - captains consumed rum, state (passed out / died)
-    - number of alive pirates in the crew
-Ships should have a method to battle other ships: ship.battle(otherShip)
-    - should return true if the actual ship (this) wins
-    - the ship should win if its calculated score is higher
-    - calculate score: Number of Alive pirates in the crew - Number of consumed rum by the captain
-    - The loser crew has a random number of losses (deaths).
-    - The winner captain and crew has a party, including a random number of rum :)
- */
-
-    Pirate captain = new Pirate();
-    List<Pirate> crew = new ArrayList<Pirate>();
+    private Pirates captain = new Pirates();
+    private List<Pirates> crew;
+    private String name;
+    private int score;
 
     public Ship(String name) {
         this.name = name;
-        this.crew = crew;
+        this.crew = new ArrayList<>();
+        this.score = 0;
     }
 
     public void fillShip() {
-        this.captain = new Pirate();
-        this.crew = new ArrayList<>();
-        this.crew.add(int)(Math.random() * 5);
-
+        crew.add(captain);
+        int randomSizeOfCrew = (int) (Math.random() * 11);
+        for (int i = 1; i < randomSizeOfCrew; i++) {
+            this.crew.add(new Pirates());
+        }
     }
-    public void ship.battle(String otherShip) {
 
-
+    public boolean battle(Ship otherShip) {
+        if (this.score() > otherShip.score()) {
+            this.party();
+            System.out.println(this.name + " won");
+            return true;
+        } else {
+            for (int i = 0; i < randomNumber() + 1; i++) {
+                otherShip.crew.get(randomNumber() - 1).setAlive(false);
+            }
+            return false;
+        }
     }
+
+    public int score() {
+        int stillAliveCrew = 0;
+        int score = 0;
+        for (int i = 0; i < this.crew.size(); i++) {
+            if (crew.get(i).isAlive()) {
+                stillAliveCrew++;
+            }
+        }
+        score = stillAliveCrew - captain.getDrinkLevel();
+        return score;
+    }
+
+    public int randomNumber() {
+        return (int) (Math.random() * 11);
+    }
+
+    public void party() {
+        this.captain.setDrinkLevel(randomNumber());
+        for (int i = 0; i < this.crew.size(); i++) {
+            crew.get(i).setDrinkLevel(randomNumber());
+        }
+    }
+
 }
