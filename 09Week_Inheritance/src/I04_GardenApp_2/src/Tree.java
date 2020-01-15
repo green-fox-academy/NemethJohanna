@@ -1,5 +1,3 @@
-package I04_GardenApp_2;
-
 public class Tree extends Plant {
 
     public Tree(String color){

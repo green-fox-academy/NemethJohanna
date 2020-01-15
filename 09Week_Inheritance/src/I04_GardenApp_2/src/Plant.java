@@ -1,5 +1,3 @@
-package I04_GardenApp_2;
-
 public abstract class Plant {
 
     private double currentWater;
