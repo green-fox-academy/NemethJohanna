@@ -4,11 +4,13 @@ public class Flower extends Plant {
 
     public Flower(String color){
         this.setColor(color);
-        this.setThirstyLevel(5);
         this.setAbsorbLevel(0.75);
+        this.setType("Flower");
     }
 
+    @Override
     public boolean needWater(){
         return getCurrentWater() < 5;
     }
+
 }

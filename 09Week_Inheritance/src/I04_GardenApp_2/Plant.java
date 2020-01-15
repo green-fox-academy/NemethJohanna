@@ -4,10 +4,26 @@ public abstract class Plant {
 
     private double currentWater;
     private String color;
-    private int thirstyLevel;
     private double absorbLevel;
+    private String type;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public abstract boolean needWater();
+
+    public void introduce(){
+        if(this.needWater()){
+            System.out.printf("The %s %s needs water\n", this.color, this.type);
+        } else {
+            System.out.printf("The %s %s doesn't need water\n", this.color, this.type);
+        }
+    }
 
     public void setCurrentWater(double currentWater) {
         this.currentWater = currentWater;
@@ -37,11 +53,4 @@ public abstract class Plant {
         this.color = color;
     }
 
-    public int getThirstyLevel() {
-        return thirstyLevel;
-    }
-
-    public void setThirstyLevel(int thirstyLevel) {
-        this.thirstyLevel = thirstyLevel;
-    }
 }

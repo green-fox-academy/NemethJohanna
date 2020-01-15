@@ -15,7 +15,12 @@ public class Main {
         garden.addPlant(purpleTree);
         garden.addPlant(orangeTree);
 
-        
+        garden.getInfo();
+
+        garden.watering(40);
+        garden.getInfo();
+        garden.watering(70);
+        garden.getInfo();
 
     }
 }
