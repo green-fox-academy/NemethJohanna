@@ -9,7 +9,7 @@ public class AnimalShelter {
     private List<Animal> animalList = new ArrayList<>();
     private List<String> adoptersName = new ArrayList<>();
 
-    public void AnimalShelter() {
+    public AnimalShelter() {
         this.budget = 50;
     }
 
@@ -22,11 +22,11 @@ public class AnimalShelter {
         return animalListSize;
     }
 
-    public int heal(Animal animal) {
+    public int heal() {
         int healedAnimals = 0;
         for (int i = 0; i < animalList.size(); i++) {
-            if (animalList.get(i).isHealthy() == (false && animalList.get(i).getHealCost() > this.budget)) {
-                animalList.get(i).heal();
+            if ((!animalList.get(i).isHealthy()) && (animalList.get(i).getHealCost() < budget)) {
+                this.animalList.get(i).heal();
                 healedAnimals++;
                 break;
             }
@@ -40,11 +40,17 @@ public class AnimalShelter {
 
 
     public void findNewOwner() {
+        List<Animal> adoptableAnimals = new ArrayList<>();
+        int random = (int) (Math.random() * adoptableAnimals.size());
         for (int i = 0; i < animalList.size(); i++) {
-            animalList.remove((int) (Math.random() * (animalList.size() + 1)));
+            if (animalList.get(i).isAdoptable()) {
+                animalList.remove(random);
+                break;
+            }
         }
         for (int i = 0; i < adoptersName.size(); i++) {
-            adoptersName.remove((int) (Math.random() * (adoptersName.size() + 1)));
+            adoptersName.remove((int) (Math.random() * (adoptersName.size())));
+            break;
         }
     }
 
@@ -55,9 +61,11 @@ public class AnimalShelter {
     @Override
     public String toString() {
         String toString = "";
-        toString += "Budget: " + budget + "$";
-        toString += "There are " + animalList.size() + " animal(s) and " + adoptersName.size() + " potential adopter(s)";
-        toString += animalList.toString();
+        toString += "Budget: " + budget + "$\n";
+        toString += "There are " + animalList.size() + " animal(s) and " + adoptersName.size() + " potential adopter(s).\n";
+        for (int i = 0; i < animalList.size(); i++) {
+            toString += animalList.get(i).toString();
+        }
         return toString;
     }
 

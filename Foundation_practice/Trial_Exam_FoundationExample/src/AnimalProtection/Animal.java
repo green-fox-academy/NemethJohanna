@@ -8,36 +8,38 @@ public abstract class Animal {
 
     public Animal(String name) {
         this.name = name;
+        this.isHealthy = false;
     }
 
-    /* public Animal(String name; String ownerName; boolean isHealthy; int healCost){
-        this.name = name;
-        ..
-        ..
-        ..
-     */
-
-    public boolean isAdoptable(Animal animal) {
-        return animal.isHealthy();
+    public boolean isAdoptable() {
+        if (this.isHealthy){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public void heal(){
-        isHealthy = true;
+        setHealthy(true);
     }
 
     @Override
     public String toString(){
         String toString = "";
-        if (this.isHealthy = false){
-            toString = this + " is not healthy, " + this.healCost + "$, and not adoptable";
+        if (this.isHealthy){
+            toString += this.getName() + " is healthy, and adoptable\n";
         } else {
-            toString = this + " is healthy, and adoptable";
+            toString += this.getName() + " is not healthy, " + this.healCost + "$, and not adoptable\n";
         }
         return toString;
     }
 
     public String getOwnerName() {
         return ownerName;
+    }
+
+    public String getName(){
+        return name;
     }
 
     public void setOwnerName(String ownerName) {

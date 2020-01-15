@@ -2,10 +2,9 @@ package AnimalProtection;
 
 public class Cat extends Animal {
 
-    public Cat() {
-        super("Cat");
+    public Cat(String name) {
+        super(name);
         this.setHealCost((int) (Math.random() * 6));
-        this.setOwnerName("Paul");
     }
 
 
