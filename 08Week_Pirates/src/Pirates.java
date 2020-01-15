@@ -30,16 +30,16 @@ public class Pirates {
         if (this.isAlive && pirateToFightWith.isAlive) {
             int chance = (int) (Math.random() * 3);
             if (chance == 0) {
-                this.isAlive = false;
+                this.die();
             } else if (chance == 2) {
-                pirateToFightWith.isAlive = false;
+                pirateToFightWith.die();
             } else {
-                this.isAlive = false;
+                this.die();
                 pirateToFightWith.isAlive = false;
             }
         }
         else {
-            System.out.println("One of the pirate is not alive, they can not fight");
+            System.out.println("One of the pirate died, they can not fight");
         }
     }
 
