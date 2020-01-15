@@ -13,7 +13,7 @@ public class Ship {
 
     public void addPirate(Pirate pirateToAdd) {
         for (int i = 0; i < pirateList.size(); i++) {
-            if (pirateList.get(i).isCaptain() == false){
+            if (!pirateList.get(i).isCaptain()){
                 pirateToAdd.setCaptain(true);
             }
             pirateList.add(pirateToAdd);
@@ -22,9 +22,9 @@ public class Ship {
 
     public List<String> getPoorPirates() {
         List<String> poorPiratesList = new ArrayList<>();
-        for (int i = 0; i < pirateList.size(); i++) {
-            if (pirateList.get(i).isHaveWoodenLeg() && pirateList.get(i).getGoldAmount() < 15) {
-                poorPiratesList.add(pirateList.get(i).getName());
+        for (Pirate pirate : pirateList) {
+            if (pirate.isHaveWoodenLeg() && pirate.getGoldAmount() < 15) {
+                poorPiratesList.add(pirate.getName());
             }
         }
         return poorPiratesList;
@@ -32,24 +32,24 @@ public class Ship {
 
     public int getGolds() {
         int sumOfGold = 0;
-        for (int i = 0; i < pirateList.size(); i++) {
-            sumOfGold += pirateList.get(i).getGoldAmount();
+        for (Pirate pirate : pirateList) {
+            sumOfGold += pirate.getGoldAmount();
         }
         return sumOfGold;
     }
 
     public void lastDayOnTheShip(){
-        for (int i = 0; i < pirateList.size(); i++) {
-            pirateList.get(i).party();
+        for (Pirate pirate : pirateList) {
+            pirate.party();
         }
     }
 
     public void prepareForBattle(){
-        for (int i = 0; i < pirateList.size(); i++) {
+        for (Pirate pirate : pirateList) {
             for (int j = 0; j < 5; j++) {
-                pirateList.get(i).work();
+                pirate.work();
             }
-           this.lastDayOnTheShip();
+            this.lastDayOnTheShip();
         }
     }
 

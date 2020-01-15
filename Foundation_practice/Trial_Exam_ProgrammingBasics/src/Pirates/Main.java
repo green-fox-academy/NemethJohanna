@@ -20,13 +20,14 @@ public class Main {
         pirate3.work();
         pirate3.work();
         pirate2.work();
+        pirate2.party();
+        pirate1.party();
+        ship.prepareForBattle();
 
         System.out.println(pirate1);
         System.out.println(pirate2);
         System.out.println(pirate3);
         System.out.println();
-        //System.out.println(ship.getPoorPirates());
-
 
     }
 }
