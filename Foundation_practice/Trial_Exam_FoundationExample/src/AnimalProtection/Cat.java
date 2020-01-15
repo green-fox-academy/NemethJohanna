@@ -3,6 +3,10 @@ package AnimalProtection;
 public class Cat extends Animal {
 
     public Cat() {
-        this.healCost = (int)(Math.random() * 6);
+        super("Cat");
+        this.setHealCost((int) (Math.random() * 6));
+        this.setOwnerName("Paul");
     }
+
+
 }

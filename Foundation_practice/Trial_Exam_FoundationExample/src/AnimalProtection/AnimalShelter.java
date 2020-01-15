@@ -5,13 +5,12 @@ import java.util.List;
 
 public class AnimalShelter {
 
-    int budget;
-    List<Animal> animalList;
-    List<String> adoptersName;
+    private int budget;
+    private List<Animal> animalList = new ArrayList<>();
+    private List<String> adoptersName = new ArrayList<>();
 
     public void AnimalShelter() {
         this.budget = 50;
-        animalList = new ArrayList<>();
     }
 
     public int rescue(Animal animalToRescue) {
@@ -26,7 +25,7 @@ public class AnimalShelter {
     public int heal(Animal animal) {
         int healedAnimals = 0;
         for (int i = 0; i < animalList.size(); i++) {
-            if (animalList.get(i).isHealthy = false && animalList.get(i).healCost > this.budget) {
+            if (animalList.get(i).isHealthy() == (false && animalList.get(i).getHealCost() > this.budget)) {
                 animalList.get(i).heal();
                 healedAnimals++;
                 break;
@@ -35,27 +34,30 @@ public class AnimalShelter {
         return healedAnimals;
     }
 
-    public void addAdopter(String name) {
-        adoptersName.add(name);
+    public void addAdopter(String adoptersName) {
+        this.adoptersName.add(adoptersName);
     }
 
-    /*this method pairs a random name with a random adoptable Animal if it is possible
-        and removes both of them from the lists*/
 
-//    public void findNewOwner(){
-//        for (int i = 0; i < animalList.size(); i++) {
-//            animalList.get((int)(Math.random() * (animalList.size() + 1))).
-//        }
-//    }
+    public void findNewOwner() {
+        for (int i = 0; i < animalList.size(); i++) {
+            animalList.remove((int) (Math.random() * (animalList.size() + 1)));
+        }
+        for (int i = 0; i < adoptersName.size(); i++) {
+            adoptersName.remove((int) (Math.random() * (adoptersName.size() + 1)));
+        }
+    }
 
-    public int earnDonation(int donationAmount){
+    public int earnDonation(int donationAmount) {
         return budget += donationAmount;
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         String toString = "";
-
+        toString += "Budget: " + budget + "$";
+        toString += "There are " + animalList.size() + " animal(s) and " + adoptersName.size() + " potential adopter(s)";
+        toString += animalList.toString();
         return toString;
     }
 
