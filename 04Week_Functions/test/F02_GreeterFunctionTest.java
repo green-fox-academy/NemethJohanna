@@ -9,5 +9,5 @@ public class F02_GreeterFunctionTest {
         String result = "Greetings dear, Johi!";
         assertEquals(result, F02_GreeterFunction.greet("Johi"));
     }
-    
+
 }

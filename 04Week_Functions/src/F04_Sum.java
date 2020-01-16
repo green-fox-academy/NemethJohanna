@@ -1,21 +1,21 @@
-// Create the usual class wrapper and main method on your own.
-
-// Write a function called `sum` that returns the sum of numbers from zero to the given parameter
 import java.util.Scanner;
 
 public class F04_Sum {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please write here a number: ");
-        int givenNumber = scanner.nextInt();
-        System.out.println(sum(givenNumber));
-        }
+        System.out.println(sum(12));
+    }
 
-   public static int sum (int number) {
+    public static int sum(int number) {
         int output = 0;
-        for (int i = 0; i <=number; i++) {
+        if (number > Integer.MAX_VALUE) {
+            return Integer.MAX_VALUE;
+        } else if (number < 0) {
+            return 0;
+        } else {
+            for (int i = 0; i <= number; i++) {
             output += i;
         }
         return output;
     }
+}
 }
