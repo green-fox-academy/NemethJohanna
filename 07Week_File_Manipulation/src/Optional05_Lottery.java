@@ -1,68 +1,50 @@
-//import java.io.IOException;
-//import java.nio.file.Files;
-//import java.nio.file.Path;
-//import java.nio.file.Paths;
-//import java.util.*;
-//
-//public class Optional05_Lottery {
-//    // Create a method that find the 5 most common lottery numbers in lottery.csv
-//
-//    public static void main(String[] args) {
-//        Path path = Paths.get("C:\\Users\\Johanna Németh\\Desktop\\NemethJohanna\\07Week_File_Manipulation\\lottery.txt");
-//
-//        fiveMostCommonNumbers(path);
-//
-//    }
-//
-//    public static void fiveMostCommonNumbers(Path path) {
-//
-//        List<String> lines = new ArrayList<>();
-//        try {
-//            lines = Files.readAllLines(path);
-//        } catch (IOException e) {
-//            System.out.println("Unable to read file: my-file.txt");
-//        }
-//
-//        ArrayList<String> lotteryNumberList = new ArrayList<>();
-//
-//        for (int i = 0; i < lines.size(); i++) {
-//            String[] splitTheLinesBySemicolon = lines.get(i).split(";");
-//            lotteryNumberList.add(i, splitTheLinesBySemicolon[11]);
-//            lotteryNumberList.add(i, splitTheLinesBySemicolon[12]);
-//            lotteryNumberList.add(i, splitTheLinesBySemicolon[13]);
-//            lotteryNumberList.add(i, splitTheLinesBySemicolon[14]);
-//            lotteryNumberList.add(i, splitTheLinesBySemicolon[15]);
-//        }
-//
-//        Map<String, Integer> mostCommonNumberMap = new HashMap<>();
-//        for (String numbers : lotteryNumberList) {
-//            if (!mostCommonNumberMap.containsKey(numbers)) {
-//                mostCommonNumberMap.put(numbers, 1);
-//            } else {
-//                mostCommonNumberMap.replace(numbers, mostCommonNumberMap.get(numbers) + 1);
-//            }
-//        }
-//
-//        //System.out.println(mostCommonNumberMap);
-//
-//        Map<String, Integer> fiveMostCommonNumberMap = new HashMap<>();
-//
-//        int memoryValue = Collections.singleton(0);
-//        String memoryKey = "";
-//        for (int i = 1; i <= 5; i++) {
-//
-//            for (Map.Entry<String, Collection<Integer>> numberCount : fiveMostCommonNumberMap.entrySet()) {
-//                if (numberCount.getValue().equals(Collections.max(lotteryNumberList))) {
-//                    memoryValue = mostCommonNumberMap.values();
-//                    memoryKey = mostCommonNumberMap.get(i).toString();
-//                    break;
-//                }
-//            }
-//            mostCommonNumberMap.remove(memoryKey, memoryValue);
-//            fiveMostCommonNumberMap.put(memoryKey, memoryValue);
-//        }
-//
-//        System.out.println(fiveMostCommonNumberMap);
-//
-//    }
-//}
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.*;
+
+public class Optional05_Lottery {
+
+    public static void main(String[] args) {
+        Path path = Paths.get("lottery.txt");
+        List<String> lines = new ArrayList<>();
+        try {
+            lines = Files.readAllLines(path);
+            fiveMostCommonNumbers(lines);
+        } catch (IOException e) {
+            System.out.println("Unable to read file: my-file.txt");
+        }
+        fiveMostCommonNumbers(lines);
+    }
+
+    public static void fiveMostCommonNumbers(List<String> lineList) {
+        ArrayList<String> lotteryNumbers = new ArrayList<>();
+        for (int i = 0; i < lineList.size(); i++) {
+            String[] numbers = lineList.get(i).split(";");
+            lotteryNumbers.add(i, numbers[11]);
+            lotteryNumbers.add(i, numbers[12]);
+            lotteryNumbers.add(i, numbers[13]);
+            lotteryNumbers.add(i, numbers[14]);
+            lotteryNumbers.add(i, numbers[15]);
+        }
+
+        Map<Integer, Integer> countLotteryNumbers = new HashMap<>();
+        for (int i = 0; i < lotteryNumbers.size(); i++) {
+            if (countLotteryNumbers.containsKey(i)) {
+                countLotteryNumbers.replace(i, countLotteryNumbers.get(i) + 1);
+            } else {
+                countLotteryNumbers.put((Integer.valueOf(lotteryNumbers.get(i))), 1);
+            }
+        }
+
+        ArrayList<Integer> fiveMostCommonNumbers = new ArrayList<>();
+        for (int i = 1; i <= 5; i++) {
+            int mostCommonNumber = Collections.max(countLotteryNumbers.entrySet(), Map.Entry.comparingByValue()).getKey();
+            countLotteryNumbers.remove(mostCommonNumber);
+            fiveMostCommonNumbers.add(mostCommonNumber);
+        }
+        System.out.println(fiveMostCommonNumbers);
+    }
+
+}
