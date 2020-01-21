@@ -1,23 +1,20 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.OptionalDouble;
+import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
+import static java.lang.Character.isUpperCase;
 
 public class Streams {
     public static void main(String[] args) {
 
         List<Integer> list = Arrays.asList(1, 3, -2, -4, -7, -3, -8, 12, 19, 6, 9, 10, 14);
 
-        //EXERCISE 1
-        //Write a Stream Expression to get the even numbers from the following list:
+        // EXERCISE 1
+        // Write a Stream Expression to get the even numbers from the following list:
         List<Integer> evenNumbers = list.stream()
                 .filter(number -> number % 2 == 0)
                 .collect(Collectors.toList());
         System.out.println("1 --> The even numbers: " + evenNumbers);
 
-        //EXERCISE 2
+        // EXERCISE 2
         // Write a Stream Expression to get the squared value of the positive numbers from the following list:
         List<Integer> positiveSquared = list.stream()
                 .filter(number -> number > 0)
@@ -25,7 +22,7 @@ public class Streams {
                 .collect(Collectors.toList());
         System.out.println("2 --> Positive numbers squared values are: " + positiveSquared);
 
-        //EXERCISE 3
+        // EXERCISE 3
         // Write a Stream Expression to find which number squared value is more then 20 from the following list:
         List<Integer> squaredMoreThan20 = list.stream()
                 .map(n -> (int) Math.pow(n, 2))
@@ -33,9 +30,8 @@ public class Streams {
                 .collect(Collectors.toList());
         System.out.println("3 --> The squared value is more than 20: " + squaredMoreThan20);
 
-
-        //EXERCISE 4
-        //Write a Stream Expression to get the average value of the odd numbers from the following list:
+        // EXERCISE 4
+        // Write a Stream Expression to get the average value of the odd numbers from the following list:
         OptionalDouble average = list.stream()
                 .filter(number -> number % 2 != 0)
                 .mapToInt(n -> n)
@@ -47,7 +43,6 @@ public class Streams {
             System.out.println("4 --> Empty list");
         }
 
-
         // EXERCISE 5
         // Write a Stream Expression to get the sum of the odd numbers in the following list:
         List<Integer> numbers = Arrays.asList(5, 9, 1, 2, 3, 7, 5, 6, 7, 3, 7, 6, 8, 5, 4, 9, 6, 2);
@@ -58,15 +53,14 @@ public class Streams {
 
         System.out.println("5 --> The sum of odd numbers: " + sumOfOddNumbers);
 
-
         // EXERCISE 6
         // Write a Stream Expression to find the uppercase characters in a string!
-        String budapest = "BuDaPeSt";
-        List<Character> str = Arrays.asList('B', 'u', 'D', 'a', 'P', 'e', 'S', 't');
-        //List<Character> chars = str.stream()
-                //.map(n -> n.)
-        System.out.println("6 --> uppercase characters: " + budapest);
-
+        String input = "BuDaPeSt";
+        List<Character> result = input.chars()
+                .filter(c -> isUpperCase(c))
+                .mapToObj(c -> (char) c)
+                .collect(Collectors.toList());
+        System.out.println("6 --> Uppercase letters: " + result);
 
         // EXERCISE 7
         // Write a Stream Expression to find the strings which starts with a given letter(as parameter), in the following list:
@@ -75,7 +69,6 @@ public class Streams {
                 .filter(n -> n.startsWith("A"))
                 .collect(Collectors.toList());
         System.out.println("7 --> " + strings);
-
 
         // EXERCISE 8
         // Write a Stream Expression to concatenate a Character list to a string!
@@ -86,8 +79,14 @@ public class Streams {
 
         System.out.println("8 --> " + newString);
 
+        // EXERCISE 9
+        // Write a Stream Expression to find the frequency of characters in a given string!
+        String findFrequency = "BUDAPEST";
 
-        //EXERCISE 9
-        // 
+        Map<Character, Integer> charFrequency = budapest.stream()
+                .mapToInt(1, )
+
+
+
     }
 }
