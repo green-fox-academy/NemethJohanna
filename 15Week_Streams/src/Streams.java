@@ -76,5 +76,18 @@ public class Streams {
                 .collect(Collectors.toList());
         System.out.println("7 --> " + strings);
 
+
+        // EXERCISE 8
+        // Write a Stream Expression to concatenate a Character list to a string!
+        List<Character> charsToString = Arrays.asList('B', 'U', 'D', 'A', 'P', 'E', 'S', 'T');
+        String newString = charsToString.stream()
+                .map(c -> c.toString())
+                .reduce("", String::concat);
+
+        System.out.println("8 --> " + newString);
+
+
+        //EXERCISE 9
+        // 
     }
 }
