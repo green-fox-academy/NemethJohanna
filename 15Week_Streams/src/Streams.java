@@ -63,11 +63,9 @@ public class Streams {
         String budapest = "BuDaPeSt";
         char[] charList = budapest.toCharArray();
         List<char[]> chars = Arrays.asList(charList);
-       // chars.stream()
-               // .filter(n -> Character.isUpperCase(chars))
-
-
-
+        chars.stream()
+                .filter(n -> Character.isUpperCase())
+                .
 
 
     }
