@@ -1,8 +1,9 @@
-import javax.xml.stream.events.Characters;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.OptionalDouble;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Streams {
     public static void main(String[] args) {
@@ -59,14 +60,21 @@ public class Streams {
 
 
         // EXERCISE 6
-        //Write a Stream Expression to find the uppercase characters in a string!
+        // Write a Stream Expression to find the uppercase characters in a string!
         String budapest = "BuDaPeSt";
-        char[] charList = budapest.toCharArray();
-        List<char[]> chars = Arrays.asList(charList);
-        chars.stream()
-                .filter(n -> Character.isUpperCase())
-                .
+        List<Character> str = Arrays.asList('B', 'u', 'D', 'a', 'P', 'e', 'S', 't');
+        //List<Character> chars = str.stream()
+                //.map(n -> n.)
+        System.out.println("6 --> uppercase characters: " + budapest);
 
+
+        // EXERCISE 7
+        // Write a Stream Expression to find the strings which starts with a given letter(as parameter), in the following list:
+        List<String> cities = Arrays.asList("ROME", "LONDON", "NAIROBI", "CALIFORNIA", "ZURICH", "NEW DELHI", "AMSTERDAM", "ABU DHABI", "PARIS");
+        List<String> strings = cities.stream()
+                .filter(n -> n.startsWith("A"))
+                .collect(Collectors.toList());
+        System.out.println("7 --> " + strings);
 
     }
 }
