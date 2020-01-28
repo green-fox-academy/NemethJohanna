@@ -1,0 +1,71 @@
+body {
+    background-color: #EBEBEB;
+    font-family: 'Raleway', sans-serif;
+    color: #565656;
+    margin-top: 50px;
+}
+
+section {
+    background-color: white;
+    width: 340px;
+    height: 370px;
+    margin: auto;
+    padding-left: 70px;
+    padding-right: 60px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    border-radius: 2px;
+}
+
+h2 {
+    font-size: 25px;
+}
+
+h3 {
+    font-size: 13px;
+}
+
+.login {
+    font-size: 10px;
+}
+
+#login-button {
+    background-color: #333333;
+    border: hidden;
+    color: white;
+    width: 120px;
+    height: 45px;
+    border-radius: 25px;
+}
+
+#username:hover, #password:hover {
+    border-color: rgb(83, 155, 83);
+}
+
+#username, #password {
+    width: 330px;
+    height: 40px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border: 1px solid #ECECEC;
+    margin-top: 8px;
+}
+
+#username {
+    margin-bottom: 25px;
+}
+
+#password {
+    margin-bottom: 10px;
+}
+
+#forgot-password {
+    margin-left: 240px;
+    font-size: 11px;
+    background: none;
+    border: none;
+    color: #565656;
+    margin-bottom: 40px;
+}
