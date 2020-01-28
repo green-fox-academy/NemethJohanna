@@ -1,33 +1,38 @@
 body {
-    background-color: #0366d6;
+    background-color: #3E94EC;
     width: 100%;
+    color: #666B85;
 }
 
 table {
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
-    font-size: 25px;
-    border: 1px solid lightgray;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 20;
+    font-size: 20px;
     border-spacing: 0;
-    width: 500px;
+    width: 700px;
     border-radius: 5px;
+    padding: 20px 20px;
 }
 
 th {
     background-color: black;
-    color: lightgray;
-    font-size: 35px;
-    border-bottom: 25px solid lightgray;
+    color: #EBEBEB;    
+    font-weight: 100;
+    font-size: 25px;
+    text-align: left;
+    padding-left: 20px;
+    border-bottom: 3px solid #C1C3D1;
+    border-right: 1px solid #C1C3D1;
 }
 
 tr {
     background-color: white;
-    color: gray;
     height: 70px;
-    margin: middle 50px;
 }
 
 td {
     padding: 0px 20px;
+    border-bottom: 1px solid #C1C3D1;
 }
 
 section {
@@ -35,17 +40,14 @@ section {
     width: 500px;
 }
 
-tr th, tr td {
-    font-weight: 100;
-    border: 1px solid lightgray;
-}
-
 tr:last-child td:first-child {
-    border-bottom-left-radius: 5px;
+    border-bottom-left-radius: 5px;    
+    border-bottom-style: hidden;
 }
 
 tr:last-child td:last-child {
     border-bottom-right-radius: 5px;
+    border-bottom-style: hidden;
 }
 
 th:first-child {
@@ -54,4 +56,13 @@ th:first-child {
 
 th:last-child {
     border-top-right-radius: 5px;
+    border-right-style: hidden;
+}
+
+tr:nth-child(even) {
+    background: #EBEBEB;
+}
+
+td:first-child {
+    border-right: 1px solid #C1C3D1;
 }
