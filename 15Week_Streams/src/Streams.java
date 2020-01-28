@@ -82,6 +82,7 @@ public class Streams {
         // EXERCISE 9
         // Write a Stream Expression to find the frequency of characters in a given string!
         String findFrequency = "BUDAPEST";
+        List<Character> frequency = findFrequency.chars()
 
         Map<Character, Integer> charFrequency = budapest.stream()
                 .mapToInt(1, )
