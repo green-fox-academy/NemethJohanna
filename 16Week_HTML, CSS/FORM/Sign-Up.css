@@ -34,7 +34,8 @@ th {
     height: 30px;
     padding-left: 5px;
     padding-bottom: 8px;
-    margin-bottom: 18px;
+    padding-top: 5px;
+    margin-bottom: 10px;
 }
 
 #facebook-button,
