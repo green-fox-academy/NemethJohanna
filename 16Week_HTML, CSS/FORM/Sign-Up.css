@@ -1,0 +1,76 @@
+body {
+    background-color: #EBEBEB;
+    font-family: 'Roboto', sans-serif;
+}
+
+table {
+    background-color: white;
+    padding: 40px;
+    width: 750px;
+    height: 500px;
+    margin:auto;
+    margin-top: 20px;
+    border-radius: 3px;
+    box-shadow: 1px 2px 5px #8D8D8D;
+}
+
+input {
+    border: hidden;
+}
+
+th {
+    font-size: 35px;
+    font-weight: 300;
+    text-align: left;
+}
+
+#username, 
+#email,
+#password,
+#retype-password {
+    border-bottom: 1px solid lightgrey;
+    font-size: 20px;
+    width: 277px;
+    height: 30px;
+    padding-left: 5px;
+    padding-bottom: 8px;
+    margin-bottom: 18px;
+}
+
+#facebook-button,
+#twitter-button,
+#google-button {
+    width: 260px;
+    height: 46px;
+    border-radius: 3px;
+    color: white;
+    margin-left: 20px;
+}
+#facebook-button {
+    background-color: #32508E;
+}
+
+#twitter-button {
+    background-color: #55ACEE;
+}
+
+#google-button {
+    background-color: #DD4B39;
+}
+
+#username:hover, 
+#email:hover,
+#password:hover,
+#retype-password:hover {
+    border-bottom: 2px solid #16A085;
+}
+
+#sign-up-button {
+    width: 150px;
+    height: 40px;
+    border-radius: 2px;
+    background-color: #16A085;
+    color: white;
+    font-size: 15px;
+}
+
