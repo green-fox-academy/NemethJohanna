@@ -11,7 +11,7 @@ table {
     margin:auto;
     margin-top: 20px;
     border-radius: 3px;
-    box-shadow: 1px 2px 5px #8D8D8D;
+    box-shadow: 0px 3px 4px #8D8D8D;
 }
 
 input {
@@ -29,20 +29,20 @@ th {
 #password,
 #retype-password {
     border-bottom: 1px solid lightgrey;
-    font-size: 20px;
+    font-size: 18px;
     width: 277px;
-    height: 30px;
+    height: 10px;
     padding-left: 5px;
-    padding-bottom: 8px;
-    padding-top: 5px;
-    margin-bottom: 10px;
+    padding-bottom: 15px;
+    padding-top: 10px;
 }
 
 #facebook-button,
 #twitter-button,
 #google-button {
-    width: 260px;
+    width: 290px;
     height: 46px;
+    font-size: 17px;
     border-radius: 3px;
     color: white;
     margin-left: 20px;
@@ -69,9 +69,24 @@ th {
 #sign-up-button {
     width: 150px;
     height: 40px;
-    border-radius: 2px;
+    border-radius: 3px;
     background-color: #16A085;
     color: white;
     font-size: 15px;
 }
 
+#or {
+    background-color: #EBEBEB;
+    width: 50px;
+    height: 35px;
+    border-radius: 100%;
+    text-align: center;
+    padding-top: 12px;
+    font-size: 19px;
+    box-shadow: 0px 2px 4px #8D8D8D;
+}
+
+#retype-password,
+#google-button {
+    margin-bottom: 30px;
+}
