@@ -75,6 +75,10 @@ th {
     font-size: 15px;
 }
 
+#sign-up-button:focus {
+    background-color: rgb(9, 80, 66);
+}
+
 #or {
     background-color: #EBEBEB;
     width: 50px;
