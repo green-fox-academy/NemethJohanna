@@ -2,44 +2,49 @@ package com.greenfoxacademy.springstart.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.concurrent.atomic.AtomicLong;
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 @Controller
 public class FizzBuzzController {
 
     private final AtomicLong counter = new AtomicLong(0);
 
-    @GetMapping("/fizzBuzz")
+    @RequestMapping(value = "/fizzBuzz", method = GET)
     public String fizzBuzz(String name, Model model){
-        String times = "";
-        int fontSize = 0;
+        String times;
+        int fontSize;
+        long count = counter.incrementAndGet();
 
-        if (counter.incrementAndGet() % 3 == 0) {
-            times += "Fizz";
-            fontSize += 24;
-        } else if (counter.incrementAndGet() % 5 == 0) {
-            times += "Buzz";
-            fontSize += 24;
-        } else if (counter.incrementAndGet() % 7 == 0) {
-            times += "Woof";
-            fontSize += 24;
-        } else if (counter.incrementAndGet() % 3 == 0 && counter.incrementAndGet() % 5 == 0) {
-            times += "FizzBuzz";
-            fontSize += 48;
-        } else if (counter.incrementAndGet() % 5 == 0 && counter.incrementAndGet() % 7 == 0) {
-            times += "BuzzWoof";
-            fontSize += 48;
-        } else if (counter.incrementAndGet() % 3 == 0 && counter.incrementAndGet() % 7 == 0) {
-            times += "FizzWoof";
-            fontSize += 48;
-        } else if (counter.incrementAndGet() % 3 == 0 && counter.incrementAndGet() % 5 == 0 && counter.incrementAndGet() % 7 == 0) {
-            times += "FizzBuzzWoof";
-            fontSize += 72;
+        if (count % 3 == 0 && count % 5 == 0 && count % 7 == 0) {
+            times = "FizzBuzzWoof";
+            fontSize = 72;
+        } else if (count % 3 == 0 && count % 5 == 0) {
+            times = "FizzBuzz";
+            fontSize = 48;
+        } else if (count % 5 == 0 && count % 7 == 0) {
+            times = "BuzzWoof";
+            fontSize = 48;
+        } else if (count % 3 == 0 && count % 7 == 0) {
+            times = "FizzWoof";
+            fontSize = 48;
+        } else if (count % 3 == 0) {
+            times = "Fizz";
+            fontSize = 24;
+        } else if (count % 5 == 0) {
+            times = "Buzz";
+            fontSize = 24;
+        } else if (count % 7 == 0) {
+            times = "Woof";
+            fontSize = 24;
         } else {
-            times += counter.incrementAndGet();
-            fontSize += 12;
+            times = Long.toString(count);
+            fontSize = 18;
         }
+
+        model.addAttribute("times", times);
+        model.addAttribute("fontSize", fontSize);
 
         return "fizzBuzz";
 
