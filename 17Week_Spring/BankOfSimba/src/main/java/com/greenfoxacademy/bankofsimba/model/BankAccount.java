@@ -3,10 +3,10 @@ package com.greenfoxacademy.bankofsimba.model;
 public class BankAccount {
 
     private String name;
-    private int balance;
+    private Integer balance;
     private String animalType;
 
-    public BankAccount(String name, int balance, String animalType) {
+    public BankAccount(String name, Integer balance, String animalType) {
         this.name = name;
         this.balance = balance;
         this.animalType = animalType;
@@ -20,11 +20,11 @@ public class BankAccount {
         this.name = name;
     }
 
-    public int getBalance() {
+    public Integer getBalance() {
         return balance;
     }
 
-    public void setBalance(int balance) {
+    public void setBalance(Integer balance) {
         this.balance = balance;
     }
 
