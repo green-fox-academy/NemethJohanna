@@ -10,7 +10,7 @@
         <h3 th:text="'Name: ' + ${name}"></h3>
     </div>
     <div>
-        <h3 th:text="'Balance: ' + ${balance}"></h3>
+        <h3 th:text="'Balance: ' + ${#numbers.formatDecimal(balance, 0, 2, 'POINT')} + ' Zebra'"></h3>
     </div>
     <div>
         <h3 th:text="'Type: ' + ${type}"></h3>
