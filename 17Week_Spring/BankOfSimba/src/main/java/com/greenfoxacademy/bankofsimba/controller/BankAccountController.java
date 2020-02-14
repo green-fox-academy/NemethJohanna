@@ -5,16 +5,28 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 @Controller
 public class BankAccountController {
 
-    BankAccount simbaBank = new BankAccount("Simba", 2000, "lion");
+    private List<BankAccount> banks = new ArrayList<>(Arrays.asList(
+            new BankAccount("Timon", 300, "meerkat"),
+            new BankAccount("Pumba", 500, "warthog"),
+            new BankAccount("Nala", 1500, "lion"),
+            new BankAccount("Simba", 2000, "lion"),
+            new BankAccount("Zordon", 1800, "lion")
+    ));
+
+    BankAccount simba = new BankAccount("Simba", 2000, "lion");
 
     @GetMapping(path = "/show")
     public String showAccount(Model model, String name, Integer balance, String type) {
-        model.addAttribute("name", simbaBank.getName());
-        model.addAttribute("balance", simbaBank.getBalance());
-        model.addAttribute("type", simbaBank.getAnimalType());
+        model.addAttribute("name", simba.getName());
+        model.addAttribute("balance", simba.getBalance());
+        model.addAttribute("type", simba.getAnimalType());
         return "bank";
     }
 
@@ -23,6 +35,12 @@ public class BankAccountController {
         String text = "This is an <em>HTML</em> text. <b>Enjoy yourself!</b>";
         model.addAttribute("name", text);
         return "HTMLception";
+    }
+
+    @GetMapping(path = "/list")
+    public String listBankAccounts(Model model) {
+        model.addAttribute("banks", banks);
+        return "bankList";
     }
 
 }
