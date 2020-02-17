@@ -8,14 +8,16 @@
 <body>
    <table>
        <tr>
+           <th>Id</th>
            <th>Name</th>
            <th>Balance</th>
            <th>Type</th>
        </tr>
        <tr th:each="bank : ${banks}" th:object="${bank}">
-               <td th:text="*{name}"></td>
-               <td th:text="*{balance}"></td>
-               <td th:text="*{animalType}"></td>
+           <td th:text="${bankStat.count}"></td>
+           <td th:text="*{name}"></td>
+           <td th:text="*{balance}"></td>
+           <td th:text="*{animalType}"></td>
        </tr>
    </table>
 </body>
