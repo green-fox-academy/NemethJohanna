@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:color="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Banks List</title>
     <meta charset="utf-8">
@@ -17,12 +17,15 @@
            <th>GOOD/BAD</th>
        </tr>
        <tr th:each="bank : ${banks}" th:object="${bank}">
-               <td th:text="${bankStat.count}"></td>
-               <td th:text="*{isKing() ? 'KING' : '-'}"></td>
-               <td th:text="*{name}"></td>
-               <td th:text="*{balance}"></td>
-               <td th:text="*{animalType}"></td>
-               <td th:text="*{isGood() ? 'Good' : 'Bad'}"></td>
+           <td th:text="${bankStat.count}"></td>
+           <td th:text="*{isKing() ? 'KING' : '-'}"></td>
+           <td th:text="*{name}"></td>
+           <td th:text="*{balance}"></td>
+           <td th:text="*{animalType}"></td>
+           <td th:switch="*{isGood()}">
+               <span th:case="*{true}" th:text="'Good one'"></span>
+               <span th:case="*{false}" th:text="'Bad guy'"></span>
+           </td>
        </tr>
    </table>
 </body>
