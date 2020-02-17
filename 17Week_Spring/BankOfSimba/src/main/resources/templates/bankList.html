@@ -15,6 +15,7 @@
            <th>BALANCE</th>
            <th>TYPE</th>
            <th>GOOD/BAD</th>
+           <th>Raise the balance</th>
        </tr>
        <tr th:each="bank : ${banks}" th:object="${bank}">
            <td th:text="${bankStat.count}"></td>
@@ -22,9 +23,14 @@
            <td th:text="*{name}"></td>
            <td th:text="*{balance}"></td>
            <td th:text="*{animalType}"></td>
-           <td th:switch="*{isGood()}">
-               <span th:case="*{true}" th:text="'Good one'"></span>
-               <span th:case="*{false}" th:text="'Bad guy'"></span>
+           <td th:text="*{isGood() ? 'Good one' : 'Bad guy'}"></td>
+<!--           <td th:switch="*{isGood()}">-->
+<!--               <span th:case="*{true}" th:text="'Good one'"></span>-->
+<!--               <span th:case="*{false}" th:text="'Bad guy'"></span>-->
+<!--           </td>-->
+           <td>
+               <form action="#" th:action="*{balance}" method="post"></form>
+               <input id="balance-raise-button" type="button" value="+">
            </td>
        </tr>
    </table>
