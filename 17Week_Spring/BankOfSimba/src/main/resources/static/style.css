@@ -1,7 +1,13 @@
 body {
-    background-color: lightgoldenrodyellow;
-    font-family: 'Roboto', sans-serif;
+    background-color: #E8E9EB;
+    font-family: 'Montserrat', sans-serif;
     margin-top: 50px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 35px;
+    color: #E6BEAE;
 }
 
 table,
@@ -16,7 +22,7 @@ td {
 
 th {
     font-size: 20px;
-    background-color: lightblue;
+    background-color: #E6BEAE;
     padding: 10px 30px;
     color: white;
 }
@@ -35,14 +41,28 @@ td {
 #balance-raise-button {
     text-align: center;
     padding: auto;
-    border-radius: 50px;
     border: darkgray solid 1px;
 }
 
 #balance-raise-button:focus {
-    background-color: aquamarine;
+    background-color: white;
 }
 
-.table:nth-child(even) {
-    background-color: grey;
+table {
+    background-color: #E0DFD5;
+    margin-bottom: 30px;
+}
+
+.raise,
+#balance-raise-button {
+    margin-left: 370px;
+}
+
+#send-button {
+    font-size: 20px;
+    width: 100px;
+    height: 20px;
+    background-color: #E6BEAE;
+    border-radius: 3px;
+    margin-top: 10px;
 }

@@ -4,6 +4,8 @@ import com.greenfoxacademy.bankofsimba.model.BankAccount;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,11 +15,11 @@ import java.util.List;
 public class BankAccountController {
 
     private List<BankAccount> banks = new ArrayList<>(Arrays.asList(
-            new BankAccount("Timon", 300, "meerkat", true, false),
-            new BankAccount("Pumba", 500, "warthog", true, false),
-            new BankAccount("Nala", 1500, "lion", true, true),
-            new BankAccount("Simba", 2000, "lion", true, true),
-            new BankAccount("Zordon", 1800, "lion", false, false)
+            new BankAccount("Timon", 300, "Meerkat", true, false),
+            new BankAccount("Pumba", 500, "Warthog", true, false),
+            new BankAccount("Nala", 1500, "Lion", true, true),
+            new BankAccount("Simba", 2000, "Lion", true, true),
+            new BankAccount("Zordon", 1800, "Lion", false, false)
     ));
 
     BankAccount simba = new BankAccount("Simba", 2000, "lion", true, true);
@@ -43,6 +45,17 @@ public class BankAccountController {
         return "bankList";
     }
 
+    @PostMapping(path = "/raisebalance")
+    public String raiseBalance(@RequestParam() BankAccount name, Model model) {
+        for (BankAccount bank : banks){
+            if (bank.getName().equals(name) && bank.isKing()){
+                name.setBalance(bank.getBalance() + 100);
+            } else {
+                name.setBalance(bank.getBalance() + 10);
+            }
+        }
+        return "redirect:/bankList";
+    }
 
 
 }
