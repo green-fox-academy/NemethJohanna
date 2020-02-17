@@ -1,0 +1,26 @@
+body {
+    background-color: lightgoldenrodyellow;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+table,
+th,
+td {
+    border-collapse: collapse;
+    border: 2px solid grey;
+    text-align: center;
+    alignment: center;
+    margin: auto;
+}
+
+th {
+    font-size: 20px;
+    background-color: lightblue;
+    padding: 10px 30px;
+}
+
+td {
+    font-size: 15px;
+    padding: 7px 30px;
+}
