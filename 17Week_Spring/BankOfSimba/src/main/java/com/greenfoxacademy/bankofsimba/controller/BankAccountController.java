@@ -13,14 +13,14 @@ import java.util.List;
 public class BankAccountController {
 
     private List<BankAccount> banks = new ArrayList<>(Arrays.asList(
-            new BankAccount("Timon", 300, "meerkat"),
-            new BankAccount("Pumba", 500, "warthog"),
-            new BankAccount("Nala", 1500, "lion"),
-            new BankAccount("Simba", 2000, "lion"),
-            new BankAccount("Zordon", 1800, "lion")
+            new BankAccount("Timon", 300, "meerkat", true, false),
+            new BankAccount("Pumba", 500, "warthog", true, false),
+            new BankAccount("Nala", 1500, "lion", true, true),
+            new BankAccount("Simba", 2000, "lion", true, true),
+            new BankAccount("Zordon", 1800, "lion", false, false)
     ));
 
-    BankAccount simba = new BankAccount("Simba", 2000, "lion");
+    BankAccount simba = new BankAccount("Simba", 2000, "lion", true, true);
 
     @GetMapping(path = "/show")
     public String showAccount(Model model, String name, Integer balance, String type) {

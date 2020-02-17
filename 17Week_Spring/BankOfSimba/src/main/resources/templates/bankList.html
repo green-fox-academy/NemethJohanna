@@ -9,15 +9,19 @@
    <table>
        <tr>
            <th>Id</th>
+           <th>King?</th>
            <th>Name</th>
            <th>Balance</th>
            <th>Type</th>
+           <th>Good or bad</th>
        </tr>
        <tr th:each="bank : ${banks}" th:object="${bank}">
            <td th:text="${bankStat.count}"></td>
+           <td th:text="*{isKing() ? 'KING' : '-'}"></td>
            <td th:text="*{name}"></td>
            <td th:text="*{balance}"></td>
            <td th:text="*{animalType}"></td>
+           <td th:text="*{isGood() ? 'Good' : 'Bad'}"></td>
        </tr>
    </table>
 </body>
