@@ -9,37 +9,37 @@
 <body>
 <h2>ADD NEW ACCOUNT</h2>
 <section>
-    <div>
-        <label for="animal">Name: </label>
-        <input type="text" id="animal" th:name="name">
-    </div>
-    <div>
-        <label for="animalType">Type: </label>
-        <select th:name="type" id="animalType">
-            <option th:value="lion">Lion</option>
-            <option th:value="meerkat">Meerkat</option>
-            <option th:value="warthog">Warthog</option>
-            <option th:value="red-billed-hornbill">Red-billed hornbill</option>
-            <option th:value="hyena">Hyena</option>
-            <option th:value="gopher">Gopher</option>
-            <option th:value="other">Other</option>
-        </select>
-    </div>
+    <form action="/list" method="post">
+        <div>
+            <label for="animal">Name: </label>
+            <input type="text" id="animal" th:name="name">
+        </div>
+        <div>
+            <label for="animalType">Type: </label>
+            <select th:name="type" id="animalType">
+                <option th:value="lion">Lion</option>
+                <option th:value="meerkat">Meerkat</option>
+                <option th:value="warthog">Warthog</option>
+                <option th:value="red-billed-hornbill">Red-billed hornbill</option>
+                <option th:value="hyena">Hyena</option>
+                <option th:value="gopher">Gopher</option>
+                <option th:value="other">Other</option>
+            </select>
+        </div>
         <label for="balance">Balance: </label>
         <input type="" id="balance" th:name="balance">
-    <div>
-        <p>Good or bad guy?</p>
-        <input type="radio" name="good" th:value="goodOne">Good one<br>
-        <input type="radio" name="good" th:value="badGuy">Bad guy<br>
-    </div>
-    <div>
-        <input type="checkbox" name="king" th:value="false">Is King?<br>
-    </div>
-    <div>
-        <form action="/list">
+        <div>
+            <p>Good or bad guy?</p>
+            <input type="radio" name="good" th:value="goodOne">Good one<br>
+            <input type="radio" name="good" th:value="badGuy">Bad guy<br>
+        </div>
+        <div>
+            <input type="checkbox" name="king" th:value="false">Is King?<br>
+        </div>
+        <div>
             <button type="submit" id="add">Add</button>
-        </form>
-    </div>
+        </div>
+    </form>
 </section>
 </body>
 </html>

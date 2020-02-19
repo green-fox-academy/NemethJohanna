@@ -59,13 +59,13 @@ public class BankAccountController {
     }
 
     @GetMapping(path = "/add")
-    public String addAccount(@ModelAttribute (name="bank") BankAccount bankAccount, Model model){
+    public String addAccount(BankAccount bankAccount, Model model){
         model.addAttribute("bankAccount", bankAccount);
         return "addAccount";
     }
 
     @PostMapping(path = "/add")
-    public String list(@ModelAttribute (name = "bank") BankAccount bankAccount){
+    public String list(BankAccount bankAccount){
         banks.add(bankAccount);
         return "redirect:/list";
     }
