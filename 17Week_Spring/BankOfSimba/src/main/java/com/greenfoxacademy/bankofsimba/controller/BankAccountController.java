@@ -4,6 +4,7 @@ import com.greenfoxacademy.bankofsimba.model.BankAccount;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -17,7 +18,7 @@ public class BankAccountController {
     private List<BankAccount> banks = new ArrayList<>(Arrays.asList(
             new BankAccount("Timon", 300, "Meerkat", true, false),
             new BankAccount("Pumba", 500, "Warthog", true, false),
-            new BankAccount("Nala", 1500, "Lion", true, true),
+            new BankAccount("Nala", 1500, "Lion", true, false),
             new BankAccount("Simba", 2000, "Lion", true, true),
             new BankAccount("Zordon", 1800, "Lion", false, false)
     ));
@@ -45,16 +46,28 @@ public class BankAccountController {
         return "bankList";
     }
 
-    @PostMapping(path = "/raisebalance")
-    public String raiseBalance(@RequestParam() BankAccount name, Model model) {
+    @PostMapping(path = "/list")
+    public String raiseBalance(@RequestParam() String name) {
         for (BankAccount bank : banks){
-            if (bank.getName().equals(name) && bank.isKing()){
-                name.setBalance(bank.getBalance() + 100);
-            } else {
-                name.setBalance(bank.getBalance() + 10);
+            if (bank.getName().equals(name) && bank.getIsKing()) {
+                bank.setBalance(bank.getBalance() + 100);
+            } else if (bank.getName().equals(name) && bank.getIsKing() == false){
+                bank.setBalance(bank.getBalance() + 10);
             }
         }
-        return "redirect:/bankList";
+        return "redirect:/list";
+    }
+
+    @GetMapping(path = "/add")
+    public String addAccount(@ModelAttribute BankAccount bankAccount, Model model){
+        banks.add(bankAccount);
+        model.addAttribute("bankAccount", bankAccount);
+        return "addAccount";
+    }
+
+    @PostMapping(path = "/add")
+    public String list(){
+        return "list";
     }
 
 

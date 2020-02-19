@@ -40,11 +40,11 @@ public class BankAccount {
         this.animalType = animalType;
     }
 
-    public boolean isKing() {
+    public boolean getIsKing() {
         return isKing;
     }
 
-    public void setKing(boolean king) {
+    public void setIsKing(boolean king) {
         isKing = king;
     }
 

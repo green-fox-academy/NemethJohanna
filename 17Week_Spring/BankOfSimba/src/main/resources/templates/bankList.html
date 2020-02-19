@@ -5,32 +5,38 @@
     <meta charset="utf-8">
     <link href="style.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-    <meta charset="utf-8"/>
 </head>
 <body>
 <h2>CLIENTS OF BANK OF SIMBA</h2>
-<table>
-    <tr>
-        <th>ID</th>
-        <th>KING?</th>
-        <th>NAME</th>
-        <th>BALANCE</th>
-        <th>TYPE</th>
-        <th>GOOD/BAD</th>
-    </tr>
-    <tr th:each="bank : ${banks}" th:object="${bank}">
-        <td th:text="${bankStat.count}"></td>
-        <td th:utext="*{isKing() ? '<b>KING</b>' : 'Not King'}"></td>
-        <td th:text="*{name}"></td>
-        <td th:text="*{#numbers.formatDecimal(balance, 0, 2, 'POINT')} + ' $'"></td>
-        <td th:text="*{animalType}"></td>
-        <td th:text="*{isGood() ? 'Good one' : 'Bad guy'}"></td>
-    </tr>
-</table>
-<div>
-    <form class="raise" action="@{/raisebalance}" method="post">Please write here which character's balance you would like to raise: </form>
-    <input id="balance-raise-button" type="text" value="Character's name">
-    <button id="send-button" type="button" value="RAISE">
-</div>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>KING?</th>
+            <th>NAME</th>
+            <th>BALANCE</th>
+            <th>TYPE</th>
+            <th>GOOD/BAD</th>
+        </tr>
+        <tr th:each="bank : ${banks}" th:object="${bank}">
+            <td th:text="${bankStat.count}"></td>
+            <td th:utext="*{getIsKing() ? '<b>KING</b>' : 'Not King'}"></td>
+            <td th:text="*{name}"></td>
+            <td th:text="*{#numbers.formatDecimal(balance, 0, 2, 'POINT')} + ' $'"></td>
+            <td th:text="*{animalType}"></td>
+            <td th:text="*{isGood() ? 'Good one' : 'Bad guy'}"></td>
+        </tr>
+    </table>
+    <form class="raise" action="/list" method="post">
+        <div>
+            <label for="animal">Please write here which character's balance you would like to raise: </label>
+            <input type="text" id="animal" name="name">
+            <button type="submit" id="send-button">RAISE</button>
+        </div>
+    </form>
+    <form class="addAccount" action="/add" method="get">
+        <div>
+            <button type="submit" id="add-button">Add new account</button>
+        </div>
+    </form>
 </body>
 </html>

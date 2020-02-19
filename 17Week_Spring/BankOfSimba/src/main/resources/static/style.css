@@ -32,16 +32,13 @@ td {
     padding: 7px 30px;
 }
 
-.switch {
-    position: relative;
-    width: 60px;
-    height: 34px;
-}
-
 #balance-raise-button {
     text-align: center;
-    padding: auto;
+    /*padding: auto;*/
+    padding-top: 10px;
     border: darkgray solid 1px;
+    font-size: 17px;
+    color: grey;
 }
 
 #balance-raise-button:focus {
@@ -50,19 +47,31 @@ td {
 
 table {
     background-color: #E0DFD5;
-    margin-bottom: 30px;
-}
-
-.raise,
-#balance-raise-button {
-    margin-left: 370px;
 }
 
 #send-button {
-    font-size: 20px;
-    width: 100px;
-    height: 20px;
+    font-size: 16px;
+    width: 130px;
+    height: 28px;
     background-color: #E6BEAE;
-    border-radius: 3px;
+    border-radius: 5px;
     margin-top: 10px;
+    color: white;
+}
+
+#add-button {
+    background-color: #E6BEAE;
+    margin-left: 330px;
+    margin-top: 30px;
+    border-radius: 5px;
+    color: white;
+    height: 30px;
+    width: 180px;
+    font-size: 20px;
+;
+}
+
+.raise {
+    text-align: center;
+    margin-top: 30px;
 }
