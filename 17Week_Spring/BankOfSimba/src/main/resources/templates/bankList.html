@@ -19,11 +19,11 @@
         </tr>
         <tr th:each="bank : ${banks}" th:object="${bank}">
             <td th:text="${bankStat.count}"></td>
-            <td th:utext="*{getIsKing() ? '<b>KING</b>' : 'Not King'}"></td>
+            <td th:utext="*{getIsKing()} ? '<b>KING</b>' : 'Not King'"></td>
             <td th:text="*{name}"></td>
             <td th:text="*{#numbers.formatDecimal(balance, 0, 2, 'POINT')} + ' $'"></td>
             <td th:text="*{animalType}"></td>
-            <td th:text="*{isGood() ? 'Good one' : 'Bad guy'}"></td>
+            <td th:text="*{getIsGood()} ? 'Good one' : 'Bad guy'"></td>
         </tr>
     </table>
     <form class="raise" action="/list" method="post">

@@ -51,7 +51,7 @@ public class BankAccountController {
         for (BankAccount bank : banks){
             if (bank.getName().equals(name) && bank.getIsKing()) {
                 bank.setBalance(bank.getBalance() + 100);
-            } else if (bank.getName().equals(name) && bank.getIsKing() == false){
+            } else if (bank.getName().equals(name) && !bank.getIsKing()){
                 bank.setBalance(bank.getBalance() + 10);
             }
         }
@@ -59,16 +59,15 @@ public class BankAccountController {
     }
 
     @GetMapping(path = "/add")
-    public String addAccount(@ModelAttribute BankAccount bankAccount, Model model){
-        banks.add(bankAccount);
+    public String addAccount(@ModelAttribute (name="bank") BankAccount bankAccount, Model model){
         model.addAttribute("bankAccount", bankAccount);
         return "addAccount";
     }
 
     @PostMapping(path = "/add")
-    public String list(){
-        return "list";
+    public String list(@ModelAttribute (name = "bank") BankAccount bankAccount){
+        banks.add(bankAccount);
+        return "redirect:/list";
     }
-
 
 }
