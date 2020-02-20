@@ -17,7 +17,7 @@ public class ColoringApplication implements CommandLineRunner {
     }
 
     @Autowired
-    public ColoringApplication(@Qualifier("blue") MyColor coloring) {
+    public ColoringApplication(MyColor coloring) {
         this.coloring = coloring;
     }
 
