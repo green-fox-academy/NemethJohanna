@@ -1,9 +1,5 @@
 package com.greenfoxacademy.coloring.service;
 
-// # Playing around with colors
-
-// There is one interface given:
-
 public interface MyColor {
     public void printColor();
 }
