@@ -35,6 +35,15 @@ public class UtilityService {
         return colors.get(random.nextInt(colors.size()));
     }
 
+    public String validateEmail(String email) {
+        if (email == null){
+            return "INVALID EMAIL ADDRESS";
+        } else if (email.contains("@") && email.contains(".")){
+            return email + " is a VALID email address";
+        } else {
+            return email + " is NOT VALID email address";
+        }
+    }
 
     public String caesar(String text, int number) {
         if (number < 0) {
