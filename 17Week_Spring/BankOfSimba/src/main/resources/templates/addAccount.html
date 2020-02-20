@@ -27,14 +27,14 @@
             </select>
         </div>
         <label for="balance">Balance: </label>
-        <input type="" id="balance" th:name="balance">
+        <input type="number" id="balance" th:name="balance">
         <div>
             <p>Good or bad guy?</p>
-            <input type="radio" name="good" th:value="goodOne">Good one<br>
-            <input type="radio" name="good" th:value="badGuy">Bad guy<br>
+            <input type="radio" th:value="goodOne">Good one<br>
+            <input type="radio" th:value="badGuy">Bad guy<br>
         </div>
         <div>
-            <input type="checkbox" name="king" th:value="false">Is King?<br>
+            <input type="checkbox" th:value="false">Is King?<br>
         </div>
         <div>
             <button type="submit" id="add">Add</button>

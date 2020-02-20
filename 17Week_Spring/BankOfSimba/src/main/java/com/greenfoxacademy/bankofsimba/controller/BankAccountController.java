@@ -59,7 +59,7 @@ public class BankAccountController {
     }
 
     @GetMapping(path = "/add")
-    public String addAccount(BankAccount bankAccount, Model model){
+    public String addAccount(@ModelAttribute BankAccount bankAccount, Model model){
         model.addAttribute("bankAccount", bankAccount);
         return "addAccount";
     }
