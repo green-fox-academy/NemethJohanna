@@ -36,10 +36,8 @@ public class UtilityService {
     }
 
     public String validateEmail(String email) {
-        if (email == null){
-            return "INVALID EMAIL ADDRESS";
-        } else if (email.contains("@") && email.contains(".")){
-            return email + " is a VALID email address";
+        if (email != null && email.contains("@") && email.contains(".")){
+            return email + " VALID EMAIL ADDRESS";
         } else {
             return email + " is NOT VALID email address";
         }
