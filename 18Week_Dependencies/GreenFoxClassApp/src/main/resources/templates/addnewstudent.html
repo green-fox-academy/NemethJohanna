@@ -6,10 +6,10 @@
 </head>
 <body>
 <h2>Add new student</h2>
-<form>
+<form th:action="@{/gfa/add}" method="post">
     <label for="name">Write here the name of the student: </label>
-    <input th:type="text" name="add" id="name">
-    <button th:type="submit" th:action="@{/list}">SAVE</button>
+    <input th:type="text" name="studentsName" id="name">
+    <button th:type="submit">SAVE</button>
 </form>
 </body>
 </html>

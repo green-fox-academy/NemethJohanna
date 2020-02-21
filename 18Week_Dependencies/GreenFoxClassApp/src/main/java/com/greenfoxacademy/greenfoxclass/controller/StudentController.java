@@ -29,7 +29,7 @@ public class StudentController {
         return "list";
     }
 
-    @GetMapping(path = "gfa/add")
+    @GetMapping(path = "/gfa/add")
     public String addStudent(@ModelAttribute String name, Model model) {
         model.addAttribute("student", name);
         return "addnewstudent";
@@ -38,7 +38,7 @@ public class StudentController {
     @PostMapping(path = "/gfa/add")
     public String addToTheList(String studentsName) {
         studentService.save(studentsName);
-        return "redirect:/list";
+        return "redirect:/gfa/list";
     }
 
 }
