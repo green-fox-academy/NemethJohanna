@@ -19,7 +19,8 @@ public class StudentController {
     }
 
     @GetMapping(path = "/gfa")
-    public String main() {
+    public String main(Model model) {
+        model.addAttribute("count", studentService.count());
         return "index";
     }
 
