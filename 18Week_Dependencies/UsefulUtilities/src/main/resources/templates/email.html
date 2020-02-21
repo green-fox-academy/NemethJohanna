@@ -5,8 +5,12 @@
     <title>Email validator</title>
 </head>
 <body>
-    <div>
-       <p th:text="${email}"></p>
-    </div>
+<div>
+    <a th:text="'For example: /useful/email?email=is@this.valid'"></a>
+</div>
+<div>
+    <span th:style="'color: green'" th:if="${valid}" th:text="${email} + ' is VALID email'" ></span>
+    <span th:style="'color: red'" th:unless="${valid}" th:text="${email} + ' is INVALID email'" ></span>
+</div>
 </body>
 </html>

@@ -35,15 +35,14 @@ public class UtilityService {
         return colors.get(random.nextInt(colors.size()));
     }
 
-    public String validateEmail(String email) {
-        if (email != null && email.contains("@") && email.contains(".")){
-            return email + " VALID EMAIL ADDRESS";
-        } else {
-            return email + " is INVALID email address";
-        }
+    public boolean validateEmail(String email) {
+        return (email != null && email.contains("@") && email.contains("."));
     }
 
-    public String caesar(String text, int number) {
+    public String caesar(String text, Integer number) {
+        if (text == null || number == null){
+            return "Missing parameters, please use this example: http://localhost:8080/useful/encoding?text=anna&number=1";
+        }
         if (number < 0) {
             number = 26 + number;
         }

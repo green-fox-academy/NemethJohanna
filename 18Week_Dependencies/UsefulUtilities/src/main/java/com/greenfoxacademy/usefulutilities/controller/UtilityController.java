@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -30,8 +31,15 @@ public class UtilityController {
 
     @GetMapping(path = "/useful/email")
     public String emailValidator(@RequestParam(required = false) String email, Model model){
-        model.addAttribute("email", service.validateEmail(email));
+        model.addAttribute("valid", service.validateEmail(email));
+        model.addAttribute("email", email);
         return "email";
+    }
+
+    @GetMapping(path = "/useful/encoding")
+    public String encoding (@RequestParam() String text, int number, Model model){
+        model.addAttribute("text", service.caesar(text, number));
+        return "encoding";
     }
 
 }
