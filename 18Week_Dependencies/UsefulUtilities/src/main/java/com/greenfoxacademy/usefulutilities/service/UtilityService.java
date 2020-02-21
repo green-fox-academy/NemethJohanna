@@ -39,7 +39,7 @@ public class UtilityService {
         if (email != null && email.contains("@") && email.contains(".")){
             return email + " VALID EMAIL ADDRESS";
         } else {
-            return email + " is NOT VALID email address";
+            return email + " is INVALID email address";
         }
     }
 
