@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>On the list?</title>
+</head>
+<body>
+    <p th:text="${}"></p>
+    <form th:action="@{/gfa}" method="post">
+        <button th:type="submit">BACK</button>
+    </form>
+</body>
+</html>

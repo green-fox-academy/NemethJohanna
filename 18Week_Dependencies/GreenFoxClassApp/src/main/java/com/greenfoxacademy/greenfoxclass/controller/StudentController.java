@@ -44,14 +44,15 @@ public class StudentController {
 
     @GetMapping(path = "/gfa/check")
     public String check(@ModelAttribute String name, Model model) {
+        studentService.check(name);
         model.addAttribute("name", studentService.check(name));
         return "check";
     }
 
-    @PostMapping(path = "/gfa/check")
-    public String checkStudent(String studentName) {
-        studentService.check(studentName);
-        return "redirect:/gfa/list";
-    }
+//    @GetMapping(path = "/gfa/check")
+//    public String checkStudent(String studentName) {
+//        studentService.check(studentName);
+//        return "checkResult";
+//    }
 
 }
