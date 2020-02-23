@@ -27,6 +27,10 @@ public class StudentService {
     public int count (){
         return names.size();
     }
+
+    public boolean check(String name){
+        return names.contains(name);
+    }
 }
 
 // ## Adding new students

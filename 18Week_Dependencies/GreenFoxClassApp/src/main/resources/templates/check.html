@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Check name</title>
+</head>
+<body>
+<h2>Check a name</h2>
+<form th:action="@{/gfa/check}" method="get">
+    <label for="name">Write here the student's name you want to check: </label>
+    <input th:type="text" name="checkstudent" id="name">
+    <button th:type="submit">CHECK</button>
+</form>
+<form th:action="@{/gfa}" method="get">
+    <button th:type="submit">BACK</button>
+</form>
+</body>
+</html>
