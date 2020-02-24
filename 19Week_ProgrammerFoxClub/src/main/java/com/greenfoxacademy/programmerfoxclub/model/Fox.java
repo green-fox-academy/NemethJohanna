@@ -1,17 +1,15 @@
 package com.greenfoxacademy.programmerfoxclub.model;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.List;
 
 public class Fox {
 
     private String name;
-    private FoodStore food;
-    private DrinkStore drink;
+    private String food;
+    private String drink;
     private List<String> tricks;
 
-    public Fox(String name, FoodStore food, DrinkStore drink, List<String> tricks) {
+    public Fox(String name, String food, String drink, List<String> tricks) {
         this.setName(name);
         this.setFood(food);
         this.setDrink(drink);
@@ -26,19 +24,19 @@ public class Fox {
         this.name = name;
     }
 
-    public FoodStore getFood() {
+    public String getFood() {
         return food;
     }
 
-    public void setFood(FoodStore food) {
+    public void setFood(String food) {
         this.food = food;
     }
 
-    public DrinkStore getDrink() {
+    public String getDrink() {
         return drink;
     }
 
-    public void setDrink(DrinkStore drink) {
+    public void setDrink(String drink) {
         this.drink = drink;
     }
 

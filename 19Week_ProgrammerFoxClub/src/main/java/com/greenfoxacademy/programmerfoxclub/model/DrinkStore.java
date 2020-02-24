@@ -5,13 +5,16 @@ import java.util.List;
 
 public class DrinkStore {
 
-    private List<String> drink;
+    private List<String> drinkList;
 
-    public DrinkStore(List<String> drink){
-        drink = new ArrayList<>();
-        drink.add("water");
-        drink.add("milk");
-        drink.add("wine");
+    public DrinkStore(){
+        drinkList = new ArrayList<>();
+        drinkList.add("water");
+        drinkList.add("milk");
+        drinkList.add("wine");
     }
 
+    public List<String> getDrinkList() {
+        return drinkList;
+    }
 }

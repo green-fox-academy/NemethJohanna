@@ -5,13 +5,16 @@ import java.util.List;
 
 public class FoodStore {
 
-    private List<String> food;
+    private List<String> foodList;
 
     public FoodStore(){
-        food = new ArrayList<>();
-        food.add("meat");
-        food.add("grass");
-        food.add("seeds");
+        foodList = new ArrayList<>();
+        foodList.add("meat");
+        foodList.add("grass");
+        foodList.add("seeds");
     }
 
+    public List<String> getFoodList() {
+        return foodList;
+    }
 }

@@ -1,7 +1,5 @@
 package com.greenfoxacademy.programmerfoxclub.controller;
 
-import com.greenfoxacademy.programmerfoxclub.model.DrinkStore;
-import com.greenfoxacademy.programmerfoxclub.model.FoodStore;
 import com.greenfoxacademy.programmerfoxclub.model.Fox;
 import com.greenfoxacademy.programmerfoxclub.service.FoxService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +20,7 @@ public class MainController {
     }
 
     @GetMapping(path = "/")
-    public String index(@RequestParam String name, Model model, DrinkStore drink, FoodStore food) {
+    public String index(@RequestParam String name, Model model, String drink, String food) {
         model.addAttribute("name", name);
         model.addAttribute("food", food);
         model.addAttribute("drink", drink);
@@ -35,8 +33,8 @@ public class MainController {
     }
 
     @PostMapping(path = "/login")
-    public String loginFox(@RequestParam (value = "name") Fox name) {
-        foxService.add(name);
+    public String loginFox(@RequestParam (value = "name") String name) {
+        foxService.add(new Fox(name, foxService.getFoodStore().getFoodList().get(0), foxService.getDrinkStore().getDrinkList().get(0), null));
         return "redirect:/?name=" + name;
     }
 
