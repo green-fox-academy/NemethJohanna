@@ -4,6 +4,7 @@ import com.greenfoxacademy.programmerfoxclub.model.Fox;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class FoxService {
@@ -16,4 +17,14 @@ public class FoxService {
     public FoxService() {
         this.foxList = new ArrayList<>();
     }
+
+    public boolean check (Fox fox){
+        return foxList.contains(fox);
+    }
+
+    public List<Fox> findAll (){
+        return foxList;
+    }
+
+
 }

@@ -6,10 +6,13 @@
 </head>
 <body>
 <div>
+    <a th:href="@{/information}">Information</a>
+</div>
+<div>
     <img th:src="@{img/greenfox.png}" alt="Fox">
 </div>
 <div>
-    <p th:text="'This is ' + ${name} + '. Currently living on lemonade. He knows 2 tricks.'"></p>
+    <p th:text="'This is ' + ${name} + '. Currently living on ' + ${food} ' and ' + ${drink} + '. He knows 2 tricks.'"></p>
 </div>
 <div>
     <h2>Known tricks</h2>
