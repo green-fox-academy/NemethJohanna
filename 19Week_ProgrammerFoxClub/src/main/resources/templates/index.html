@@ -5,10 +5,14 @@
     <title>Home page</title>
 </head>
 <body>
-<img th:src="@{img/greenfox.png}" alt="Fox">
 <div>
-    This is Mr. Fox. Currently living on pizza lemonade. He knows 2 tricks.
+    <img th:src="@{img/greenfox.png}" alt="Fox">
 </div>
-<h2>Known tricks</h2>
+<div>
+    <p th:text="'This is ' + ${name} + '. Currently living on pizza lemonade. He knows 2 tricks.'"></p>
+</div>
+<div>
+    <h2>Known tricks</h2>
+</div>
 </body>
 </html>
