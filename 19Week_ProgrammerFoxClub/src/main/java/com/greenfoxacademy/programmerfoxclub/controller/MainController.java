@@ -1,9 +1,9 @@
 package com.greenfoxacademy.programmerfoxclub.controller;
 
+import com.greenfoxacademy.programmerfoxclub.model.Fox;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -22,7 +22,7 @@ public class MainController {
     }
 
     @PostMapping(path = "/login")
-    public String loginFox(@RequestParam (value = "name") String name) {
+    public String loginFox(@RequestParam (value = "name") Fox name) {
         return "redirect:/?name=" + name;
     }
 

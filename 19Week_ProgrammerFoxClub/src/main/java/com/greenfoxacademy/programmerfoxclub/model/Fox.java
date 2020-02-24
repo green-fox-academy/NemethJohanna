@@ -1,5 +1,6 @@
-package com.greenfoxacademy.programmerfoxclub.service;
+package com.greenfoxacademy.programmerfoxclub.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Fox {
@@ -8,6 +9,7 @@ public class Fox {
     private String food;
     private String drink;
     private List<String> tricks;
+    private ArrayList<Fox> foxList;
 
     public Fox(String name, String food, String drink, List<String> tricks) {
         this.name = name;
