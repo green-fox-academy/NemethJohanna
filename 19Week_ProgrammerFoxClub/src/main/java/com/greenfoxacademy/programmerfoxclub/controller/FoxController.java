@@ -25,8 +25,10 @@ public class FoxController {
     }
 
     @PostMapping(path = "/nutritionStore")
-    public String addNutrition(@RequestParam () Model model){
-        return "redirect:/login";
+    public String addNutrition(@RequestParam () Model model, String name){
+        model.addAttribute("food", foxService.getFoodStore());
+        model.addAttribute("drink", foxService.getDrinkStore());
+        return "redirect:/?name=" + name;
     }
 
 

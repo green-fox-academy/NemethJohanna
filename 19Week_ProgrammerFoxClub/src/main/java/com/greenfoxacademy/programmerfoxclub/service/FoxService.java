@@ -46,6 +46,8 @@ public class FoxService {
         return trickList;
     }
 
+
+
 //    public boolean check (Fox fox){
 //        return foxList.contains(fox);
 //    }
