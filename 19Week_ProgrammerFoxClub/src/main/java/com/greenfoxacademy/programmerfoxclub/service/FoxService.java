@@ -12,11 +12,13 @@ public class FoxService {
     private ArrayList<Fox> foxList;
     private FoodStore foodStore;
     private DrinkStore drinkStore;
+    private ArrayList<String> trickList;
 
     public FoxService() {
         foxList = new ArrayList<>();
         drinkStore = new DrinkStore();
         foodStore = new FoodStore();
+        trickList = new ArrayList<>();
     }
 
     public FoodStore getFoodStore() {
@@ -31,20 +33,21 @@ public class FoxService {
         foxList.add(fox);
     }
 
+    public Fox getFox (String name){
+        for (Fox fox : foxList){
+            if (fox.getName().equals(name)){
+                return fox;
+            }
+        }
+        return null;
+    }
+
 //    public boolean check (Fox fox){
 //        return foxList.contains(fox);
 //    }
 //
 //    public List<Fox> findAll (){
 //        return foxList;
-//    }
-//
-//    public void addFood (){
-//
-//    }
-//
-//    public void addDrink(){
-//
 //    }
 
 }

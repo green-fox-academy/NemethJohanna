@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -20,10 +21,8 @@ public class MainController {
     }
 
     @GetMapping(path = "/")
-    public String index(@RequestParam String name, Model model, String drink, String food) {
-        model.addAttribute("name", name);
-        model.addAttribute("food", food);
-        model.addAttribute("drink", drink);
+    public String index(@RequestParam String name, Model model) {
+        model.addAttribute("fox", foxService.getFox(name));
         return "index";
     }
 
@@ -38,6 +37,9 @@ public class MainController {
         return "redirect:/?name=" + name;
     }
 
-
-
+    @GetMapping(path = "/?name={name}/index")
+    public String information (@PathVariable (name = "name") String name, Model model){
+        model.addAttribute("name", name);
+        return "redirect:/";
+    }
 }
