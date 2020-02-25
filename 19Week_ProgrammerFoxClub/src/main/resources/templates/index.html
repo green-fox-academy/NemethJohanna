@@ -18,10 +18,12 @@
     <img th:src="@{img/greenfox.png}" alt="Fox">
 </div>
 <div>
-    <p th:text="'This is ' + ${fox.name} + '. Currently living on ' + ${fox.food} + ' and ' + ${fox.drink} + '. He/She knows 0 tricks.'"></p>
+    <p th:text="'This is ' + ${fox.name} + '. Currently living on ' + ${fox.food} + ' and ' + ${fox.drink} + '. He/She knows ' + ${fox.tricks} + ' tricks.'"></p>
 </div>
 <div>
     <h2>Known tricks</h2>
+    <span th:if="${fox.tricks == 0}">Does not know any tricks yet.</span>
+    <span th:unless="${fox.tricks == 0}" th:text="${fox.tricks}"></span>
 </div>
 </body>
 </html>

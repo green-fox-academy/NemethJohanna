@@ -1,5 +1,6 @@
 package com.greenfoxacademy.programmerfoxclub.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Fox {
@@ -13,7 +14,7 @@ public class Fox {
         this.setName(name);
         this.setFood(food);
         this.setDrink(drink);
-        this.tricks = tricks;
+        this.tricks = new ArrayList<>();
     }
 
     public String getName() {

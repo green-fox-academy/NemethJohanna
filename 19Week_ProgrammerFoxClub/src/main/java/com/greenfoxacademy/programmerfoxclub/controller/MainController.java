@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Collections;
+
 @Controller
 public class MainController {
 
@@ -43,5 +45,12 @@ public class MainController {
         model.addAttribute("name", name);
         return "nutrition";
     }
+
+    @GetMapping(path = "/trick")
+    public String trick(@RequestParam (name = "name") Model model){
+        model.addAttribute("tricks", foxService.listTricks());
+        return "trick";
+    }
+
 
 }

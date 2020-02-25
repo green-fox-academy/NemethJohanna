@@ -42,6 +42,10 @@ public class FoxService {
         return null;
     }
 
+    public ArrayList<String> listTricks(){
+        return trickList;
+    }
+
 //    public boolean check (Fox fox){
 //        return foxList.contains(fox);
 //    }
