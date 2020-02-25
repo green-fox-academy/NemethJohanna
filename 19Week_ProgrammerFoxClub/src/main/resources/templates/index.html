@@ -5,15 +5,19 @@
     <title>Home page</title>
 </head>
 <body>
-<div>
-    <a th:href="@{'/?name=' +  ${fox.name}}">Information</a>
-</div>
-<div>
-    <a th:href="@{'/nutrition?name=' + ${fox.name}}">Nutrition Store</a>
-</div>
-<div>
-    <a th:href="@{'/?name=' + ${fox.name} + '/trick'}">Trick center</a>
-</div>
+<header>
+    <nav>
+        <div>
+            <a th:href="@{'/?name=' +  ${fox.name}}">Information</a>
+        </div>
+        <div>
+            <a th:href="@{'/nutritionStore?name=' + ${fox.name}}">Nutrition Store</a>
+        </div>
+        <div>
+            <a th:href="@{'/trick?name=' + ${fox.name}}">Trick center</a>
+        </div>
+    </nav>
+</header>
 <div>
     <img th:src="@{img/greenfox.png}" alt="Fox">
 </div>

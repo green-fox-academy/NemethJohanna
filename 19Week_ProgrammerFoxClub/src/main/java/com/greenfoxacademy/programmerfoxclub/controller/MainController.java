@@ -6,11 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import java.util.Collections;
 
 @Controller
 public class MainController {
@@ -40,11 +37,19 @@ public class MainController {
         return "redirect:/?name=" + name;
     }
 
-    @GetMapping(path = "/nutrition")
+    @GetMapping(path = "/nutritionStore")
     public String nutrition(@RequestParam (name = "name") String name, Model model){
         model.addAttribute("name", name);
-        return "nutrition";
+        return "nutritionStore";
     }
+
+    @PostMapping(path = "/nutritionStore")
+    public String addNutrition(@RequestParam () Model model){
+        return "redirect:/";
+    }
+
+
+
 
     @GetMapping(path = "/trick")
     public String trick(@RequestParam (name = "name") Model model){
