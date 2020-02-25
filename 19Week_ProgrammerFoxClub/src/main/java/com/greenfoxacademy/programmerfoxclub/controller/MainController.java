@@ -33,13 +33,15 @@ public class MainController {
 
     @PostMapping(path = "/login")
     public String loginFox(@RequestParam (value = "name") String name) {
-        foxService.add(new Fox(name, foxService.getFoodStore().getFoodList().get(0), foxService.getDrinkStore().getDrinkList().get(0), null));
+        foxService.add(new Fox(name, "nothing", "nothing", null));
+//        foxService.add(new Fox(name, foxService.getFoodStore().getFoodList().get(0), foxService.getDrinkStore().getDrinkList().get(0), null));
         return "redirect:/?name=" + name;
     }
 
-    @GetMapping(path = "/?name={name}/index")
-    public String information (@PathVariable (name = "name") String name, Model model){
+    @GetMapping(path = "/nutrition")
+    public String nutrition(@RequestParam (name = "name") String name, Model model){
         model.addAttribute("name", name);
-        return "redirect:/";
+        return "nutrition";
     }
+
 }

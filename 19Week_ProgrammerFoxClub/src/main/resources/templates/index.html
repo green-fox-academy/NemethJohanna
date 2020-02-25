@@ -6,13 +6,13 @@
 </head>
 <body>
 <div>
-    <a th:href="@{'/?name=' +  ${name} + '/index'}">Information</a>
+    <a th:href="@{'/?name=' +  ${fox.name}}">Information</a>
 </div>
 <div>
-    <a th:href="@{/nutrition}">Nutrition Store</a>
+    <a th:href="@{'/nutrition?name=' + ${fox.name}}">Nutrition Store</a>
 </div>
 <div>
-    <a th:href="@{/trick}">Trick Center</a>
+    <a th:href="@{'/?name=' + ${fox.name} + '/trick'}">Trick center</a>
 </div>
 <div>
     <img th:src="@{img/greenfox.png}" alt="Fox">
