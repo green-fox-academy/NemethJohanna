@@ -37,18 +37,6 @@ public class MainController {
         return "redirect:/?name=" + name;
     }
 
-    @GetMapping(path = "/nutritionStore")
-    public String nutrition(@RequestParam (name = "name") String name, Model model){
-        model.addAttribute("name", name);
-        return "nutritionStore";
-    }
-
-    @PostMapping(path = "/nutritionStore")
-    public String addNutrition(@RequestParam () Model model){
-        return "redirect:/";
-    }
-
-
 
 
     @GetMapping(path = "/trick")
