@@ -37,16 +37,15 @@ public class MainController {
     }
 
     @GetMapping(path = "/trick")
-    public String trick(@RequestParam (name = "name") Model model){
-        model.addAttribute("tricks", foxService.listTricks());
+    public String trick(){
         return "trick";
     }
 
-    @PostMapping (path = "/trick")
-    public String setTrick(@RequestParam String name, String trick){
-        foxService.addTrick(trick);
-        foxService.getFox(name).addTrick(trick);
-        return "redirect:/?name=" + name;
-    }
+//    @PostMapping (path = "/trick")
+//    public String setTrick(@RequestParam String name, String trick){
+//        foxService.addTrick(trick);
+//        foxService.getFox(name).addTrick(trick);
+//        return "redirect:/?name=" + name;
+//    }
 
 }

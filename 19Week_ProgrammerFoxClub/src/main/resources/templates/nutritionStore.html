@@ -18,16 +18,16 @@
         </div>
     </nav>
 </header>
-<form th:action="@{/nutritionStore}" method="post">
+<form th:action="@{'/nutritionStore?name=' + ${name}}" method="post">
     <label for="food">Food: </label>
-    <select name="select-food" id="food">
+    <select name="food" id="food">
         <option value="meat">Meat</option>
         <option value="grass">Grass</option>
         <option value="seeds">Seeds</option>
         <option value="worms">Worms</option>
     </select>
     <label for="drink">Drink: </label>
-    <select name="select-food" id="drink">
+    <select name="drink" id="drink">
         <option value="water">Water</option>
         <option value="milk">Milk</option>
         <option value="wine">Wine</option>
