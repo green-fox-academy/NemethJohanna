@@ -32,20 +32,8 @@ public class MainController {
 
     @PostMapping(path = "/login")
     public String loginFox(@RequestParam (value = "name") String name) {
-        foxService.add(new Fox(name, "nothing", "nothing", null));
+        foxService.addFox(new Fox(name, "nothing", "nothing", null));
         return "redirect:/?name=" + name;
     }
-
-    @GetMapping(path = "/trick")
-    public String trick(){
-        return "trick";
-    }
-
-//    @PostMapping (path = "/trick")
-//    public String setTrick(@RequestParam String name, String trick){
-//        foxService.addTrick(trick);
-//        foxService.getFox(name).addTrick(trick);
-//        return "redirect:/?name=" + name;
-//    }
 
 }

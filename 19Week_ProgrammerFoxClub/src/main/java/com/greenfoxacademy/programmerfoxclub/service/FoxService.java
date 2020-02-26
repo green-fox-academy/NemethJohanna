@@ -33,36 +33,26 @@ public class FoxService {
         return drinkStore;
     }
 
-    public void add (Fox fox){
+    public void addFox(Fox fox) {
         foxList.add(fox);
     }
 
-    public Fox getFox (String name){
-        for (Fox fox : foxList){
-            if (fox.getName().equals(name)){
+    public Fox getFox(String name) {
+        for (Fox fox : foxList) {
+            if (fox.getName().equals(name)) {
                 return fox;
             }
         }
         return null;
     }
 
-    public ArrayList<String> listTricks(){
+    public ArrayList<String> listTricks() {
         return trickList;
     }
 
-    public void addTrick (String trick){
+    public void addTrick(String trick) {
         trickList.add(trick);
     }
-
-
-
-//    public boolean check (Fox fox){
-//        return foxList.contains(fox);
-//    }
-//
-//    public List<Fox> findAll (){
-//        return foxList;
-//    }
 
 }
 

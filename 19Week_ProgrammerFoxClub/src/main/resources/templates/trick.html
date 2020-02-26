@@ -2,9 +2,33 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Add tricks</title>
 </head>
 <body>
-TRICKS
+<header>
+    <nav>
+        <div>
+            <a th:href="@{'/?name=' + ${name}}">Information</a>
+        </div>
+        <div>
+            <a th:href="@{'/nutritionStore?name=' + ${name}}">Nutrition Store</a>
+        </div>
+        <div>
+            <a th:href="@{'/?name=' + ${name} + '/trick'}">Trick center</a>
+        </div>
+    </nav>
+</header>
+<form th:action="'/trick?name=' + ${name}" method="post">
+    <label for="tricks">Tricks</label>
+    <select name="trick" id="tricks">
+        <option value="coding">Coding</option>
+        <option value="reading">Reading</option>
+        <option value="dancing">Dancing</option>
+        <option value="counting">Counting</option>
+        <option value="singing">Singing</option>
+        <option value="counting">Counting</option>
+    </select>
+    <button th:type="submit">LEARN</button>
+</form>
 </body>
 </html>
