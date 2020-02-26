@@ -17,4 +17,8 @@ public class DrinkStore {
     public List<String> getDrinkList() {
         return drinkList;
     }
+
+    public void setDrinkList(List<String> drinkList) {
+        this.drinkList = drinkList;
+    }
 }

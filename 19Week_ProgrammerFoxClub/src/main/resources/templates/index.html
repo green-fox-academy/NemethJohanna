@@ -22,13 +22,13 @@
     <img th:src="@{img/greenfox.png}" alt="Fox">
 </div>
 <div>
-    <p th:text="'This is ' + ${fox.name} + '. Currently living on ' + ${fox.food} + ' and ' + ${fox.drink} + '. He/She knows ' + ${fox.tricks.size()} + ' trick(s).'"></p>
+    <p th:text="'This is ' + ${fox.name} + '. Currently living on ' + ${fox.food} + ' and ' + ${fox.drink} + '. He/She knows ' + ${fox.trickList.size()} + ' trick(s).'"></p>
 </div>
 <div>
     <h2>Known tricks</h2>
     <div>
-        <span th:if="${fox.tricks.size() == 0}">You know no tricks yet. Go to the trick center and learn some! ;)</span>
-        <span th:unless="${fox.tricks.size() == 0}" th:text="${fox.tricks}"></span>
+        <span th:if="${fox.trickList.size() == 0}">You know no tricks yet. Go to the trick center and learn some! ;)</span>
+        <span th:unless="${fox.trickList.size() == 0}" th:text="${fox.trickList}"></span>
     </div>
 </div>
 </body>

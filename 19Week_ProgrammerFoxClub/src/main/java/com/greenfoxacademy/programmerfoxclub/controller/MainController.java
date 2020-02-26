@@ -33,11 +33,8 @@ public class MainController {
     @PostMapping(path = "/login")
     public String loginFox(@RequestParam (value = "name") String name) {
         foxService.add(new Fox(name, "nothing", "nothing", null));
-//        foxService.add(new Fox(name, foxService.getFoodStore().getFoodList().get(0), foxService.getDrinkStore().getDrinkList().get(0), null));
         return "redirect:/?name=" + name;
     }
-
-
 
     @GetMapping(path = "/trick")
     public String trick(@RequestParam (name = "name") Model model){
@@ -45,5 +42,11 @@ public class MainController {
         return "trick";
     }
 
+    @PostMapping (path = "/trick")
+    public String setTrick(@RequestParam String name, String trick){
+        foxService.addTrick(trick);
+        foxService.getFox(name).addTrick(trick);
+        return "redirect:/?name=" + name;
+    }
 
 }

@@ -21,6 +21,10 @@ public class FoxService {
         trickList = new ArrayList<>();
     }
 
+    public ArrayList<Fox> getFoxList() {
+        return foxList;
+    }
+
     public FoodStore getFoodStore() {
         return foodStore;
     }
@@ -44,6 +48,10 @@ public class FoxService {
 
     public ArrayList<String> listTricks(){
         return trickList;
+    }
+
+    public void addTrick (String trick){
+        trickList.add(trick);
     }
 
 

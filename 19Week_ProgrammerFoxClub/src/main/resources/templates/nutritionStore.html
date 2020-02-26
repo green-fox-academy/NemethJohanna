@@ -8,7 +8,7 @@
 <header>
     <nav>
         <div>
-            <a th:href="@{'/?name=' +  ${name}}">Information</a>
+            <a th:href="@{'/?name=' + ${name}}">Information</a>
         </div>
         <div>
             <a th:href="@{'/nutritionStore?name=' + ${name}}">Nutrition Store</a>
@@ -18,18 +18,22 @@
         </div>
     </nav>
 </header>
-<form th:action="@{'/?name=' + ${name}}" method="post">
+<form th:action="@{/nutritionStore}" method="post">
     <label for="food">Food: </label>
-    <input th:type="text" name="food" id="food">
+    <select name="select-food" id="food">
+        <option value="meat">Meat</option>
+        <option value="grass">Grass</option>
+        <option value="seeds">Seeds</option>
+        <option value="worms">Worms</option>
+    </select>
     <label for="drink">Drink: </label>
-    <input th:type="text" name="drink" id="drink">
+    <select name="select-food" id="drink">
+        <option value="water">Water</option>
+        <option value="milk">Milk</option>
+        <option value="wine">Wine</option>
+        <option value="tea">Tea</option>
+    </select>
     <button th:type="submit">CHANGE</button>
-
-<!--    <select th:field="*{percentage}">-->
-<!--        <option th:each="i : ${#numbers.sequence(0, 100)}" th:value="${i}" th:text="${i}">-->
-<!--        </option>-->
-<!--    </select>-->
-
 </form>
 </body>
 </html>

@@ -17,4 +17,8 @@ public class FoodStore {
     public List<String> getFoodList() {
         return foodList;
     }
+
+    public void setFoodList(List<String> foodList) {
+        this.foodList = foodList;
+    }
 }
