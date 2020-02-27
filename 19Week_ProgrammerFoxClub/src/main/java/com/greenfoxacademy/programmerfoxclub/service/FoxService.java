@@ -26,19 +26,19 @@ public class FoxService {
             new Food("seeds"),
             new Food("worms")));
 
-    private List<Trick> trickList = new ArrayList<>(Arrays.asList(
+    private List<Trick> trickTrickList = new ArrayList<>(Arrays.asList(
             new Trick("coding"),
             new Trick("dancing"),
             new Trick("singing"),
             new Trick("reading"),
             new Trick("writing")));
 
-    public FoxService() {
-        foxList = new ArrayList<>();
-    }
-
-    public ArrayList<Fox> getFoxList() {
-        return foxList;
+    public void removeTrick (Trick trick){
+        for (int i = 0; i < getTrickTrickList().size(); i++) {
+            if (getTrickTrickList().get(i).getTrickName().equals(trick.getTrickName())){
+                getTrickTrickList().remove(i);
+            }
+        }
     }
 
     public void addFox(Fox fox) {
@@ -54,6 +54,14 @@ public class FoxService {
         return null;
     }
 
+    public FoxService() {
+        foxList = new ArrayList<>();
+    }
+
+    public ArrayList<Fox> getFoxList() {
+        return foxList;
+    }
+
     public List<Drink> getDrinkList() {
         return drinkList;
     }
@@ -62,8 +70,8 @@ public class FoxService {
         return foodList;
     }
 
-    public List<Trick> getTrickList() {
-        return trickList;
+    public List<Trick> getTrickTrickList() {
+        return trickTrickList;
     }
 }
 

@@ -8,17 +8,19 @@ public class Fox {
     private String name;
     private String food;
     private String drink;
-    private List<String> trickList;
+    private List<Trick> ownTrickList;
 
-    public Fox(String name, String food, String drink, List<String> trickList) {
+    public Fox(String name, String food, String drink, List<Trick> trickList) {
         this.setName(name);
         this.setFood(food);
         this.setDrink(drink);
-        this.trickList = new ArrayList<>();
+        this.ownTrickList = new ArrayList<>();
     }
 
-    public void addTrick (String trick){
-        trickList.add(trick);
+    public void addTrick (Trick trick){
+        if (!ownTrickList.equals(trick)){
+            ownTrickList.add(trick);
+        }
     }
 
     public String getName() {
@@ -45,8 +47,8 @@ public class Fox {
         this.drink = drink;
     }
 
-    public List<String> getTrickList() {
-        return trickList;
+    public List<Trick> getOwnTrickList() {
+        return ownTrickList;
     }
 
 }

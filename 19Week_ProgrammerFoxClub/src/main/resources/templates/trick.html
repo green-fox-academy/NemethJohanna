@@ -20,9 +20,8 @@
 </header>
 <form th:action="'/trick?name=' + ${name}" method="post">
     <label for="tricks">Tricks</label>
-    <select name="trick" id="tricks">
-        <option th:each="trick : ${trickList}" th:object="${trick}">
-            <p th:text="*{trick}"></p>
+    <select name="trickName" id="tricks">
+        <option th:each="trick : ${trickList}" th:text="${trick.trickName}">
         </option>
     </select>
     <button th:type="submit">LEARN</button>
