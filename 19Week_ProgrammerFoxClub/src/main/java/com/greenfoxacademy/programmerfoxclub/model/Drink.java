@@ -1,11 +1,11 @@
 package com.greenfoxacademy.programmerfoxclub.model;
 
-public class DrinkStore {
+public class Drink {
 
     private String drink;
 
-    public DrinkStore(String drink){
-      this.drink = drink;
+    public Drink(String drink){
+        this.drink = drink;
     }
 
 }

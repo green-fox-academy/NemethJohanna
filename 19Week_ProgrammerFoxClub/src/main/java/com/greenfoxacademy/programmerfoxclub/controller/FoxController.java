@@ -20,6 +20,8 @@ public class FoxController {
 
     @GetMapping(path = "/nutritionStore")
     public String nutrition(@RequestParam(required = false) String name, Model model){
+        model.addAttribute("drinkList", foxService.getDrinkList());
+        model.addAttribute("foodList", foxService.getFoodList());
         model.addAttribute("name", name);
         return "nutritionStore";
     }

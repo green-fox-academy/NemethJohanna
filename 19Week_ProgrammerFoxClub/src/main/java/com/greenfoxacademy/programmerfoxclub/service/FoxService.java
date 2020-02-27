@@ -1,7 +1,7 @@
 package com.greenfoxacademy.programmerfoxclub.service;
 
-import com.greenfoxacademy.programmerfoxclub.model.DrinkStore;
-import com.greenfoxacademy.programmerfoxclub.model.FoodStore;
+import com.greenfoxacademy.programmerfoxclub.model.Drink;
+import com.greenfoxacademy.programmerfoxclub.model.Food;
 import com.greenfoxacademy.programmerfoxclub.model.Fox;
 import org.springframework.stereotype.Service;
 
@@ -12,33 +12,27 @@ import java.util.List;
 @Service
 public class FoxService {
     private ArrayList<Fox> foxList;
-    private FoodStore foodStore;
-    private DrinkStore drinkStore;
     private ArrayList<String> trickList;
 
-    private List<DrinkStore> drinkList = new ArrayList<>(Arrays.asList(
-            new DrinkStore("milk"),
-            new DrinkStore("water"),
-            new DrinkStore("tea"),
-            new DrinkStore("wine")));
+    private List<Drink> drinkList = new ArrayList<>(Arrays.asList(
+            new Drink("milk"),
+            new Drink("water"),
+            new Drink("tea"),
+            new Drink("wine")));
+
+    private List<Food> foodList = new ArrayList<>(Arrays.asList(
+            new Food("meat"),
+            new Food("grass"),
+            new Food("seeds"),
+            new Food("worms")));
 
     public FoxService() {
         foxList = new ArrayList<>();
-        drinkStore = new DrinkStore();
-        foodStore = new FoodStore();
         trickList = new ArrayList<>();
     }
 
     public ArrayList<Fox> getFoxList() {
         return foxList;
-    }
-
-    public FoodStore getFoodStore() {
-        return foodStore;
-    }
-
-    public DrinkStore getDrinkStore() {
-        return drinkStore;
     }
 
     public void addFox(Fox fox) {
@@ -54,12 +48,12 @@ public class FoxService {
         return null;
     }
 
-    public ArrayList<String> listTricks() {
-        return trickList;
+    public List<Drink> getDrinkList() {
+        return drinkList;
     }
 
-    public void addTrick(String trick) {
-        trickList.add(trick);
+    public List<Food> getFoodList() {
+        return foodList;
     }
 
 }

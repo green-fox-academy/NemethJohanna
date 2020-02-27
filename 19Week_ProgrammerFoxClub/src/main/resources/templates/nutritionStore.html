@@ -21,17 +21,15 @@
 <form th:action="@{'/nutritionStore?name=' + ${name}}" method="post">
     <label for="food">Food: </label>
     <select name="food" id="food">
-        <option value="meat">Meat</option>
-        <option value="grass">Grass</option>
-        <option value="seeds">Seeds</option>
-        <option value="worms">Worms</option>
+        <option th:each="food : ${foodList}" th:object="${food}">
+            <p th:text="${food}"></p>
+        </option>
     </select>
     <label for="drink">Drink: </label>
     <select name="drink" id="drink">
-        <option value="water">Water</option>
-        <option value="milk">Milk</option>
-        <option value="wine">Wine</option>
-        <option value="tea">Tea</option>
+        <option th:each="drink : ${drinkList}" th:object="${drink}">
+            <p th:text="${drink}"></p>
+        </option>
     </select>
     <button th:type="submit">CHANGE</button>
 </form>
