@@ -21,12 +21,9 @@
 <form th:action="'/trick?name=' + ${name}" method="post">
     <label for="tricks">Tricks</label>
     <select name="trick" id="tricks">
-        <option value="coding">Coding</option>
-        <option value="reading">Reading</option>
-        <option value="dancing">Dancing</option>
-        <option value="counting">Counting</option>
-        <option value="singing">Singing</option>
-        <option value="counting">Counting</option>
+        <option th:each="trick : ${trickList}" th:object="${trick}">
+            <p th:text="*{trick}"></p>
+        </option>
     </select>
     <button th:type="submit">LEARN</button>
 </form>

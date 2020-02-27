@@ -35,6 +35,7 @@ public class FoxController {
 
     @GetMapping(path = "/trick")
     public String trick(@RequestParam (required = false) String name, Model model){
+        model.addAttribute("trickList", foxService.getTrickList());
         model.addAttribute("name", name);
         return "trick";
     }

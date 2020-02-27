@@ -3,6 +3,7 @@ package com.greenfoxacademy.programmerfoxclub.service;
 import com.greenfoxacademy.programmerfoxclub.model.Drink;
 import com.greenfoxacademy.programmerfoxclub.model.Food;
 import com.greenfoxacademy.programmerfoxclub.model.Fox;
+import com.greenfoxacademy.programmerfoxclub.model.Trick;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -12,7 +13,6 @@ import java.util.List;
 @Service
 public class FoxService {
     private ArrayList<Fox> foxList;
-    private ArrayList<String> trickList;
 
     private List<Drink> drinkList = new ArrayList<>(Arrays.asList(
             new Drink("milk"),
@@ -26,9 +26,15 @@ public class FoxService {
             new Food("seeds"),
             new Food("worms")));
 
+    private List<Trick> trickList = new ArrayList<>(Arrays.asList(
+            new Trick("coding"),
+            new Trick("dancing"),
+            new Trick("singing"),
+            new Trick("reading"),
+            new Trick("writing")));
+
     public FoxService() {
         foxList = new ArrayList<>();
-        trickList = new ArrayList<>();
     }
 
     public ArrayList<Fox> getFoxList() {
@@ -56,5 +62,8 @@ public class FoxService {
         return foodList;
     }
 
+    public List<Trick> getTrickList() {
+        return trickList;
+    }
 }
 
