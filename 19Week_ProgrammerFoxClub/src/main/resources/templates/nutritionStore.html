@@ -22,13 +22,13 @@
     <label for="food">Food: </label>
     <select name="food" id="food">
         <option th:each="food : ${foodList}" th:object="${food}">
-            <p th:text="${food}"></p>
+            <p th:text="*{name}"></p>
         </option>
     </select>
     <label for="drink">Drink: </label>
     <select name="drink" id="drink">
         <option th:each="drink : ${drinkList}" th:object="${drink}">
-            <p th:text="${drink}"></p>
+            <p th:text="*{name}"></p>
         </option>
     </select>
     <button th:type="submit">CHANGE</button>

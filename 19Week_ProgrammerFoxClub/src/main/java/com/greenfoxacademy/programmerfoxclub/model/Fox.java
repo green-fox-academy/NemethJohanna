@@ -6,12 +6,13 @@ import java.util.List;
 public class Fox {
 
     private String name;
-    private String food;
-    private String drink;
+    private Food food;
+    private Drink drink;
     private List<String> trickList;
 
-    public Fox(String name, String food, String drink, List<String> trickList) {
+    public Fox(String name, Food food, Drink drink, List<String> trickList) {
         this.setName(name);
+        this.setFood("");
         this.setFood(food);
         this.setDrink(drink);
         this.trickList = new ArrayList<>();

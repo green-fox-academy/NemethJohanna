@@ -2,10 +2,13 @@ package com.greenfoxacademy.programmerfoxclub.model;
 
 public class Drink {
 
-    private String drink;
+    private String name;
 
     public Drink(String drink){
-        this.drink = drink;
+        this.name = drink;
     }
 
+    public String getName() {
+        return name;
+    }
 }
