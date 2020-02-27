@@ -6,6 +6,8 @@ import com.greenfoxacademy.programmerfoxclub.model.Fox;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @Service
 public class FoxService {
@@ -13,6 +15,12 @@ public class FoxService {
     private FoodStore foodStore;
     private DrinkStore drinkStore;
     private ArrayList<String> trickList;
+
+    private List<DrinkStore> drinkList = new ArrayList<>(Arrays.asList(
+            new DrinkStore("milk"),
+            new DrinkStore("water"),
+            new DrinkStore("tea"),
+            new DrinkStore("wine")));
 
     public FoxService() {
         foxList = new ArrayList<>();
