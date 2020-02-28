@@ -49,4 +49,10 @@ public class FoxController {
         return "redirect:/?name=" + name;
     }
 
+    @GetMapping(path = "/actionhistory")
+    public String actionHistory(@RequestParam String name, Model model){
+        model.addAttribute("name", name);
+        return "actionHistory";
+    }
+
 }

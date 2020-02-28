@@ -14,17 +14,23 @@
             <a th:href="@{'/nutritionStore?name=' + ${name}}">Nutrition Store</a>
         </div>
         <div>
-            <a th:href="@{'/?name=' + ${name} + '/trick'}">Trick center</a>
+            <a th:href="@{'/trick?name=' + ${name}}">Trick center</a>
+        </div>
+        <div>
+            <a th:href="@{'/actionhistory?name=' + ${name}}">Action history</a>
         </div>
     </nav>
 </header>
 <form th:action="'/trick?name=' + ${name}" method="post">
-    <label for="tricks">Tricks</label>
-    <select name="trickName" id="tricks">
-        <option th:each="trick : ${trickList}" th:text="${trick.trickName}">
-        </option>
-    </select>
-    <button th:type="submit">LEARN</button>
+    <div th:if="${trickList.size() > 0}">
+        <label for="tricks">Tricks</label>
+        <select name="trickName" id="tricks">
+            <option th:each="trick : ${trickList}" th:text="${trick.trickName}">
+            </option>
+        </select>
+        <button th:type="submit">LEARN</button>
+    </div>
+    <div th:unless="${trickList.size() > 0}">Congratulation! You have learned all the tricks!</div>
 </form>
 </body>
 </html>

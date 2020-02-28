@@ -16,6 +16,9 @@
         <div>
             <a th:href="@{'/trick?name=' + ${fox.name}}">Trick center</a>
         </div>
+        <div>
+            <a th:href="@{'/actionhistory?name=' + ${fox.name}}">Action history</a>
+        </div>
     </nav>
 </header>
 <div>
@@ -29,10 +32,13 @@
     <div>
         <div th:switch="${fox.ownTrickList.size()}">
             <p th:case="0">You know no tricks yet. Go to the trick center and learn some! ;)</p>
-            <p th:case="5">Congratulation! You have learned all the tricks!</p>
             <p th:case="*" th:text="${fox.ownTrickList}"></p>
         </div>
     </div>
+</div>
+<div>
+    <h2>Action history</h2>
+    
 </div>
 </body>
 </html>

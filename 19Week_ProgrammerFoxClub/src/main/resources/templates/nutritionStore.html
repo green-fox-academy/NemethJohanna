@@ -14,7 +14,10 @@
             <a th:href="@{'/nutritionStore?name=' + ${name}}">Nutrition Store</a>
         </div>
         <div>
-            <a th:href="@{'/?name=' + ${name} + '/trick'}">Trick center</a>
+            <a th:href="@{'/trick?name=' + ${name}}">Trick center</a>
+        </div>
+        <div>
+            <a th:href="@{'/actionhistory?name=' + ${name}}">Action history</a>
         </div>
     </nav>
 </header>

@@ -5,6 +5,23 @@
     <title>Title</title>
 </head>
 <body>
+<header>
+    <nav>
+        <div>
+            <a th:href="@{'/?name=' +  ${name}}">Information</a>
+        </div>
+        <div>
+            <a th:href="@{'/nutritionStore?name=' + ${name}}">Nutrition Store</a>
+        </div>
+        <div>
+            <a th:href="@{'/trick?name=' + ${name}}">Trick center</a>
+        </div>
+        <div>
+            <a th:href="@{'/actionhistory?name=' + ${name}}">Action history</a>
+        </div>
+    </nav>
+</header>
+
 
 </body>
 </html>

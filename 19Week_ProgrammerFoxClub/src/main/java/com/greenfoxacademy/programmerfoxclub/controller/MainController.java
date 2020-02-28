@@ -22,6 +22,7 @@ public class MainController {
     @GetMapping(path = "/")
     public String index(@RequestParam String name, Model model) {
         model.addAttribute("fox", foxService.getFox(name));
+        model.addAttribute("trickTrickSize", foxService.getTrickTrickList().size());
         return "index";
     }
 
