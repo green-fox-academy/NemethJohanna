@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Action history</title>
 </head>
 <body>
 <header>
@@ -23,7 +23,7 @@
 </header>
 <div>
     <form th:action="'/actionhistory?name=' + ${name}" method="post">
-        <ul th:each="action : ${actionList}">
+        <ul th:each="action : ${#lists.sort(actionList)}">
             <li th:text="${action}"></li>
         </ul>
     </form>

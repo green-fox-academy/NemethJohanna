@@ -1,5 +1,7 @@
 package com.greenfoxacademy.programmerfoxclub.model;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +12,6 @@ public class Fox {
     private String drink;
     private List<Trick> ownTrickList;
     private List<String> actionList;
-    // private date localDateTime;
 
     public Fox(String name, String food, String drink, List<Trick> trickList) {
         this.setName(name);
@@ -28,15 +29,19 @@ public class Fox {
 
     public void addAction (String action, String actionType){
         if (actionType.equals("food")) {
-            actionList.add("Food has been changed from: " + getFood() + " to: " + action);
+            actionList.add(date() + ": Food has been changed from: " + getFood() + " to: " + action);
         } else if (actionType.equals("drink")){
-            actionList.add("Drink has been changed from: " + getDrink() + " to: " + action);
+            actionList.add(date() + ": Drink has been changed from: " + getDrink() + " to: " + action);
         } else if (actionType.equals("trick")){
-            actionList.add("Learned to: " + action);
+            actionList.add(date() + ": Learned to: " + action);
         }
     }
 
-
+    public String date(){
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy. MMMM dd. HH:mm:ss");
+        return now.format(formatter);
+    }
 
 
 

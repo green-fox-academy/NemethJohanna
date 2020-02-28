@@ -6,6 +6,8 @@ import com.greenfoxacademy.programmerfoxclub.model.Fox;
 import com.greenfoxacademy.programmerfoxclub.model.Trick;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -50,12 +52,12 @@ public class FoxService {
     }
 
     public void setFood (String name, String food){
-        getFox(name).addAction(name, "food");
+        getFox(name).addAction(food, "food");
         getFox(name).setFood(food);
     }
 
     public void setDrink (String name, String drink){
-        getFox(name).addAction(name, "drink");
+        getFox(name).addAction(drink, "drink");
         getFox(name).setDrink(drink);
     }
 
@@ -70,7 +72,7 @@ public class FoxService {
 
     public void addTrick (Trick trick, String name){
         if (trick.getTrickName() != null){
-            getFox(name).addAction(name, "trick");
+            getFox(name).addAction(trick.toString(), "trick");
             getFox(name).addTrick(trick);
         }
     }
