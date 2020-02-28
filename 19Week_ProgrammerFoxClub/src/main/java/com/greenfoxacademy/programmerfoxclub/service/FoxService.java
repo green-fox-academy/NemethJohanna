@@ -76,7 +76,11 @@ public class FoxService {
     }
 
     public List<String> getActionList (String name){
-            return getFox(name).getActionList();
+        List<String> reservedList = new ArrayList<>();
+        for (int i = getFox(name).getActionList().size() - 1; i >= 0; i--) {
+            reservedList.add(getFox(name).getActionList().get(i));
+        }
+        return reservedList;
     }
 
     public FoxService() {
