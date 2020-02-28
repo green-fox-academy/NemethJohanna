@@ -54,6 +54,12 @@ public class FoxService {
         return null;
     }
 
+    public void addTrick (Trick trick, String name){
+        if (trick.getTrickName() != null){
+            getFox(name).addTrick(trick);
+        }
+    }
+
     public FoxService() {
         foxList = new ArrayList<>();
     }

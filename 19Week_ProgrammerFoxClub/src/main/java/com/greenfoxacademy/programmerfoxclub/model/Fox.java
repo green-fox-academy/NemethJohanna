@@ -17,8 +17,8 @@ public class Fox {
         this.ownTrickList = new ArrayList<>();
     }
 
-    public void addTrick (Trick trick){
-        if (!ownTrickList.equals(trick)){
+    public void addTrick(Trick trick) {
+        if (trick != null){
             ownTrickList.add(trick);
         }
     }

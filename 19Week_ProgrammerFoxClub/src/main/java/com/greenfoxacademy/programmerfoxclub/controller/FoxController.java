@@ -44,9 +44,8 @@ public class FoxController {
 
     @PostMapping (path = "/trick")
     public String setTrick(@RequestParam String name, @ModelAttribute Trick trick){
-        foxService.getFox(name).addTrick(trick);
+        foxService.addTrick(trick, name);
         foxService.removeTrick(trick);
-//        foxService.getTrickTrickList().remove(trick);
         return "redirect:/?name=" + name;
     }
 
