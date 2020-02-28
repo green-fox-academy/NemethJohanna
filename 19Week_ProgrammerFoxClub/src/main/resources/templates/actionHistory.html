@@ -23,9 +23,14 @@
 </header>
 <div>
     <form th:action="'/actionhistory?name=' + ${name}" method="post">
-        <ul th:each="action : ${actionList}">
-            <li th:text="${action}"></li>
-        </ul>
+        <div th:if="${actionList.size() == 0}">
+            <p>No actions happened! Feed your fox or play with it!</p>
+        </div>
+        <div th:unless="${actionList.size() == 0}">
+            <ul th:each="action : ${actionList}">
+                <li th:text="${action}"></li>
+            </ul>
+        </div>
     </form>
 </div>
 </body>
