@@ -32,12 +32,16 @@
     <div>
         <div th:switch="${fox.ownTrickList.size()}">
             <p th:case="0">You know no tricks yet. Go to the trick center and learn some! ;)</p>
-            <p th:case="*" th:text="${fox.ownTrickList}"></p>
+<!--            <p th:case="*" th:text="${fox.ownTrickList}">-->
+                <ul th:each="trick : ${fox.ownTrickList}">
+                    <li th:text="${trick}"></li>
+                </ul>
+            </p>
         </div>
     </div>
 </div>
 <div>
-<!--    <h2>Action history</h2>-->
+    <h2>Action history</h2>
 <!--    <div th:text="${name}">-->
 
 <!--    </div>-->

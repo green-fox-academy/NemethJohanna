@@ -50,12 +50,12 @@ public class FoxService {
     }
 
     public void setFood (String name, String food){
-        getFox(name).addAction(name, food);
+        getFox(name).addAction(name, "food");
         getFox(name).setFood(food);
     }
 
     public void setDrink (String name, String drink){
-        getFox(name).addAction(name, drink);
+        getFox(name).addAction(name, "drink");
         getFox(name).setDrink(drink);
     }
 
@@ -70,7 +70,7 @@ public class FoxService {
 
     public void addTrick (Trick trick, String name){
         if (trick.getTrickName() != null){
-            getFox(name).addAction(name, trick.toString());
+            getFox(name).addAction(name, "trick");
             getFox(name).addTrick(trick);
         }
     }

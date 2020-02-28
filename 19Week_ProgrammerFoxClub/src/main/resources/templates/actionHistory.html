@@ -22,10 +22,11 @@
     </nav>
 </header>
 <div>
-    <h2>Action history</h2>
-    <div th:text="${actionList}">
-
-    </div>
+    <form th:action="'/actionhistory?name=' + ${name}" method="post">
+        <ul th:each="action : ${actionList}">
+            <li th:text="${action}"></li>
+        </ul>
+    </form>
 </div>
 </body>
 </html>

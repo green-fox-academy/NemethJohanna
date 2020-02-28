@@ -57,9 +57,8 @@ public class FoxController {
     }
 
     @PostMapping(path = "/actionhistory")
-    public String getHistory(@RequestParam String name, String action, String actionType) {
+    public String getHistory(@RequestParam String name, @RequestParam String action, @RequestParam String actionType) {
         foxService.addAction(action, name, actionType);
-//        foxService.getActionList(name);
         return "redirect:/?name=" + name;
     }
 
