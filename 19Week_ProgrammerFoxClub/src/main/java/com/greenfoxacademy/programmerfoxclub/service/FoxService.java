@@ -33,15 +33,15 @@ public class FoxService {
             new Trick("reading"),
             new Trick("writing")));
 
-    public void removeTrick (Trick trick){
+    public void removeTrick(Trick trick) {
         for (int i = 0; i < getTrickTrickList().size(); i++) {
-            if (getTrickTrickList().get(i).getTrickName().equals(trick.getTrickName())){
+            if (getTrickTrickList().get(i).getTrickName().equals(trick.getTrickName())) {
                 getTrickTrickList().remove(i);
             }
         }
     }
 
-    public void addAction (String action, String name, String actionType){
+    public void addAction(String action, String name, String actionType) {
         getFox(name).addAction(action, actionType);
     }
 
@@ -49,12 +49,12 @@ public class FoxService {
         foxList.add(fox);
     }
 
-    public void setFood (String name, String food){
+    public void setFood(String name, String food) {
         getFox(name).addAction(food, "food");
         getFox(name).setFood(food);
     }
 
-    public void setDrink (String name, String drink){
+    public void setDrink(String name, String drink) {
         getFox(name).addAction(drink, "drink");
         getFox(name).setDrink(drink);
     }
@@ -68,19 +68,27 @@ public class FoxService {
         return null;
     }
 
-    public void addTrick (Trick trick, String name){
-        if (trick.getTrickName() != null){
+    public void addTrick(Trick trick, String name) {
+        if (trick.getTrickName() != null) {
             getFox(name).addAction(trick.toString(), "trick");
             getFox(name).addTrick(trick);
         }
     }
 
-    public List<String> getActionList (String name){
-        List<String> reservedList = new ArrayList<>();
-        for (int i = getFox(name).getActionList().size() - 1; i >= 0; i--) {
-            reservedList.add(getFox(name).getActionList().get(i));
+    public List<String> getActionList(String name) {
+        return getFox(name).getActionList();
+    }
+
+    public List<String> getFiveLatestAction(String name) {
+        List<String> list = new ArrayList<>();
+        if (getFox(name).getActionList().size() <= 5){
+            return getActionList(name);
+        } else {
+            for (int i = getFox(name).getActionList().size() - 1; i > getFox(name).getActionList().size() - 6; i--) {
+                list.add(getFox(name).getActionList().get(i));
+            }
+            return list;
         }
-        return reservedList;
     }
 
     public FoxService() {

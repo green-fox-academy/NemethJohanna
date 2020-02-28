@@ -24,6 +24,7 @@ public class MainController {
         model.addAttribute("fox", foxService.getFox(name));
         model.addAttribute("trickTrickSize", foxService.getTrickTrickList().size());
         model.addAttribute("actionList", foxService.getActionList(name));
+        model.addAttribute("latestFiveAction", foxService.getFiveLatestAction(name));
         return "index";
     }
 

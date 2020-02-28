@@ -40,14 +40,24 @@
     </div>
 </div>
 <div>
+
+<!--    display the five latest actions to the information page-->
+
     <h2>Action history</h2>
     <div>
         <form th:action="'/actionhistory?name=' + ${fox.name}" method="post">
-            <div th:if="${actionList.size() == 0}">
-                <p>No actions happened! Feed your fox or play with it!</p>
+            <div th:if="${actionList.size() <= 5}">
+                <div th:if="${actionList.size() == 0}">
+                    <p>No actions happened! Feed your fox or play with it!</p>
+                </div>
+                <div th:unless="${actionList.size() == 0}">
+                    <ul th:each="action : ${actionList}">
+                        <li th:text="${action}"></li>
+                    </ul>
+                </div>
             </div>
-            <div th:unless="${actionList.size() == 0}">
-                <ul th:each="action : ${actionList}">
+            <div th:unless="${actionList.size() <= 5}">
+                <ul th:each="action : ${latestFiveAction}">
                     <li th:text="${action}"></li>
                 </ul>
             </div>
