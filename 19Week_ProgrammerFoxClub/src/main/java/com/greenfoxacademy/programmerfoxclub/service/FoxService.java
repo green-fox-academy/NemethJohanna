@@ -41,8 +41,22 @@ public class FoxService {
         }
     }
 
+    public void addAction (String action, String name, String actionType){
+        getFox(name).addAction(action, actionType);
+    }
+
     public void addFox(Fox fox) {
         foxList.add(fox);
+    }
+
+    public void setFood (String name, String food){
+        getFox(name).addAction(name, food);
+        getFox(name).setFood(food);
+    }
+
+    public void setDrink (String name, String drink){
+        getFox(name).addAction(name, drink);
+        getFox(name).setDrink(drink);
     }
 
     public Fox getFox(String name) {
@@ -56,16 +70,17 @@ public class FoxService {
 
     public void addTrick (Trick trick, String name){
         if (trick.getTrickName() != null){
+            getFox(name).addAction(name, trick.toString());
             getFox(name).addTrick(trick);
         }
     }
 
-    public FoxService() {
-        foxList = new ArrayList<>();
+    public List<String> getActionList (String name){
+            return getFox(name).getActionList();
     }
 
-    public ArrayList<Fox> getFoxList() {
-        return foxList;
+    public FoxService() {
+        foxList = new ArrayList<>();
     }
 
     public List<Drink> getDrinkList() {
@@ -79,5 +94,6 @@ public class FoxService {
     public List<Trick> getTrickTrickList() {
         return trickTrickList;
     }
+
 }
 

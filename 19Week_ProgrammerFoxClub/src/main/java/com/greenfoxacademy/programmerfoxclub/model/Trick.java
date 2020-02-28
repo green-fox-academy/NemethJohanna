@@ -3,6 +3,7 @@ package com.greenfoxacademy.programmerfoxclub.model;
 public class Trick {
 
     private String trickName;
+    private String action;
 
     public Trick() {
     }

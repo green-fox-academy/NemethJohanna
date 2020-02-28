@@ -30,8 +30,8 @@ public class FoxController {
 
     @PostMapping(path = "/nutritionStore")
     public String addNutrition(@RequestParam (required = false) String name, String food, String drink){
-        foxService.getFox(name).setFood(food);
-        foxService.getFox(name).setDrink(drink);
+        foxService.setFood(name, food);
+        foxService.setDrink(name, drink);
         return "redirect:/?name=" + name;
     }
 
@@ -50,9 +50,17 @@ public class FoxController {
     }
 
     @GetMapping(path = "/actionhistory")
-    public String actionHistory(@RequestParam String name, Model model){
+    public String actionHistory(Model model, @RequestParam String name){
         model.addAttribute("name", name);
+        model.addAttribute("actionList", foxService.getActionList(name));
         return "actionHistory";
+    }
+
+    @PostMapping(path = "/actionhistory")
+    public String getHistory(@RequestParam String name, String action, String actionType) {
+        foxService.addAction(action, name, actionType);
+//        foxService.getActionList(name);
+        return "redirect:/?name=" + name;
     }
 
 }
