@@ -43,8 +43,6 @@ public class Fox {
         return now.format(formatter);
     }
 
-
-
     public String getName() {
         return name;
     }
@@ -76,8 +74,5 @@ public class Fox {
     public List<String> getActionList() {
         return actionList;
     }
-
-
-
 
 }

@@ -23,6 +23,7 @@ public class MainController {
     public String index(@RequestParam String name, Model model) {
         model.addAttribute("fox", foxService.getFox(name));
         model.addAttribute("trickTrickSize", foxService.getTrickTrickList().size());
+        model.addAttribute("actionList", foxService.getActionList(name));
         return "index";
     }
 
