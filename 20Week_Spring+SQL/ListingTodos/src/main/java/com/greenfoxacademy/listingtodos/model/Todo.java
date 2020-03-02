@@ -3,11 +3,11 @@ package com.greenfoxacademy.listingtodos.model;
 import javax.persistence.*;
 
 @Entity
-@Table (name = "todos")
+@Table(name = "todos")
 public class Todo {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String title;
     private boolean urgent;
@@ -17,6 +17,9 @@ public class Todo {
         this.title = title;
         this.urgent = false;
         this.done = false;
+    }
+
+    public Todo() {
     }
 
     public long getId() {
