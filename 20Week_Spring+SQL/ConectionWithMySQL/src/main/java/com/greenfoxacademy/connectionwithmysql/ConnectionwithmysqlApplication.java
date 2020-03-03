@@ -8,7 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ConnectionwithmysqlApplication implements CommandLineRunner {
+public class ConnectionwithmysqlApplication implements CommandLineRunner{
 
     private TodoRepository todoRepository;
 
@@ -25,5 +25,8 @@ public class ConnectionwithmysqlApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
         todoRepository.save(new Todo(true, "I have to learn Object Relational Mapping", true));
         todoRepository.save(new Todo(false, "Clean the windows", false));
+        todoRepository.save(new Todo(false, "Do the washing", true));
+        todoRepository.save(new Todo(true, "Sweep the floor", false));
+        todoRepository.save(new Todo(false, "Go for shopping", true));
     }
 }
