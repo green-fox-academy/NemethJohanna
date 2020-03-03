@@ -19,13 +19,13 @@ public class TodoController {
 
     @GetMapping(value = {"/", "/todo"})
     public String list(Model model) {
-        model.addAttribute("todos", todoService.findAll());
+        model.addAttribute("todos", todoService.getTodos());
         return "list";
     }
 
-    @GetMapping(path = "/todo/isDone")
-    public String listActiveTodos(Model model, @RequestParam boolean isDone) {
-//        model.addAttribute("active", todoRepository.findAllById(!isDone));
-        return "redirect:/";
-    }
+//    @GetMapping(path = "/todo/isDone")
+//    public String listActiveTodos(Model model, @RequestParam boolean isDone) {
+//        model.addAttribute("active", todoService.findAllById(false));
+//        return "redirect:/";
+//    }
 }
