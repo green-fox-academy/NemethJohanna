@@ -13,10 +13,10 @@ public class Todo {
     private boolean urgent;
     private boolean done;
 
-    public Todo(String title) {
+    public Todo( boolean done, String title, boolean urgent) {
         this.title = title;
-        this.urgent = false;
-        this.done = false;
+        this.urgent = urgent;
+        this.done = done;
     }
 
     public Todo() {
@@ -54,13 +54,4 @@ public class Todo {
         this.done = done;
     }
 
-//    @Override
-//    public String toString() {
-//        return "Todo{" +
-//                "id=" + id +
-//                ", title='" + title + '\'' +
-//                ", urgent=" + urgent +
-//                ", done=" + done +
-//                '}';
-//    }
 }
