@@ -19,6 +19,17 @@ public class TodoService {
         return todoRepository.findAll();
     }
 
+    public Iterable<Todo> getActiveTodos(Boolean isActive){
+        if (isActive == null){
+            return todoRepository.findAll();
+        }
+        return todoRepository.findAllByDone(isActive);
+    }
+
+//    public Iterable<Todo> findAllByIsDone(boolean isDone) {
+//        return todoRepository.findAllByIsDone(isDone);
+//    }
+
 //    public void addTodo(Todo todo) {
 //        todoRepository.save(todo);
 //    }
