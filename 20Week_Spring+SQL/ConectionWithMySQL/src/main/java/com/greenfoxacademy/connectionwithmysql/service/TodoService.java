@@ -19,14 +19,14 @@ public class TodoService {
         return todoRepository.findAll();
     }
 
-    public Iterable<Todo> getActiveTodos(Boolean isActive){
-        if (isActive == null){
+    public Iterable<Todo> getActiveTodos(Boolean isActive) {
+        if (isActive == null) {
             return todoRepository.findAll();
         }
         return todoRepository.findAllByDone(isActive);
     }
 
-    public Todo addTodo(Todo todo){
+    public Todo addTodo(Todo todo) {
         return todoRepository.save(todo);
     }
 
@@ -34,9 +34,8 @@ public class TodoService {
         todoRepository.deleteById(id);
     }
 
-
-//    public void addTodo(Todo todo) {
-//        todoRepository.save(todo);
-//    }
+    public void edit(long id) {
+        todoRepository.editById(id);
+    }
 
 }
