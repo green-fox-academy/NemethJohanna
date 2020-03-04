@@ -26,8 +26,9 @@
             <td th:text="${todo.isUrgent()}"></td>
             <td th:text="${todo.isDone()}"></td>
             <td>
-                <form th:action="@{/todo/{id}/delete}" method="get"></form>
-                <button type="submit">delete</button>
+                <form th:action="@{'/todo/' + ${todo.getId()} + '/delete'}" method="post" name="id">
+                    <button th:type="submit">delete</button>
+                </form>
             </td>
         </tr>
         </tbody>
