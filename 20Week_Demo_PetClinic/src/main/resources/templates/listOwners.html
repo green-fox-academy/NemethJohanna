@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Owners</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <a th:href="@{'/'}">HOME</a>
+            </div>
+            <div>
+                <a th:href="@{'/findowner'}">FIND OWNERS</a>
+            </div>
+            <div>
+                <a th:href="@{'/veterinarians'}">VETERINARIANS</a>
+            </div>
+            <div>
+                <a th:href="@{'/error'}">ERROR</a>
+            </div>
+        </nav>
+    </header>
+<selection>
+<h2>OWNERS</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>ADDRESS</th>
+            <th>CITY</th>
+            <th>TELEPHONE</th>
+            <th>PET</th>
+        </tr>
+        <tr th:each="owner : ${owners}", th:each="pet : ${pets}">
+            <td th:text="${owner.getId()}"></td>
+            <td th:text="${owner.getName()}"></td>
+            <td th:text="${owner.getAddress()}"></td>
+            <td th:text="${owner.getCity()}"></td>
+            <td th:text="${owner.getTelephone()}"></td>
+            <td th:text="${pet}"></td>
+
+        </tr>
+    </table>
+</selection>
+</body>
+</html>
