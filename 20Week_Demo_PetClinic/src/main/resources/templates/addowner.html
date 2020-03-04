@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new owner</title>
+</head>
+<body>
+<header>
+    <nav>
+        <div>
+            <a th:href="@{'/petclinic/'}">HOME</a>
+            <a th:href="@{'/petclinic/findowner'}">FIND OWNERS</a>
+            <a th:href="@{'/petclinic/veterinarians'}">VETERINARIANS</a>
+            <a th:href="@{'/petclinic/error'}">ERROR</a>
+        </div>
+    </nav>
+</header>
+<h2>OWNER</h2>
+<section>
+    <form th:action="@{/petclinic/listowner}" method="get">
+        <div>
+            <label  for="firstName">First name</label>
+            <input type="text" id="firstName">
+        </div>
+       <div>
+           <label  for="lastName">Last name</label>
+           <input type="text" id="lastName">
+       </div>
+        <div>
+            <label  for="address">Address</label>
+            <input type="text" id="address">
+        </div>
+        <div>
+            <label  for="city">City</label>
+            <input type="text" id="city">
+        </div>
+        <div>
+            <label  for="telephone">Telephone</label>
+            <input type="text" id="telephone">
+        </div>
+        <button th:type="submit">Add Owner</button>
+    </form>
+</section>
+
+</body>
+</html>
