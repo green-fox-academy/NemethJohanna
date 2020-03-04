@@ -30,6 +30,10 @@ public class TodoService {
         return todoRepository.save(todo);
     }
 
+    public Todo delete(long id) {
+        return todoRepository.deleteById(id);
+    }
+
 
 //    public void addTodo(Todo todo) {
 //        todoRepository.save(todo);

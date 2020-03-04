@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.thymeleaf.standard.expression.GreaterOrEqualToExpression;
 
 @Controller
 @RequestMapping("/todo")
@@ -19,7 +20,7 @@ public class TodoController {
     }
 
     @GetMapping(value = {"/", ""})
-    public String list(Model model, @RequestParam (required = false) Boolean isActive) {
+    public String list(Model model, @RequestParam (required = false) Boolean isActive){
         model.addAttribute("todos", todoService.getActiveTodos(isActive));
         return "list";
     }
@@ -35,6 +36,12 @@ public class TodoController {
         return "redirect:/todo/";
     }
 
-    
+    @PostMapping(path = "/{id}/delete")
+    public String deleteTodo(@PathVariable (name="id") long id){
+        todoService.delete(id);
+        return "redirect:/todo/";
+    }
+
+
 
 }
