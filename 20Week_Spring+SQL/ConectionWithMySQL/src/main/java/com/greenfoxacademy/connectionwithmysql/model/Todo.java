@@ -13,10 +13,16 @@ public class Todo {
     private boolean urgent;
     private boolean done;
 
-    public Todo( boolean done, String title, boolean urgent) {
+    public Todo(boolean done, String title, boolean urgent) {
         this.title = title;
         this.urgent = urgent;
         this.done = done;
+    }
+
+    public Todo(String title) {
+        this.title = title;
+        this.urgent = false;
+        this.done = false;
     }
 
     public Todo() {

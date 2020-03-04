@@ -1,12 +1,11 @@
 package com.greenfoxacademy.connectionwithmysql.controller;
 
+import com.greenfoxacademy.connectionwithmysql.model.Todo;
 import com.greenfoxacademy.connectionwithmysql.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/todo")
@@ -24,5 +23,18 @@ public class TodoController {
         model.addAttribute("todos", todoService.getActiveTodos(isActive));
         return "list";
     }
+
+    @GetMapping(path = "/add")
+    public String getAddForm(){
+        return "add";
+    }
+
+    @PostMapping(path = "/add")
+    public String addTodo(Model model, @ModelAttribute Todo todo){
+        model.addAttribute("add", todoService.addTodo(todo));
+        return "redirect:/todo/";
+    }
+
+    
 
 }
