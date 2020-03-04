@@ -1,38 +1,38 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Find Owner</title>
-</head>
-<body>
-<header>
-    <nav>
-        <div>
-            <a th:href="@{'/'}">HOME</a>
-        </div>
-        <div>
-            <a th:href="@{'/findowner'}">FIND OWNERS</a>
-        </div>
-        <div>
-            <a th:href="@{'/veterinarians'}">VETERINARIANS</a>
-        </div>
-        <div>
-            <a th:href="@{'/error'}">ERROR</a>
-        </div>
-    </nav>
-</header>
-<h2>Find owners</h2>
-<section>
-    <form th:action="@{/petclinic/owners}" method="get">
-        <label for="findOwner">Last name </label>
-        <input type="text" id="findOwner">
-        <button th:type="submit">Find Owner</button>
-    </form>
-</section>
-<section>
-    <form th:action="@{/}" method="post">
-        <button th:type="submit">Add Owner</button>
-    </form>
-</section>
-</body>
-</html>
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Find Owner</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<header>-->
+<!--    <nav>-->
+<!--        <div>-->
+<!--            <a th:href="@{'/'}">HOME</a>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <a th:href="@{'/findowner'}">FIND OWNERS</a>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <a th:href="@{'/veterinarians'}">VETERINARIANS</a>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <a th:href="@{'/error'}">ERROR</a>-->
+<!--        </div>-->
+<!--    </nav>-->
+<!--</header>-->
+<!--<h2>Find owners</h2>-->
+<!--<section>-->
+<!--    <form th:action="@{/petclinic/owners}" method="get">-->
+<!--        <label for="findOwner">Last name </label>-->
+<!--        <input type="text" id="findOwner">-->
+<!--        <button th:type="submit">Find Owner</button>-->
+<!--    </form>-->
+<!--</section>-->
+<!--<section>-->
+<!--    <form th:action="@{/}" method="post">-->
+<!--        <button th:type="submit">Add Owner</button>-->
+<!--    </form>-->
+<!--</section>-->
+<!--</body>-->
+<!--</html>-->

@@ -3,7 +3,7 @@ package com.greenfoxacademy.petclinic.models;
 import javax.persistence.*;
 
 @Entity
-@Table(schema = "pets")
+@Table(name = "pets")
 public class Pet {
 
     @Id

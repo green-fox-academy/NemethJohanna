@@ -3,7 +3,7 @@ package com.greenfoxacademy.petclinic.models;
 import javax.persistence.*;
 
 @Entity
-@Table(schema = "owners")
+@Table(name = "owners")
 public class Owner {
 
     @Id
@@ -13,17 +13,19 @@ public class Owner {
     private String address;
     private String city;
     private String telephone;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "pet_name")
     private Pet pet;
 
     public Owner() {
     }
 
-    public Owner(String name, String address, String city, String telephone, Pet pet) {
+    public Owner(String name, String address, String city, String telephone) {
         this.name = name;
         this.address = address;
         this.city = city;
         this.telephone = telephone;
-        this.pet = pet;
     }
 
     public long getId() {
