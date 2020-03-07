@@ -14,7 +14,7 @@ public class Owner {
     private String city;
     private String telephone;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne
     @JoinColumn(name = "pet_name")
     private Pet pet;
 

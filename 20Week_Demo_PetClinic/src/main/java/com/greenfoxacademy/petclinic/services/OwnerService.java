@@ -17,4 +17,8 @@ public class OwnerService {
         return ownerRepository.findAll();
     }
 
+    public Owner addOwner(Owner owner){
+        return ownerRepository.save(owner);
+    }
+
 }

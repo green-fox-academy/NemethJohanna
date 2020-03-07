@@ -32,9 +32,7 @@
             <td th:text="${owner.getAddress()}"></td>
             <td th:text="${owner.getCity()}"></td>
             <td th:text="${owner.getTelephone()}"></td>
-            <p th:each="pet : ${pets}">
-                <td th:text="${pe}"></td>
-            </p>
+            <td th:if="${owner.pet != null}" th:text="${owner.dog.name}"></td>
         </tr>
     </table>
 </selection>
