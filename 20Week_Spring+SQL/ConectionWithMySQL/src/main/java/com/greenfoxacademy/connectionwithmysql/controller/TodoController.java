@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.thymeleaf.standard.expression.GreaterOrEqualToExpression;
 
 @Controller
 @RequestMapping("/todo")
@@ -43,14 +42,15 @@ public class TodoController {
     }
 
     @GetMapping(path = "/{id}/edit")
-    public String renderEditPage(Model model, Long id){
-//        model.addAttribute("todo", todoService.findTodoById(id));
+    public String renderEditPage(@PathVariable (name = "id") Long id, Model model){
+        model.addAttribute("todo", todoService.findTodoById(id));
+        model.addAttribute("id", id);
         return "edit";
     }
 
     @PostMapping(path = "/{id}/edit")
-    public String editTodo(@PathVariable long id, Model model, @ModelAttribute Todo todo){
-        todoService.edit(todo);
+    public String editTodo(@ModelAttribute ("todo") Todo todo){
+        todoService.save(todo);
         return "redirect:/todo";
     }
 
