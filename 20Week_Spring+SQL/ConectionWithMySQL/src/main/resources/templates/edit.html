@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Edit Todo</h1>
-<form action="#" th:action="@{'/todo/' + ${id} + '/edit'}" th:method="post">
+<form action="#" th:action="@{'/todo/' + ${todo.getId()} + '/edit'}" method="get" name="id">
     <label for="editTodo">Todo Description</label>
     <input th:type="text" id="editTodo" th:field="${todo.title}">
     <div>
@@ -22,6 +22,5 @@
         <a th:href="@{/todo}">Cancel</a>
     </div>
 </form>
-
 </body>
 </html>
