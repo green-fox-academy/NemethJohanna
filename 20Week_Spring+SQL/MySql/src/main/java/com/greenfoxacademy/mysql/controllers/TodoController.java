@@ -42,9 +42,8 @@ public class TodoController {
     }
 
     @GetMapping(path = "/{id}/edit")
-    public String renderEditPage(@PathVariable (name = "id") Long id, Model model){
+    public String renderEditPage(@PathVariable Long id, Model model){
         model.addAttribute("todo", todoService.findTodoById(id));
-        model.addAttribute("id", id);
         return "edit";
     }
 
