@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:action="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Edit</title>
@@ -13,11 +13,11 @@
     </div>
     <div>
         <label for="checkUrgent">Urgent</label>
-        <input type="checkbox" id="checkUrgent" th:checked="${todo.getIsUrgent()}" th:field="isUrgent"><br>
+        <input type="checkbox" id="checkUrgent" th:checked="${todo.getIsUrgent()}" th:field="${todo.getIsUrgent()}"><br>
     </div>
     <div>
         <label for="checkDone">Done</label>
-        <input type="checkbox" id="checkDone" th:checked="${todo.getIsDone()}" th:field="isDone"><br>
+        <input type="checkbox" id="checkDone" th:checked="${todo.getIsDone()}" th:field="${todo.getIsDone()}"><br>
     </div>
     <div>
         <button th:type="submit">Submit</button>
