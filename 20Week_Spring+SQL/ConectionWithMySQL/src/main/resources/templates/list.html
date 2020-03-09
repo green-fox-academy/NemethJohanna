@@ -22,8 +22,8 @@
         <tr th:each="todo : ${todos}">
             <td th:text="${todo.getId()}"></td>
             <td th:text="${todo.getTitle()}"></td>
-            <td th:text="${todo.isUrgent()}"></td>
-            <td th:text="${todo.isDone()}"></td>
+            <td th:text="${todo.getIsUrgent()}"></td>
+            <td th:text="${todo.getIsDone()}"></td>
             <td>
                 <form th:action="@{'/todo/' + ${todo.getId()} + '/delete'}" method="post" name="id">
                     <button th:type="submit">delete</button>

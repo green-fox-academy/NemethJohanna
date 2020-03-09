@@ -6,16 +6,18 @@
 </head>
 <body>
 <h1>Edit Todo</h1>
-<form action="#" th:action="@{'/todo/' + ${todo.getId()} + '/edit'}" method="get" name="id">
-    <label for="editTodo">Todo Description</label>
-    <input th:type="text" id="editTodo" th:field="${todo.title}">
+<form action="#" th:action="@{'/todo/' + ${todo.getId()} + '/edit'}" method="post" th:name="id">
+    <div>
+        <label for="editTodo">Todo Description</label>
+        <input th:type="text" id="editTodo" th:field="${todo.title}">
+    </div>
     <div>
         <label for="checkUrgent">Urgent</label>
-        <input type="checkbox" id="checkUrgent" th:checked="${todo.isUrgent()}" th:field="${todo.isUrgent()}"><br>
+        <input type="checkbox" id="checkUrgent" th:checked="${todo.getIsUrgent()}" th:field="isUrgent"><br>
     </div>
     <div>
         <label for="checkDone">Done</label>
-        <input type="checkbox" id="checkDone" th:checked="${todo.isDone()}" th:field="${todo.isDone()}"><br>
+        <input type="checkbox" id="checkDone" th:checked="${todo.getIsDone()}" th:field="isDone"><br>
     </div>
     <div>
         <button th:type="submit">Submit</button>

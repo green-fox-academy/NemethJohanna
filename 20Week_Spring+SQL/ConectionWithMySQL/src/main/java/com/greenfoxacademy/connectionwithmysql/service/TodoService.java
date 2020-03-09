@@ -5,6 +5,8 @@ import com.greenfoxacademy.connectionwithmysql.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class TodoService {
 
@@ -19,7 +21,7 @@ public class TodoService {
         if (isActive == null) {
             return todoRepository.findAll();
         }
-        return todoRepository.findAllByDone(isActive);
+        return todoRepository.findAllByIsDone(isActive);
     }
 
     public Todo addTodo(Todo todo) {
@@ -35,8 +37,10 @@ public class TodoService {
     }
 
     public Todo findTodoById(Long id) {
-        if (todoRepository.findById(id).isPresent()){
-            return todoRepository.findById(id).get();
+        Optional<Todo> optional = todoRepository.findById(id);
+
+        if (optional.isPresent()){
+            return optional.get();
         } else {
             return null;
         }
