@@ -40,11 +40,12 @@ public class TodoService {
     public Todo findTodoById(Long id) {
         Optional<Todo> optional = todoRepository.findById(id);
 
-        if (optional.isPresent()){
-            return optional.get();
-        } else {
-            return null;
-        }
+//        if (optional.isPresent()){
+//            return optional.get();
+//        } else {
+//            return null;
+//        }
+        return optional.orElse(null);
     }
 
 }

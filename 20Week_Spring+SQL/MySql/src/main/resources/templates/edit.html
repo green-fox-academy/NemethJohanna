@@ -9,15 +9,15 @@
 <form action="#" th:action="@{'/todo/' + ${todo.getId()} + '/edit'}" th:method="post">
     <div>
         <label for="editTodo">Todo Description</label>
-        <input th:type="text" id="editTodo" th:field="${todo.title}">
+        <input th:type="text" id="editTodo" name="title" th:value="${todo.title}">
     </div>
     <div>
         <label for="checkUrgent">Urgent</label>
-        <input type="checkbox" id="checkUrgent" name="isUrgent" th:checked="${todo.isUrgent}" th:value="true"><br>
+        <input type="checkbox" id="checkUrgent" name="isUrgent" th:checked="${todo.isUrgent}"><br>
     </div>
     <div>
         <label for="checkDone">Done</label>
-        <input type="checkbox" id="checkDone" name="isDone" th:checked="${todo.isDone}" th:value="true"><br>
+        <input type="checkbox" id="checkDone" name="isDone" th:checked="${todo.isDone}"><br>
     </div>
     <div>
         <button th:type="submit">Submit</button>

@@ -27,9 +27,9 @@
             </form>
         </td>
         <td>
-            <form th:action="@{'/todo/' + ${todo.getId()} + '/edit'}" method="post" name="id">
-                <button th:type="submit">edit</button>
-            </form>
+            <a th:href="@{'/todo/' + ${todo.getId()} + '/edit'}">
+                <button>edit</button>
+            </a>
         </td>
     </tr>
     </tbody>
