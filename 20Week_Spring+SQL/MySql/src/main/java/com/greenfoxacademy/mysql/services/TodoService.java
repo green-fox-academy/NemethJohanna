@@ -39,13 +39,16 @@ public class TodoService {
 
     public Todo findTodoById(Long id) {
         Optional<Todo> optional = todoRepository.findById(id);
-
 //        if (optional.isPresent()){
 //            return optional.get();
 //        } else {
 //            return null;
 //        }
         return optional.orElse(null);
+    }
+
+    public Iterable<Todo> searchTodo(String title){
+        return todoRepository.findByTitleContains(title);
     }
 
 }

@@ -6,14 +6,22 @@
 </head>
 <body>
 <h1>Todos for today:</h1>
-<a th:href="@{/todo/add}">Add new todo</a>
+<div>
+    <a th:href="@{/todo/add}">Add new todo</a>
+</div>
+<br>
+<form th:action="@{'/todo'}" method="get">
+    <label for="searchTodo">Search todo</label>
+    <input th:type="text" id="searchTodo" name="title">
+    <button th:type="submit">Search</button>
+</form>
 <br>
 <table>
     <tr>
-        <th>  ID  </th>
-        <th>  TITLE  </th>
-        <th>  URGENT  </th>
-        <th>  DONE  </th>
+        <th> ID</th>
+        <th> TITLE</th>
+        <th> URGENT</th>
+        <th> DONE</th>
     </tr>
     <tbody>
     <tr th:each="todo : ${todos}">

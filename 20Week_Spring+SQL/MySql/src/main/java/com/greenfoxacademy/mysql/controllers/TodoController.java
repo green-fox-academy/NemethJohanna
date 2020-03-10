@@ -19,18 +19,21 @@ public class TodoController {
     }
 
     @GetMapping(value = {"/", ""})
-    public String list(Model model, @RequestParam (required = false) Boolean isActive){
+    public String list(Model model, @RequestParam(required = false) Boolean isActive, @RequestParam(required = false) String title) {
         model.addAttribute("todos", todoService.getActiveTodos(isActive));
+        if (title != null) {
+            model.addAttribute("todos", todoService.searchTodo(title));
+        }
         return "list";
     }
 
     @GetMapping(path = "/add")
-    public String getAddForm(){
+    public String getAddForm() {
         return "add";
     }
 
     @PostMapping(path = "/add")
-    public String addTodo(Model model, @ModelAttribute Todo todo){
+    public String addTodo(Model model, @ModelAttribute Todo todo) {
         model.addAttribute("add", todoService.addTodo(todo));
         return "redirect:/todo/";
     }
@@ -42,13 +45,13 @@ public class TodoController {
     }
 
     @GetMapping(path = "/{id}/edit")
-    public String renderEditPage(@PathVariable Long id, Model model){
+    public String renderEditPage(@PathVariable Long id, Model model) {
         model.addAttribute("todo", todoService.findTodoById(id));
         return "edit";
     }
 
     @PostMapping(path = "/{id}/edit")
-    public String editTodo(@ModelAttribute ("todo") Todo todo){
+    public String editTodo(@ModelAttribute("todo") Todo todo) {
         todoService.save(todo);
         return "redirect:/todo";
     }
