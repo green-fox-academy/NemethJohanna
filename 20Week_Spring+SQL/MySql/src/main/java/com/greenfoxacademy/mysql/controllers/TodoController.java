@@ -29,7 +29,7 @@ public class TodoController {
 
     @GetMapping(path = "/add")
     public String getAddForm() {
-        return "add";
+        return "addTodo";
     }
 
     @PostMapping(path = "/add")
@@ -47,7 +47,7 @@ public class TodoController {
     @GetMapping(path = "/{id}/edit")
     public String renderEditPage(@PathVariable Long id, Model model) {
         model.addAttribute("todo", todoService.findTodoById(id));
-        return "edit";
+        return "editTodo";
     }
 
     @PostMapping(path = "/{id}/edit")

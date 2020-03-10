@@ -7,6 +7,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface AssigneeRepository extends CrudRepository<Assignee, Integer> {
 
-    Iterable<Assignee> findAll();
-
 }
