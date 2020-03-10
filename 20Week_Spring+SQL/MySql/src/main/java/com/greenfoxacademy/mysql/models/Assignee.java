@@ -8,7 +8,7 @@ public class Assignee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
+    Long id;
     private String name;
     private String email;
 
@@ -36,11 +36,11 @@ public class Assignee {
         this.email = email;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 }

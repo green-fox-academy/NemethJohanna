@@ -35,8 +35,14 @@ public class AssigneeController {
         return "redirect:/assignee/";
     }
 
+    @PostMapping(path = "/{id}/delete")
+    public String deleteTodo(@PathVariable Long id) {
+        assigneeService.delete(id);
+        return "redirect:/assignee";
+    }
+
     @GetMapping(path = "/{id}/edit")
-    public String renderAssigneeEditPage(@PathVariable Integer id, Model model){
+    public String renderAssigneeEditPage(@PathVariable Long id, Model model){
         model.addAttribute("assignees", assigneeService.findAssigneeById(id));
         return "editassignee";
     }

@@ -21,7 +21,7 @@ public class AssigneeService {
         return assigneeRepository.findAll();
     }
 
-    public Assignee findAssigneeById(Integer id){
+    public Assignee findAssigneeById(Long id){
         Optional<Assignee> optional = assigneeRepository.findById(id);
         return optional.orElse(null);
     }
@@ -31,5 +31,9 @@ public class AssigneeService {
 
     public Assignee addAssignee(Assignee assignee) {
         return assigneeRepository.save(assignee);
+    }
+
+    public void delete (Long id){
+        assigneeRepository.deleteById(id);
     }
 }
