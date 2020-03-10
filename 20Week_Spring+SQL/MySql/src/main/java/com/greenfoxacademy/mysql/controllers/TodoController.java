@@ -24,7 +24,7 @@ public class TodoController {
         if (title != null) {
             model.addAttribute("todos", todoService.searchTodo(title));
         }
-        return "list";
+        return "todoList";
     }
 
     @GetMapping(path = "/add")

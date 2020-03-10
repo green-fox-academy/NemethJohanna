@@ -12,6 +12,8 @@ public class Todo {
     private String title;
     private boolean isUrgent;
     private boolean isDone;
+    @ManyToOne
+    private Assignee assignee;
 
     public Todo(boolean done, String title, boolean urgent) {
         this.title = title;
