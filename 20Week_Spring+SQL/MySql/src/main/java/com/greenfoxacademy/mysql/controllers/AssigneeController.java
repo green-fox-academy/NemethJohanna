@@ -43,13 +43,13 @@ public class AssigneeController {
 
     @GetMapping(path = "/{id}/edit")
     public String renderAssigneeEditPage(@PathVariable Long id, Model model){
-        model.addAttribute("assignees", assigneeService.findAssigneeById(id));
-        return "editassignee";
+        model.addAttribute("assignee", assigneeService.findAssigneeById(id));
+        return "editAssignee";
     }
 
     @PostMapping(path = "/{id}/edit")
     public String editAssignee(@ModelAttribute("todo") Assignee assignee) {
         assigneeService.save(assignee);
-        return "redirect:/assigneeList";
+        return "redirect:/assignee/";
     }
 }
