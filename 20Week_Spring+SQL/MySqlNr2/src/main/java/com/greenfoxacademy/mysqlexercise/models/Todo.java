@@ -17,10 +17,11 @@ public class Todo {
     @ManyToOne
     private Assignee assignee;
 
-    public Todo(boolean done, String title, boolean urgent) {
+    public Todo(boolean done, String title, boolean urgent, Assignee assignee) {
         this.title = title;
         this.isUrgent = urgent;
         this.isDone = done;
+        this.assignee = assignee;
     }
 
     public Todo(String title) {

@@ -1,5 +1,6 @@
 package com.greenfoxacademy.mysqlexercise.controllers;
 
+import com.greenfoxacademy.mysqlexercise.models.Assignee;
 import com.greenfoxacademy.mysqlexercise.models.Todo;
 import com.greenfoxacademy.mysqlexercise.services.AssigneeService;
 import com.greenfoxacademy.mysqlexercise.services.TodoService;
@@ -55,9 +56,8 @@ public class TodoController {
     }
 
     @PostMapping(path = "/{id}/edit")
-    public String editTodo(@ModelAttribute("todo") Todo todo) {
+    public String editTodo(@ModelAttribute("todo") Todo todo, @ModelAttribute Assignee assignee) {
         todoService.save(todo);
-
         return "redirect:/todo";
     }
 

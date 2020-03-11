@@ -22,23 +22,20 @@ public class AssigneeService {
         return assigneeRepository.findAll();
     }
 
-    public Assignee findAssigneeById(Long id){
+    public Assignee findAssigneeById(Long id) {
         Optional<Assignee> optional = assigneeRepository.findById(id);
         return optional.orElse(null);
     }
+
     public void save(Assignee assignee) {
         assigneeRepository.save(assignee);
-    }
-
-    public void saveTodo (Todo todo){
-//        todo.getAssignee().add
     }
 
     public Assignee addAssignee(Assignee assignee) {
         return assigneeRepository.save(assignee);
     }
 
-    public void delete (Long id){
+    public void delete(Long id) {
         assigneeRepository.deleteById(id);
     }
 

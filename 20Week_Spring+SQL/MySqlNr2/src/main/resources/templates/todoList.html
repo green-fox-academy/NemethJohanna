@@ -33,7 +33,7 @@
         <td th:text="${todo.getTitle()}"></td>
         <td th:text="${todo.getIsUrgent()}"></td>
         <td th:text="${todo.getIsDone()}"></td>
-        <td th:text="${todo.getAssignee()?.getName()}"></td>
+        <td th:text="${todo.getAssignee()?.getId()}"></td>
         <td>
             <form th:action="@{'/todo/' + ${todo.getId()} + '/delete'}" method="post" name="id">
                 <button th:type="submit">delete</button>

@@ -21,7 +21,7 @@
     </div>
     <div>
         <select>
-            <option th:each="assignee : ${assignees}" th:text="${assignee.name}"></option>
+            <option th:each="assignee : ${assignees}" th:text="${assignee.name}" name="assignee"></option>
         </select>
     </div>
     <div>

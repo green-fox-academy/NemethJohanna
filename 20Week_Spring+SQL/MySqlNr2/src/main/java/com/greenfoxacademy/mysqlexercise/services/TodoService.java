@@ -1,6 +1,8 @@
 package com.greenfoxacademy.mysqlexercise.services;
 
+import com.greenfoxacademy.mysqlexercise.models.Assignee;
 import com.greenfoxacademy.mysqlexercise.models.Todo;
+import com.greenfoxacademy.mysqlexercise.repositories.AssigneeRepository;
 import com.greenfoxacademy.mysqlexercise.repositories.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,10 +13,12 @@ import java.util.Optional;
 public class TodoService {
 
     private TodoRepository todoRepository;
+    private AssigneeRepository assigneeRepository;
 
     @Autowired
-    public TodoService(TodoRepository todoRepository) {
+    public TodoService(TodoRepository todoRepository, AssigneeRepository assigneeRepository) {
         this.todoRepository = todoRepository;
+        this.assigneeRepository = assigneeRepository;
     }
 
     public Iterable<Todo> getActiveTodos(Boolean isActive) {
@@ -36,6 +40,10 @@ public class TodoService {
     public void save(Todo todo) {
         todoRepository.save(todo);
     }
+
+//    public void saveAssignee (Assignee assignee){
+//        todoRepository.save(assignee);
+//    }
 
     public Todo findTodoById(Long id) {
         Optional<Todo> optional = todoRepository.findById(id);
