@@ -1,8 +1,7 @@
 package com.greenfoxacademy.mysql.models;
 
-import org.hibernate.validator.constraints.Length;
-
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "todos")
@@ -14,6 +13,7 @@ public class Todo {
     private String title;
     private boolean isUrgent;
     private boolean isDone;
+    private Date date;
     @ManyToOne
     private Assignee assignee;
 
@@ -62,6 +62,14 @@ public class Todo {
 
     public void setIsDone(boolean done) {
         isDone = done;
+    }
+
+    public Assignee getAssignee() {
+        return assignee;
+    }
+
+    public void setAssignee(Assignee assignee) {
+        this.assignee = assignee;
     }
 
 }
