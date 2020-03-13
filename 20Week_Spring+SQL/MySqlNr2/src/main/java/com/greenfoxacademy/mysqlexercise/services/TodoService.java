@@ -29,7 +29,6 @@ public class TodoService {
     }
 
     public Todo addTodo(Todo todo) {
-
         return todoRepository.save(todo);
     }
 
@@ -40,10 +39,6 @@ public class TodoService {
     public void save(Todo todo) {
         todoRepository.save(todo);
     }
-
-//    public void saveAssignee (Assignee assignee){
-//        todoRepository.save(assignee);
-//    }
 
     public Todo findTodoById(Long id) {
         Optional<Todo> optional = todoRepository.findById(id);
@@ -57,6 +52,10 @@ public class TodoService {
 
     public Iterable<Todo> searchTodo(String title){
         return todoRepository.findByTitleContains(title);
+    }
+
+    public Iterable<Todo> findAllByAssignee (String assignee){
+        return todoRepository.findByAssignee(assignee);
     }
 
 }

@@ -1,6 +1,8 @@
 package com.greenfoxacademy.mysqlexercise.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "assignees")
@@ -11,6 +13,7 @@ public class Assignee {
     Long id;
     private String name;
     private String email;
+//    private List<Todo> todoList;
 
     public Assignee() {
     }
@@ -18,6 +21,7 @@ public class Assignee {
     public Assignee(String name, String email) {
         this.name = name;
         this.email = email;
+//        this.todoList = new ArrayList<>();
     }
 
     public String getName() {
@@ -43,4 +47,17 @@ public class Assignee {
     public void setId(Long id) {
         this.id = id;
     }
+
+//    public List<Todo> getTodoList() {
+//        return todoList;
+//    }
+//
+//    public void setTodo (Todo todo){
+//        this.todoList.add(todo);
+//        todo.setAssignee(this);
+//    }
+//
+//    public void setTodoList(List<Todo> todoList) {
+//        this.todoList = todoList;
+//    }
 }

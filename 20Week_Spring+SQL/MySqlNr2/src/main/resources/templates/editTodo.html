@@ -20,8 +20,8 @@
         <input type="checkbox" id="checkDone" name="isDone" th:checked="${todo.isDone}"><br>
     </div>
     <div>
-        <select>
-            <option th:each="assignee : ${assignees}" th:text="${assignee.name}" name="assignee"></option>
+        <select name="assigneeName">
+            <option th:each="assignee : ${assignees}" th:text="${assignee.name}"></option>
         </select>
     </div>
     <div>

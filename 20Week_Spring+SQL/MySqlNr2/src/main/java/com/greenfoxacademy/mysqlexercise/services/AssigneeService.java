@@ -39,4 +39,8 @@ public class AssigneeService {
         assigneeRepository.deleteById(id);
     }
 
+    public Assignee findAssigneeByName (String name){
+        return assigneeRepository.findByName(name);
+    }
+
 }

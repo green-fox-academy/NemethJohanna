@@ -13,7 +13,7 @@ public class Todo {
     private String title;
     private boolean isUrgent;
     private boolean isDone;
-    private Date date;
+//    private Date date;
     @ManyToOne
     private Assignee assignee;
 

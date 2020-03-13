@@ -21,11 +21,11 @@
 <br>
 <table>
     <tr>
-        <th> ID</th>
-        <th> TITLE</th>
-        <th> URGENT</th>
-        <th> DONE</th>
-        <th> ASSIGNEE</th>
+        <th>ID</th>
+        <th>TITLE</th>
+        <th>URGENT</th>
+        <th>DONE</th>
+        <th>ASSIGNEE</th>
     </tr>
     <tbody>
     <tr th:each="todo : ${todos}">
@@ -33,7 +33,7 @@
         <td th:text="${todo.getTitle()}"></td>
         <td th:text="${todo.getIsUrgent()}"></td>
         <td th:text="${todo.getIsDone()}"></td>
-        <td th:text="${todo.getAssignee()?.getId()}"></td>
+        <td th:text="${todo.getAssignee()?.getName()}"></td>
         <td>
             <form th:action="@{'/todo/' + ${todo.getId()} + '/delete'}" method="post" name="id">
                 <button th:type="submit">delete</button>

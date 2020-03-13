@@ -23,10 +23,12 @@ public class TodoController {
     }
 
     @GetMapping(value = {"/", ""})
-    public String list(Model model, @RequestParam(required = false) Boolean isActive, @RequestParam(required = false) String title) {
+    public String list(Model model, @RequestParam(required = false) Boolean isActive, @RequestParam(required = false) String title, @RequestParam(required = false) String name) {
         model.addAttribute("todos", todoService.getActiveTodos(isActive));
         if (title != null) {
             model.addAttribute("todos", todoService.searchTodo(title));
+        } else if (name != null){
+           model.addAttribute("todos", todoService.findAllByAssignee(name));
         }
         return "todoList";
     }
@@ -56,7 +58,9 @@ public class TodoController {
     }
 
     @PostMapping(path = "/{id}/edit")
-    public String editTodo(@ModelAttribute("todo") Todo todo, @ModelAttribute Assignee assignee) {
+    public String editTodo(@ModelAttribute("todo") Todo todo, String assigneeName) {
+        Assignee assignee = assigneeService.findAssigneeByName(assigneeName);
+        todo.setAssignee(assignee);
         todoService.save(todo);
         return "redirect:/todo";
     }
