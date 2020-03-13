@@ -1,8 +1,6 @@
 package com.greenfoxacademy.mysqlexercise.models;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "assignees")

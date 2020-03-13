@@ -54,8 +54,10 @@ public class TodoService {
         return todoRepository.findByTitleContains(title);
     }
 
-    public Iterable<Todo> findAllByAssignee (String assignee){
-        return todoRepository.findByAssignee(assignee);
+    public Iterable<Todo> findAllByAssignee (Assignee name){
+//        Optional<Todo> optional = todoRepository.findAllByAssignee(assignee);
+//        return (Iterable<Todo>) optional.orElse(null);
+        return todoRepository.findAllByAssignee(name);
     }
 
 }
