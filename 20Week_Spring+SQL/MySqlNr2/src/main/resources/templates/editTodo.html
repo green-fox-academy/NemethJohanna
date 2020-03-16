@@ -20,6 +20,10 @@
         <input type="checkbox" id="checkDone" name="isDone" th:checked="${todo.isDone}"><br>
     </div>
     <div>
+        <label for="dueDate">Due date</label>
+        <input type="date" id="dueDate" name="dueDate" th:value="${todo.getDueDate()}">
+    </div>
+    <div>
         <select name="assigneeName">
             <option th:each="assignee : ${assignees}" th:text="${assignee.name}"></option>
         </select>

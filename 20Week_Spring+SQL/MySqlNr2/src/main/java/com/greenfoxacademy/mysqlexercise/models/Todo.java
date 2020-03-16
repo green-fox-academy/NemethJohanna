@@ -1,6 +1,10 @@
 package com.greenfoxacademy.mysqlexercise.models;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -13,7 +17,10 @@ public class Todo {
     private String title;
     private boolean isUrgent;
     private boolean isDone;
-//    private Date date;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate dueDate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate date;
     @ManyToOne
     private Assignee assignee;
 
@@ -73,4 +80,19 @@ public class Todo {
         this.assignee = assignee;
     }
 
+    public LocalDate getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(LocalDate dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
 }

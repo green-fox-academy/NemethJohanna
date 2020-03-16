@@ -23,6 +23,7 @@
 <table>
     <tr>
         <th>ID</th>
+        <th>DUE DATE</th>
         <th>TITLE</th>
         <th>URGENT</th>
         <th>DONE</th>
@@ -31,6 +32,7 @@
     <tbody>
     <tr th:each="todo : ${todos}">
         <td th:text="${todo.getId()}"></td>
+        <td th:text="${todo.getDueDate()}"></td>
         <td th:text="${todo.getTitle()}"></td>
         <td th:text="${todo.getIsUrgent()}"></td>
         <td th:text="${todo.getIsDone()}"></td>
