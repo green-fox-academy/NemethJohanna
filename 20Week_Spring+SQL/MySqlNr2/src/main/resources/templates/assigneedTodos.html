@@ -5,14 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-
 <h2 th:text="${assignee.getName()}"></h2>
-
 <ul>
     <li th:each="todo : ${todos}" th:text="${todo.getTitle()}">
-
     </li>
 </ul>
-
 </body>
 </html>

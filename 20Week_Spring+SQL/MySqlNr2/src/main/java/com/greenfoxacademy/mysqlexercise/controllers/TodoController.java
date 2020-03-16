@@ -67,4 +67,16 @@ public class TodoController {
         return "redirect:/todo";
     }
 
+    @GetMapping(path = "/{id}")
+    public String renderListPage(@PathVariable Long id, Model model, @ModelAttribute Todo todo){
+        model.addAttribute("assignee", todoService.findTodoById(id).getAssignee());
+//        model.addAttribute("todos", todoService.findAllByAssignee(todo));
+        return "assigneedTodos";
+    }
+
+    @PostMapping(path = "/{id}")
+    public String listAssignees(Long id){
+        assigneeService.findAssigneeById(id).getName();
+        return "";
+    }
 }

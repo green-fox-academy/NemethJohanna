@@ -60,7 +60,6 @@ public class AssigneeController {
     public String renderListPage(@PathVariable Long id, Model model, @ModelAttribute Assignee assignee){
         model.addAttribute("assignee", assigneeService.findAssigneeById(id));
         model.addAttribute("todos", todoService.findAllByAssignee(assignee));
-//        model.addAttribute("todos", assigneeService.)
         return "assigneedTodos";
     }
 
