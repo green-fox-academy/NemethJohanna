@@ -63,10 +63,4 @@ public class AssigneeController {
         return "assigneedTodos";
     }
 
-    @PostMapping(path = "/{id}")
-    public String listAssignees(Long id){
-        assigneeService.findAssigneeById(id).getName();
-        return "";
-    }
-
 }

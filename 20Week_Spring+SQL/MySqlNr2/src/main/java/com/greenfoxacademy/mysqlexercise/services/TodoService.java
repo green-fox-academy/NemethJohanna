@@ -55,8 +55,6 @@ public class TodoService {
     }
 
     public Iterable<Todo> findAllByAssignee (Assignee name){
-//        Optional<Todo> optional = todoRepository.findAllByAssignee(name);
-//        return (Iterable<Todo>) optional.orElse(null);
         return todoRepository.findAllByAssignee(name);
     }
 
