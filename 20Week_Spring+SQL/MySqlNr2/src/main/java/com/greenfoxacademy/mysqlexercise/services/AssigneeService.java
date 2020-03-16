@@ -1,7 +1,6 @@
 package com.greenfoxacademy.mysqlexercise.services;
 
 import com.greenfoxacademy.mysqlexercise.models.Assignee;
-import com.greenfoxacademy.mysqlexercise.models.Todo;
 import com.greenfoxacademy.mysqlexercise.repositories.AssigneeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,5 +41,12 @@ public class AssigneeService {
     public Assignee findAssigneeByName (String name){
         return assigneeRepository.findByName(name);
     }
+
+//    public Iterable<Todo> findAllByAssignee (Assignee name){
+////        Optional<Todo> optional = todoRepository.findAllByAssignee(name);
+////        return (Iterable<Todo>) optional.orElse(null);
+//        return todoRepository.findAllByAssignee(name);
+//    }
+
 
 }

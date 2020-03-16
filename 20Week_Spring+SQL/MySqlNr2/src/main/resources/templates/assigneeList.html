@@ -22,7 +22,7 @@
     <tbody>
     <tr th:each="assignee : ${assignees}">
         <td>
-            <a th:href="@{'/todo?assignee=' + ${assignee.name}}" th:text="${assignee.name}" name="name"></a>
+            <a th:href="@{'/assignee/' + ${assignee.id}}" th:text="${assignee.name}" name="id"></a>
         </td>
         <td th:text="${assignee.email}"></td>
         <td>

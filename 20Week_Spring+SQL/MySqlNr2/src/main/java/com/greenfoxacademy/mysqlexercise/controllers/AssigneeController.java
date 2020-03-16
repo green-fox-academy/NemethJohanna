@@ -2,6 +2,7 @@ package com.greenfoxacademy.mysqlexercise.controllers;
 
 import com.greenfoxacademy.mysqlexercise.models.Assignee;
 import com.greenfoxacademy.mysqlexercise.services.AssigneeService;
+import com.greenfoxacademy.mysqlexercise.services.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,10 +13,12 @@ import org.springframework.web.bind.annotation.*;
 public class AssigneeController {
 
     private AssigneeService assigneeService;
+    private TodoService todoService;
 
     @Autowired
-    public AssigneeController(AssigneeService assigneeService) {
+    public AssigneeController(AssigneeService assigneeService, TodoService todoService) {
         this.assigneeService = assigneeService;
+        this.todoService = todoService;
     }
 
     @GetMapping(value = {"/", ""})
@@ -52,4 +55,19 @@ public class AssigneeController {
         assigneeService.save(assignee);
         return "redirect:/assignee/";
     }
+
+    @GetMapping(path = "/{id}")
+    public String renderListPage(@PathVariable Long id, Model model, @ModelAttribute Assignee assignee){
+        model.addAttribute("assignee", assigneeService.findAssigneeById(id));
+        model.addAttribute("todos", todoService.findAllByAssignee(assignee));
+//        model.addAttribute("todos", assigneeService.)
+        return "assigneedTodos";
+    }
+
+    @PostMapping(path = "/{id}")
+    public String listAssignees(Long id){
+        assigneeService.findAssigneeById(id).getName();
+        return "";
+    }
+
 }
