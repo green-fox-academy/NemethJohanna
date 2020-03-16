@@ -4,8 +4,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Date;
+import java.util.TimeZone;
 
 @Entity
 @Table(name = "todos")
@@ -20,24 +21,27 @@ public class Todo {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dueDate;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate date;
+    private LocalDate creationDate;
     @ManyToOne
     private Assignee assignee;
-
+    
     public Todo(boolean done, String title, boolean urgent, Assignee assignee) {
         this.title = title;
         this.isUrgent = urgent;
         this.isDone = done;
         this.assignee = assignee;
+        this.creationDate = LocalDate.now();
     }
 
     public Todo(String title) {
         this.title = title;
         this.isUrgent = false;
         this.isDone = false;
-    }
+        this.creationDate = LocalDate.now();
+     }
 
     public Todo() {
+        this.creationDate = LocalDate.now();
     }
 
     public long getId() {
@@ -88,11 +92,11 @@ public class Todo {
         this.dueDate = dueDate;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public LocalDate getCreationDate() {
+        return creationDate;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setCreationDate(LocalDate creationDate) {
+        this.creationDate = creationDate;
     }
 }
