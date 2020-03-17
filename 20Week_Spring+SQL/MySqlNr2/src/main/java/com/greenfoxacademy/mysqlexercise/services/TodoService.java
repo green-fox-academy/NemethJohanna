@@ -6,6 +6,11 @@ import com.greenfoxacademy.mysqlexercise.repositories.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.Optional;
 
 @Service
@@ -47,16 +52,27 @@ public class TodoService {
         return optional.orElse(null);
     }
 
-    public Iterable<Todo> searchTodo(String title){
-        return todoRepository.findByTitleContains(title);
+    public Iterable<Todo> search(String search, String key) throws ParseException {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        if (key.equals("title")){
+            return todoRepository.findByTitleContains(search);
+        } else if (key.equals("dueDate")){
+            LocalDate dueDate = LocalDate.parse(search, formatter);
+            return todoRepository.findByDueDate(dueDate);
+        } else if (key.equals("creationDate")){
+            LocalDate creationDate = LocalDate.parse(search, formatter);
+            return todoRepository.findByCreationDate(creationDate);
+        }
+//        else if (key.equals("name")){
+//            return todoRepository.findByAssignee();
+//        }
+        else {
+            return null;
+        }
     }
-//
-//    public Iterable<Todo> search(Todo todo){
-//        return todoRepository.find
-//    }
 
-    public Iterable<Todo> findAllByAssignee (Assignee name){
-        return todoRepository.findAllByAssignee(name);
+    public Iterable<Todo> findByAssignee(Assignee name) {
+        return todoRepository.findByAssignee(name);
     }
 
 }

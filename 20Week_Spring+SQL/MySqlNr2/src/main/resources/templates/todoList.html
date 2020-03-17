@@ -15,15 +15,28 @@
 </div>
 <br>
 <form th:action="@{'/todo'}" method="get">
-    <label for="searchTodo">Search todo</label>
-    <input th:type="text" id="searchTodo" name="title">
-    <button th:type="submit">Search</button>
+    <label>Search</label>
+    <select name="key">
+        <option value="title">Title</option>
+        <option value="creationDate">Creation date</option>
+        <option value="dueDate">Due date</option>
+        <option value="name">Assignee</option>
+    </select>
+    <input type="search" id="search" name="search">
+
+<!--    <span th:if="${'key' == 'title'}" type="text">-->
+<!--        <input type="text" name="search">-->
+<!--    </span>-->
+<!--    <span th:unless="${'key' == 'title'}">-->
+<!--        <input type="date" name="search">-->
+<!--    </span>-->
+    <button type="submit">Search</button>
 </form>
 <br>
 <table>
     <tr>
         <th>ID</th>
-        <th>DATE OF CREATION</th>
+        <th>CREATION DATE</th>
         <th>DUE DATE</th>
         <th>TITLE</th>
         <th>URGENT</th>
@@ -39,7 +52,8 @@
         <td th:text="${todo.getIsUrgent()}"></td>
         <td th:text="${todo.getIsDone()}"></td>
         <td>
-            <a th:href="@{'/assignee/' + ${todo.getAssignee()?.getId()}}" th:text="${todo.getAssignee()?.getName()}" name="id"></a>
+            <a th:href="@{'/assignee/' + ${todo.getAssignee()?.getId()}}" th:text="${todo.getAssignee()?.getName()}"
+               name="id"></a>
         </td>
         <td>
             <form th:action="@{'/todo/' + ${todo.getId()} + '/delete'}" method="post" name="id">

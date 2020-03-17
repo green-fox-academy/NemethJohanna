@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+
 @Controller
 @RequestMapping("/todo")
 public class TodoController {
@@ -24,14 +26,16 @@ public class TodoController {
 
     @GetMapping(value = {"/", ""})
     public String list(Model model, @RequestParam(required = false) Boolean isActive,
-                       @RequestParam(required = false) String title,
-                       @RequestParam(required = false, name="name") Assignee name) {
+                       @RequestParam(required = false, name="search") String search,
+                       @RequestParam(required = false, name="key") String key,
+                       @RequestParam(required = false, name="name") String name) throws ParseException {
         model.addAttribute("todos", todoService.getActiveTodos(isActive));
-        if (title != null) {
-            model.addAttribute("todos", todoService.searchTodo(title));
-        } else if (name != null){
-           model.addAttribute("todos", todoService.findAllByAssignee(name));
+        if (search != null && key != null) {
+            model.addAttribute("todos", todoService.search(search, key));
         }
+//        else if (name != null){
+//           model.addAttribute("todos", todoService.findAllByAssignee(name));
+//        }
         return "todoList";
     }
 
@@ -72,5 +76,11 @@ public class TodoController {
         model.addAttribute("assignee", todoService.findTodoById(id).getAssignee());
         return "assigneedTodos";
     }
+
+//    @PostMapping(path = "/search")
+//    public String search(){
+//        todoService.search();
+//        return "redirect:/todo";
+//    }
 
 }

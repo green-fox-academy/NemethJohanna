@@ -59,7 +59,7 @@ public class AssigneeController {
     @GetMapping(path = "/{id}")
     public String renderListPage(@PathVariable Long id, Model model, @ModelAttribute Assignee assignee){
         model.addAttribute("assignee", assigneeService.findAssigneeById(id));
-        model.addAttribute("todos", todoService.findAllByAssignee(assignee));
+        model.addAttribute("todos", todoService.findByAssignee(assignee));
         return "assigneedTodos";
     }
 
