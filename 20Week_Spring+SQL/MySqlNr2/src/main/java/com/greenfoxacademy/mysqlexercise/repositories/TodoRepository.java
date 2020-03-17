@@ -5,11 +5,8 @@ import com.greenfoxacademy.mysqlexercise.models.Todo;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
-
 @Repository
 public interface TodoRepository extends CrudRepository<Todo, Long> {
-
     Iterable<Todo> findAllByIsDone(Boolean isDone);
     Iterable<Todo> findByTitleContains(String title);
     Iterable<Todo> findAllByAssignee (Assignee name);

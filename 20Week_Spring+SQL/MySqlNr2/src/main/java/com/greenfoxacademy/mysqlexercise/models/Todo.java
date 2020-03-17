@@ -24,7 +24,7 @@ public class Todo {
     private LocalDate creationDate;
     @ManyToOne
     private Assignee assignee;
-    
+
     public Todo(boolean done, String title, boolean urgent, Assignee assignee) {
         this.title = title;
         this.isUrgent = urgent;
