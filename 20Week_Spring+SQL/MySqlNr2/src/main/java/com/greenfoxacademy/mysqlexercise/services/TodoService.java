@@ -6,7 +6,6 @@ import com.greenfoxacademy.mysqlexercise.repositories.AssigneeRepository;
 import com.greenfoxacademy.mysqlexercise.repositories.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.Assert;
 
 import java.text.ParseException;
 import java.time.LocalDate;
@@ -46,11 +45,6 @@ public class TodoService {
 
     public Todo findTodoById(Long id) {
         Optional<Todo> optional = todoRepository.findById(id);
-//        if (optional.isPresent()){
-//            return optional.get();
-//        } else {
-//            return null;
-//        }
         return optional.orElse(null);
     }
 
