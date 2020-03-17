@@ -28,7 +28,8 @@ public class TodoController {
     public String list(Model model, @RequestParam(required = false) Boolean isActive,
                        @RequestParam(required = false, name="search") String search,
                        @RequestParam(required = false, name="key") String key,
-                       @RequestParam(required = false, name="name") String name) throws ParseException {
+                       @RequestParam(required = false, name="name") String name) throws ParseException
+    {
         model.addAttribute("todos", todoService.getActiveTodos(isActive));
         if (search != null && key != null) {
             model.addAttribute("todos", todoService.search(search, key));

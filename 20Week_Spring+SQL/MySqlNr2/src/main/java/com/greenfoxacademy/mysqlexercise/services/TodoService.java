@@ -2,24 +2,26 @@ package com.greenfoxacademy.mysqlexercise.services;
 
 import com.greenfoxacademy.mysqlexercise.models.Assignee;
 import com.greenfoxacademy.mysqlexercise.models.Todo;
+import com.greenfoxacademy.mysqlexercise.repositories.AssigneeRepository;
 import com.greenfoxacademy.mysqlexercise.repositories.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.Assert;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.Optional;
 
 @Service
 public class TodoService {
 
     private TodoRepository todoRepository;
+    private AssigneeRepository assigneeRepository;
 
     @Autowired
-    public TodoService(TodoRepository todoRepository) {
+    public TodoService(TodoRepository todoRepository, AssigneeRepository assigneeRepository) {
+        this.assigneeRepository = assigneeRepository;
         this.todoRepository = todoRepository;
     }
 
@@ -62,11 +64,9 @@ public class TodoService {
         } else if (key.equals("creationDate")){
             LocalDate creationDate = LocalDate.parse(search, formatter);
             return todoRepository.findByCreationDate(creationDate);
-        }
-//        else if (key.equals("name")){
-//            return todoRepository.findByAssignee();
-//        }
-        else {
+        } else if (key.equals("name")){
+            return todoRepository.findByAssignee(assigneeRepository.findByName(search));
+        } else {
             return null;
         }
     }

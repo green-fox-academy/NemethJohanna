@@ -13,7 +13,7 @@ public interface TodoRepository extends CrudRepository<Todo, Long> {
     Iterable<Todo> findAllByIsDone(Boolean isDone);
     Iterable<Todo> findByTitleContains(String title);
     Iterable<Todo> findByAssignee (Assignee name);
-    Iterable<Todo> findAllByAssignee (String name);
+//    Iterable<Todo> findAllByAssignee (String name);
     Iterable<Todo> findByDueDate(LocalDate dueDate);
     Iterable<Todo> findByCreationDate(LocalDate dueDate);
 }
