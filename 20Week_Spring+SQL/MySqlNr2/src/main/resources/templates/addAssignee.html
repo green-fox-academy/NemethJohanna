@@ -6,16 +6,16 @@
 </head>
 <body>
 <h1>Add new todo</h1>
-<form th:action="@{/assignee/add}" method="post">
+<form action="/assignee/add" method="post">
     <div>
         <label for="addName">Name: </label>
-        <input th:type="text" id="addName" name="name">
+        <input type="text" id="addName" name="name">
     </div>
     <div>
         <label for="addEmail">Email: </label>
-        <input th:type="text" id="addEmail" name="email">
+        <input type="text" id="addEmail" name="email">
     </div>
-    <button th:type="submit">SUBMIT</button>
+    <button type="submit">SUBMIT</button>
 </form>
 </body>
 </html>

@@ -11,10 +11,10 @@
 </div>
 <br>
 <div>
-    <a th:href="@{/todo/add}">Add new todo</a>
+    <a href="/todo/add">Add new todo</a>
 </div>
 <br>
-<form th:action="@{'/todo'}" method="get">
+<form action="/todo" method="get">
     <label>Search</label>
     <select name="key">
         <option value="title">Title</option>
@@ -50,7 +50,7 @@
         </td>
         <td>
             <form th:action="@{'/todo/' + ${todo.getId()} + '/delete'}" method="post" name="id">
-                <button th:type="submit">delete</button>
+                <button type="submit">delete</button>
             </form>
         </td>
         <td>

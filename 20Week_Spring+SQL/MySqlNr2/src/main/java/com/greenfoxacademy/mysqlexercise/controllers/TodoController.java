@@ -62,9 +62,7 @@ public class TodoController {
 
     @PostMapping(path = "/{id}/edit")
     public String editTodo(@ModelAttribute("todo") Todo todo, String assigneeName) {
-        Assignee assignee = assigneeService.findAssigneeByName(assigneeName);
-        todo.setAssignee(assignee);
-        todoService.save(todo);
+        todoService.save(todo, assigneeName);
         return "redirect:/todo";
     }
 

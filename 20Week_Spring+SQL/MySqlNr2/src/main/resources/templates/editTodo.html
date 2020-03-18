@@ -9,7 +9,7 @@
 <form action="#" th:action="@{'/todo/' + ${todo.getId()} + '/edit'}" th:method="post">
     <div>
         <label for="editTodo">Todo Description</label>
-        <input th:type="text" id="editTodo" name="title" th:value="${todo.title}">
+        <input type="text" id="editTodo" name="title" th:value="${todo.title}">
     </div>
     <div>
         <label for="checkUrgent">Urgent</label>
@@ -29,8 +29,8 @@
         </select>
     </div>
     <div>
-        <button th:type="submit">Submit</button>
-        <a th:href="@{/todo}">Cancel</a>
+        <button type="submit">Submit</button>
+        <a href="/todo">Cancel</a>
     </div>
 </form>
 </body>

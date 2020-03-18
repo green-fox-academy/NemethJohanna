@@ -11,7 +11,7 @@
 </div>
 <br>
 <div>
-    <a th:href="@{/assignee/add}">Add new assignee</a>
+    <a href="/assignee/add">Add new assignee</a>
 </div>
 <br>
 <table>
@@ -27,7 +27,7 @@
         <td th:text="${assignee.email}"></td>
         <td>
             <form th:action="@{'/assignee/' + ${assignee.getId()} + '/delete'}" method="post" name="id">
-                <button th:type="submit">delete</button>
+                <button type="submit">delete</button>
             </form>
         </td>
         <td>

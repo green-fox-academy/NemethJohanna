@@ -9,15 +9,15 @@
 <form th:action="@{'/assignee/' + ${assignee.getId()} + '/edit'}" method="post">
     <div>
         <label for="editName">Name</label>
-        <input th:type="text" id="editName" name="name" th:value="${assignee.name}">
+        <input type="text" id="editName" name="name" th:value="${assignee.name}">
     </div>
     <div>
         <label for="editEmail">Email</label>
-        <input th:type="text" id="editEmail" name="email" th:value="${assignee.email}">
+        <input type="text" id="editEmail" name="email" th:value="${assignee.email}">
     </div>
     <div>
-        <button th:type="submit">Submit</button>
-        <a th:href="@{/todo}">Cancel</a>
+        <button type="submit">Submit</button>
+        <a href="/todo">Cancel</a>
     </div>
 </form>
 </body>

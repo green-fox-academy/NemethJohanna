@@ -6,17 +6,17 @@
 </head>
 <body>
 <h1>Add new todo</h1>
-<form th:action="@{/todo/add}" method="post">
+<form action="/todo/add" method="post">
     <div>
         <label for="addTodo"> Title</label>
-        <input th:type="text" id="addTodo" name="title">
+        <input type="text" id="addTodo" name="title">
     </div>
     <div>
         <label for="dueDate">Due date</label>
         <input type="date" id="dueDate" name="dueDate">
     </div>
     <div>
-        <button th:type="submit">SUBMIT</button>
+        <button type="submit">SUBMIT</button>
     </div>
 </form>
 </body>

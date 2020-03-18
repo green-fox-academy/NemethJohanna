@@ -39,7 +39,9 @@ public class TodoService {
         todoRepository.deleteById(id);
     }
 
-    public void save(Todo todo) {
+    public void save(Todo todo, String name) {
+        Assignee assignee = assigneeRepository.findByName(name);
+        todo.setAssignee(assignee);
         todoRepository.save(todo);
     }
 
