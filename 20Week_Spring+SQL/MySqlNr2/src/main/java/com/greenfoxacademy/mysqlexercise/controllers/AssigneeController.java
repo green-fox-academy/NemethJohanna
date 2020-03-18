@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @Controller
 @RequestMapping("/assignee")
 public class AssigneeController {
@@ -57,7 +59,7 @@ public class AssigneeController {
     }
 
     @GetMapping(path = "/{id}")
-    public String renderListPage(@PathVariable Long id, Model model, @ModelAttribute Assignee assignee){
+    public String renderListPage(@PathVariable Long id, Model model, @ModelAttribute Optional<Assignee> assignee){
         model.addAttribute("assignee", assigneeService.findAssigneeById(id));
         model.addAttribute("todos", todoService.findByAssignee(assignee));
         return "assigneedTodos";

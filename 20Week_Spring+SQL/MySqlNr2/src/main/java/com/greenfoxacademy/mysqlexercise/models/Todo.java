@@ -4,6 +4,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Optional;
 
 @Entity
 @Table(name = "todos")
@@ -77,10 +78,6 @@ public class Todo {
         return assignee;
     }
 
-    public void setAssignee(Assignee assignee) {
-        this.assignee = assignee;
-    }
-
     public LocalDate getDueDate() {
         return dueDate;
     }
@@ -95,5 +92,9 @@ public class Todo {
 
     public void setCreationDate(LocalDate creationDate) {
         this.creationDate = creationDate;
+    }
+
+    public void setAssignee(Optional<Assignee> assignee) {
+        this.assignee = assignee.orElse(null);
     }
 }

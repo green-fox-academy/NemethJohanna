@@ -40,7 +40,7 @@ public class TodoService {
     }
 
     public void save(Todo todo, String name) {
-        Assignee assignee = assigneeRepository.findByName(name);
+        Optional<Assignee> assignee = assigneeRepository.findByName(name);
         todo.setAssignee(assignee);
         todoRepository.save(todo);
     }
@@ -67,7 +67,7 @@ public class TodoService {
         }
     }
 
-    public Iterable<Todo> findByAssignee(Assignee name) {
+    public Iterable<Todo> findByAssignee(Optional<Assignee> name) {
         return todoRepository.findByAssignee(name);
     }
 

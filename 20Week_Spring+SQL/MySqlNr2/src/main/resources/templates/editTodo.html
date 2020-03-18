@@ -24,7 +24,7 @@
         <input type="date" id="dueDate" name="dueDate" th:value="${todo.getDueDate()}">
     </div>
     <div>
-        <select name="assigneeName">
+        <select name="name">
             <option th:each="assignee : ${assignees}" th:text="${assignee.name}"></option>
         </select>
     </div>

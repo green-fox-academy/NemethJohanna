@@ -4,9 +4,11 @@ import com.greenfoxacademy.mysqlexercise.models.Assignee;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface AssigneeRepository extends CrudRepository<Assignee, Long> {
 
-    Assignee findByName(String name);
+    Optional<Assignee> findByName(String name);
 
 }
