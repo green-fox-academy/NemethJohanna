@@ -16,17 +16,10 @@ public class Post {
     public Post() {
     }
 
-    public Post(int id, String title, String url, int score) {
-        this.id = id;
+    public Post(String title, String url) {
         this.title = title;
         this.url = url;
-        this.score = score;
-    }
-
-    public Post(String title, String url, int score) {
-        this.title = title;
-        this.url = url;
-        this.score = score;
+        this.score = 0;
     }
 
     public int getId() {

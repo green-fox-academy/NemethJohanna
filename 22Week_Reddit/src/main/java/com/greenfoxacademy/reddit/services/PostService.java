@@ -27,17 +27,23 @@ public class PostService {
     }
 
     public void raiseScore(int id){
-        postRepository.findById(id).get().setScore(10);
-//        Optional<Post> optional = postRepository.findById(id);
-//        if (optional.isPresent()){
-//            optional.get().setScore(10);
-//        }
+        Optional<Post> post = postRepository.findById(id);
+        if (post.isPresent()){
+            Post postScoreRaising = post.get();
+            postScoreRaising.setScore(postScoreRaising.getScore() + 1);
+            postRepository.save(postScoreRaising);
+        }
+
     }
 
     public void decreaseScore(int id){
-        Optional<Post> optional = postRepository.findById(id);
-        if (optional.isPresent()){
-            optional.get().setScore(5);
+        Optional<Post> post = postRepository.findById(id);
+        if (post.isPresent()){
+            Post postScoreDecreasing = post.get();
+            if (postScoreDecreasing.getScore() > 0){
+                postScoreDecreasing.setScore(postScoreDecreasing.getScore() - 1);
+                postRepository.save(postScoreDecreasing);
+            }
         }
     }
 

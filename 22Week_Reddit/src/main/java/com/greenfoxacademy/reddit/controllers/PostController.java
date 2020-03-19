@@ -49,4 +49,8 @@ public class PostController {
         return "redirect:/";
     }
 
+    /*        Post post1 = new Post("Read news", "https://index.hu/");
+        Post post2 = new Post("Learn coding", "https://www.udemy.com/");
+        Post post3 = new Post("Watch youtube", "https://www.youtube.com/");*/
+
 }
