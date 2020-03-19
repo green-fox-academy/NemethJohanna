@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Posts</title>
+</head>
+<body>
+<div>
+    <a href="/submit">Submit new post</a>
+</div>
+<br>
+<div>
+    <h1>Trending posts</h1>
+</div>
+<br>
+<table>
+    <tbody>
+    <tr th:each="post : ${posts}">
+        <td th:text="${post.getScore()}"></td>
+        <td>
+            <form th:action="'/' + ${post.getId() + '/raise-score'}" method="post" name="id">
+                <button> + </button>
+            </form>
+        </td>
+        <td>
+            <form th:action="'/' + ${post.getId() + '/decrease-score'}" method="post" name="id">
+                <button> - </button>
+            </form>
+        </td>
+        <td>
+            <a th:href="${post.getUrl()}" th:text="${post.getTitle()}"></a>
+        </td>
+
+    </tr>
+    </tbody>
+
+
+</table>
+
+</body>
+</html>

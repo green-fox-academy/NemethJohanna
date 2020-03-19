@@ -50,7 +50,7 @@ public class TodoService {
         return optional.orElse(null);
     }
 
-    public Iterable<Todo> search(String search, String key) throws ParseException {
+    public Iterable<Todo> search(String search, String key) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         if (key.equals("title")){
             return todoRepository.findByTitleContains(search);
