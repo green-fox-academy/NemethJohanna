@@ -38,16 +38,21 @@ public class PostController {
     }
 
     @PostMapping(path = "/{id}/raise-score")
-    public String raise(@PathVariable int id){
+    public String raise(@PathVariable long id){
         postService.raiseScore(id);
         return "redirect:/";
     }
 
     @PostMapping(path = "/{id}/decrease-score")
-    public String decrease(@PathVariable int id){
+    public String decrease(@PathVariable long id){
         postService.decreaseScore(id);
         return "redirect:/";
     }
+
+//    @GetMapping(path = "/sign-in")
+//    public String renderSignIn(){
+//        return "signIn";
+//    }
 
     /*        Post post1 = new Post("Read news", "https://index.hu/");
         Post post2 = new Post("Learn coding", "https://www.udemy.com/");

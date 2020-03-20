@@ -19,7 +19,7 @@ public class Post {
     public Post(String title, String url) {
         this.title = title;
         this.url = url;
-        this.score = 0;
+        this.score = 1;
     }
 
     public long getId() {
