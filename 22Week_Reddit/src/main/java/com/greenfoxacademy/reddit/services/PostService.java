@@ -1,7 +1,9 @@
 package com.greenfoxacademy.reddit.services;
 
 import com.greenfoxacademy.reddit.models.Post;
+import com.greenfoxacademy.reddit.models.User;
 import com.greenfoxacademy.reddit.repositories.PostRepository;
+import com.greenfoxacademy.reddit.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,10 +14,12 @@ import java.util.Optional;
 public class PostService {
 
     private PostRepository postRepository;
+    private UserRepository userRepository;
 
     @Autowired
-    public PostService(PostRepository postRepository) {
+    public PostService(PostRepository postRepository, UserRepository userRepository) {
         this.postRepository = postRepository;
+        this.userRepository = userRepository;
     }
 
     public List<Post> list() {
@@ -23,8 +27,9 @@ public class PostService {
         return postRepository.findAllByOrderByScoreDesc();
     }
 
-    public void add(Post post) {
-        postRepository.save(post);
+    public void add(Post post, User userName) {
+        userName.addPost(post);
+//        postRepository.save(post);
     }
 
     public void raiseScore(long id) {
