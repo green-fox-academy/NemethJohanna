@@ -6,17 +6,20 @@
 </head>
 <body>
 <div>
+    <h1 th:text="'Hello, ' + ${userName} + '!'"></h1>
+</div>
+<br>
+<div>
     <a th:href="'/' + ${userName} + '/submit'">Submit new post</a>
 </div>
 <br>
 <div>
-    <h1>Trending posts</h1>
+    <h2>Trending posts</h2>
 </div>
-<br>
-<table>
+<table class="table" style="width: 50%">
     <tbody>
     <tr th:each="post : ${posts}">
-        <td th:text="${post.getScore()}"></td>
+        <th th:text="${post.getScore()}" scope="row"></th>
         <td>
             <form th:action="'/' + ${userName} + '/' + ${post.getId() + '/raise-score'}" method="post" name="id">
                 <button> + </button>

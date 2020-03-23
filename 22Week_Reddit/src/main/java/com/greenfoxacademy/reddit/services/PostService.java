@@ -23,13 +23,19 @@ public class PostService {
     }
 
     public List<Post> list() {
-//        return postRepository.findAll();
         return postRepository.findAllByOrderByScoreDesc();
     }
 
-    public void add(Post post, User userName) {
-        userName.addPost(post);
-//        postRepository.save(post);
+    public void addPost(Post post) {
+        postRepository.save(post);
+    }
+
+    public void setUser(String userName, Post post){
+        Optional<User> user = userRepository.findByUserName(userName);
+        user.ifPresent(post::setUser);
+//        if (user.isPresent()){
+//            post.setUser(user.get());
+//        }
     }
 
     public void raiseScore(long id) {

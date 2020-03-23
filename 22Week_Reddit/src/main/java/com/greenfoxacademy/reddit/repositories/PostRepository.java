@@ -12,5 +12,6 @@ public interface PostRepository extends CrudRepository <Post, Long> {
 
     Optional<Post> findById(int id);
     List<Post> findAllByOrderByScoreDesc();
+    Optional<Post> findByUrl(String url);
 
 }

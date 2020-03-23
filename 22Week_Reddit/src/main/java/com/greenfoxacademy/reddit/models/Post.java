@@ -1,6 +1,7 @@
 package com.greenfoxacademy.reddit.models;
 
 import javax.persistence.*;
+import java.util.Optional;
 
 @Entity
 @Table(name = "posts")
@@ -12,14 +13,17 @@ public class Post {
     private String title;
     private String url;
     private int score;
+    @ManyToOne
+    private User user;
 
     public Post() {
     }
 
-    public Post(String title, String url) {
+    public Post(String title, String url, User user) {
         this.title = title;
         this.url = url;
         this.score = 1;
+        this.user = user;
     }
 
     public long getId() {
@@ -52,5 +56,13 @@ public class Post {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

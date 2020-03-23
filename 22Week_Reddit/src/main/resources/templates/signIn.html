@@ -7,7 +7,7 @@
 <body>
 <h1>SIGN IN</h1>
 <div>
-    <form th:action="'/' + ${userName} + '/list'" method="post">
+    <form action="/sign-in" method="post">
         <div>
             <label for="userName">USERNAME:</label>
             <input type="text" id="userName" name="userName">
