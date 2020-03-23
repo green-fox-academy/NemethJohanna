@@ -50,7 +50,7 @@ public class PostController {
     public String addNewPost(@ModelAttribute Post post, @PathVariable String userName){
         userService.savePost(post, userName);
         postService.addPost(post);
-//        postService.setUser(userName, post);
+        postService.setUser(userName, post);
         return "redirect:/" + userName + "/list";
     }
 

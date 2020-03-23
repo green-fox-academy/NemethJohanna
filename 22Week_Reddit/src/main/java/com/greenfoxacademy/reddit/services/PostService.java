@@ -40,10 +40,10 @@ public class PostService {
 
     public void setUser(String userName, Post post){
         Optional<User> user = userRepository.findByUserName(userName);
-        user.ifPresent(post::setUser);
-//        if (user.isPresent()){
-//            post.setUser(user.get());
-//        }
+        if (user.isPresent()){
+            post.setUser(userRepository.findByUserName(userName).get());
+            postRepository.save(post);
+        }
     }
 
     public void raiseScore(long id) {
