@@ -30,6 +30,14 @@ public class PostService {
         postRepository.save(post);
     }
 
+    public void savePost(Post post, User user){
+        postRepository.save(post);
+//        Optional<User> user1 = userRepository.findByUserName(user.getUserName());
+//        if (user1.isPresent()){
+//            post.setUser(user);
+//        }
+    }
+
     public void setUser(String userName, Post post){
         Optional<User> user = userRepository.findByUserName(userName);
         user.ifPresent(post::setUser);

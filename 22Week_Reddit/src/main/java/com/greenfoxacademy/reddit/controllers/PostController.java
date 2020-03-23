@@ -35,29 +35,22 @@ public class PostController {
     @GetMapping(path = "/{userName}/list")
     public String getList(Model model, @ModelAttribute User user){
         model.addAttribute("userName", user.getUserName());
-//        model.addAttribute("userName", userService.getUserName(userName));
-        model.addAttribute("posts", postService.list());
-        return "index";
-    }
-
-    @PostMapping(path = "/{userName}/list")
-    public String list(Model model, @ModelAttribute User userName){
-//        userService.saveUser(userName);
         model.addAttribute("posts", postService.list());
         return "index";
     }
 
     @GetMapping(path = "/{userName}/submit")
-    public String renderAddPage(@PathVariable String userName, Model model){
+    public String renderAddPage(Model model, @ModelAttribute User user, @PathVariable String userName){
         model.addAttribute("userName", userName);
+        model.addAttribute("post", new Post());
         return "submit";
     }
 
     @PostMapping(path = "/{userName}/submit")
-    public String addNewPost(@ModelAttribute Post post, @ModelAttribute String userName){
+    public String addNewPost(@ModelAttribute Post post, @PathVariable String userName){
+        userService.savePost(post, userName);
         postService.addPost(post);
-//        userService.savePost(userName, post);
-        postService.setUser(userName, post);
+//        postService.setUser(userName, post);
         return "redirect:/" + userName + "/list";
     }
 

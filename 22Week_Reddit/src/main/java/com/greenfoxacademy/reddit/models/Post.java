@@ -1,7 +1,6 @@
 package com.greenfoxacademy.reddit.models;
 
 import javax.persistence.*;
-import java.util.Optional;
 
 @Entity
 @Table(name = "posts")

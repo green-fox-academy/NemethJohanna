@@ -11,12 +11,12 @@
     <form th:action="'/' + ${userName} + '/submit'" method="post">
         <div>
             <label for="title">Title:</label>
-            <input type="text" id="title" name="title">
+            <input type="text" id="title" th:field="${post.title}">
         </div>
         <br>
         <div>
             <label for="url">URL:</label>
-            <input type="text" id="url" name="url">
+            <input type="text" id="url" th:field="${post.url}">
         </div>
         <br>
         <button type="submit">SUBMIT</button>
