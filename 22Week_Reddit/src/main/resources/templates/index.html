@@ -22,12 +22,12 @@
         <th th:text="${post.getScore()}" scope="row"></th>
         <td>
             <form th:action="'/' + ${userName} + '/' + ${post.getId() + '/raise-score'}" method="post" name="id">
-                <button> + </button>
+                <button type="submit"> + </button>
             </form>
         </td>
         <td>
             <form th:action="'/' + ${userName} + '/' + ${post.getId() + '/decrease-score'}" method="post" name="id">
-                <button> - </button>
+                <button type="submit"> - </button>
             </form>
         </td>
         <td>

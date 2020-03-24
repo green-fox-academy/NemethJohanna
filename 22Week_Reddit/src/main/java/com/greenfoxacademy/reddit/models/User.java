@@ -1,5 +1,7 @@
 package com.greenfoxacademy.reddit.models;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,10 +16,12 @@ public class User {
     private String userName;
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
     private List<Post> postList;
+//    private Boolean vote;
 
     public User(String userName) {
         this.userName = userName;
         this.postList = new ArrayList<>();
+//        this.vote = false;
     }
 
     public User() {
@@ -47,4 +51,11 @@ public class User {
         postList.add(post);
     }
 
+//    public Boolean getVote() {
+//        return vote;
+//    }
+//
+//    public void setVote(Boolean vote) {
+//        this.vote = vote;
+//    }
 }

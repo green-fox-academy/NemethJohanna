@@ -17,6 +17,7 @@ public class Post {
     private User user;
 
     public Post() {
+        this.score = 1;
     }
 
     public Post(String title, String url, User user) {

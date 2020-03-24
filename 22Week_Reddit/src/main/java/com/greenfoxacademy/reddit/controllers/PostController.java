@@ -55,14 +55,14 @@ public class PostController {
 
     @PostMapping(path = "/{userName}/{id}/raise-score")
     public String raise(@PathVariable long id, @PathVariable String userName){
-        postService.raiseScore(id);
-        return "redirect:/";
+        postService.raiseScore(id, userName);
+        return "redirect:/" + userName + "/list";
     }
 
     @PostMapping(path = "/{userName}/{id}/decrease-score")
     public String decrease(@PathVariable long id, @PathVariable String userName){
-        postService.decreaseScore(id);
-        return "redirect:/";
+        postService.decreaseScore(id, userName);
+        return "redirect:/" + userName + "/list";
     }
 
 

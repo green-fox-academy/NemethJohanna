@@ -35,16 +35,31 @@ public class PostService {
         }
     }
 
-    public void raiseScore(long id) {
+    public void raiseScore(long id, String userName) {
+//        Optional<User> user = userRepository.findByUserName(userName);
+//        if (user.isPresent()){
+//            Optional<Post> post = postRepository.findById(id);
+//            if (post.isPresent()) {
+//
+//            if (user.get().getVote() == false){
+//                    Post postScoreRaising = post.get();
+//                    postScoreRaising.setScore(postScoreRaising.getScore() + 1);
+//                    postRepository.save(postScoreRaising);
+//                    user.get().setVote(true);
+//                }
+//            }
+//        }
+
         Optional<Post> post = postRepository.findById(id);
         if (post.isPresent()) {
             Post postScoreRaising = post.get();
             postScoreRaising.setScore(postScoreRaising.getScore() + 1);
             postRepository.save(postScoreRaising);
         }
+
     }
 
-    public void decreaseScore(long id) {
+    public void decreaseScore(long id, String userName) {
         Optional<Post> post = postRepository.findById(id);
         if (post.isPresent()) {
             Post postScoreDecreasing = post.get();
