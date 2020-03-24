@@ -49,19 +49,18 @@ public class PostController {
     @PostMapping(path = "/{userName}/submit")
     public String addNewPost(@ModelAttribute Post post, @PathVariable String userName){
         userService.savePost(post, userName);
-        postService.addPost(post);
         postService.setUser(userName, post);
         return "redirect:/" + userName + "/list";
     }
 
     @PostMapping(path = "/{userName}/{id}/raise-score")
-    public String raise(@PathVariable long id, @PathVariable User userName){
+    public String raise(@PathVariable long id, @PathVariable String userName){
         postService.raiseScore(id);
         return "redirect:/";
     }
 
     @PostMapping(path = "/{userName}/{id}/decrease-score")
-    public String decrease(@PathVariable long id){
+    public String decrease(@PathVariable long id, @PathVariable String userName){
         postService.decreaseScore(id);
         return "redirect:/";
     }

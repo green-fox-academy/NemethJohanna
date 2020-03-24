@@ -25,10 +25,6 @@ public class UserService {
         } else {
             User user2 = new User(userName);
             userRepository.save(user2);
-//            Optional<User> user3 = userRepository.findByUserName(userName);
-//            if (user3.isPresent()){
-//                user3.get();
-//            }
         }
     }
 

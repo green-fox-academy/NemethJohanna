@@ -26,19 +26,8 @@ public class PostService {
         return postRepository.findAllByOrderByScoreDesc();
     }
 
-    public void addPost(Post post) {
-        postRepository.save(post);
-    }
-
-    public void savePost(Post post, User user){
-        postRepository.save(post);
-//        Optional<User> user1 = userRepository.findByUserName(user.getUserName());
-//        if (user1.isPresent()){
-//            post.setUser(user);
-//        }
-    }
-
     public void setUser(String userName, Post post){
+        postRepository.save(post);
         Optional<User> user = userRepository.findByUserName(userName);
         if (user.isPresent()){
             post.setUser(userRepository.findByUserName(userName).get());
