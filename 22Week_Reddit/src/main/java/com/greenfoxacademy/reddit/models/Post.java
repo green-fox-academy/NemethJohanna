@@ -1,7 +1,9 @@
 package com.greenfoxacademy.reddit.models;
 
 import javax.persistence.*;
-import java.util.Optional;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "posts")
@@ -15,9 +17,14 @@ public class Post {
     private int score;
     @ManyToOne
     private User user;
+    private LocalDate date;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Vote> voteList;
 
     public Post() {
         this.score = 1;
+        this.date = LocalDate.now();
+        this.voteList = new ArrayList<>();
     }
 
     public Post(String title, String url, User user) {
@@ -25,6 +32,8 @@ public class Post {
         this.url = url;
         this.score = 1;
         this.user = user;
+        this.date = LocalDate.now();
+        this.voteList = new ArrayList<>();
     }
 
     public long getId() {
@@ -67,4 +76,23 @@ public class Post {
         this.user = user;
     }
 
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public List<Vote> getVoteList() {
+        return voteList;
+    }
+
+    public void setVoteList(List<Vote> voteList) {
+        this.voteList = voteList;
+    }
+
+    public void addVote(Vote vote){
+        voteList.add(vote);
+    }
 }

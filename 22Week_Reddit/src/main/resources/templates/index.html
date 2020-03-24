@@ -16,23 +16,24 @@
 <div>
     <h2>Trending posts</h2>
 </div>
-<table class="table" style="width: 50%">
+<table class="table table-striped">
     <tbody>
     <tr th:each="post : ${posts}">
         <th th:text="${post.getScore()}" scope="row"></th>
         <td>
             <form th:action="'/' + ${userName} + '/' + ${post.getId() + '/raise-score'}" method="post" name="id">
-                <button type="submit"> + </button>
+                <button type="submit"> +</button>
             </form>
         </td>
         <td>
             <form th:action="'/' + ${userName} + '/' + ${post.getId() + '/decrease-score'}" method="post" name="id">
-                <button type="submit"> - </button>
+                <button type="submit"> -</button>
             </form>
         </td>
         <td>
             <a th:href="${post.getUrl()}" th:text="${post.getTitle()}"></a>
         </td>
+        <td th:text="${post.getDate()}"></td>
     </tr>
     </tbody>
 </table>
