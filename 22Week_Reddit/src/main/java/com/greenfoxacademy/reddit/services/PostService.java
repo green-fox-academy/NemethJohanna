@@ -58,7 +58,7 @@ public class PostService {
                 Vote vote = new Vote(user.get(), post.get());
                 newPost.addVote(vote);
                 newPost.setScore(newPost.getScore() + 1);
-                postRepository.save(newPost);
+//                postRepository.save(newPost);
             }
         }
     }
