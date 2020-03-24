@@ -18,7 +18,7 @@ public class Post {
     @ManyToOne
     private User user;
     private LocalDate date;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "post")
     private List<Vote> voteList;
 
     public Post() {

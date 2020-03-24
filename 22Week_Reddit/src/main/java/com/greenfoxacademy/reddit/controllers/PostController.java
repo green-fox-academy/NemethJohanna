@@ -2,6 +2,7 @@ package com.greenfoxacademy.reddit.controllers;
 
 import com.greenfoxacademy.reddit.models.Post;
 import com.greenfoxacademy.reddit.models.User;
+import com.greenfoxacademy.reddit.models.Vote;
 import com.greenfoxacademy.reddit.services.PostService;
 import com.greenfoxacademy.reddit.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,15 +54,16 @@ public class PostController {
         return "redirect:/" + userName + "/list";
     }
 
-    @PostMapping(path = "/{userName}/{id}/raise-score")
-    public String raise(@PathVariable long id, @PathVariable String userName){
-        postService.raiseScore(id, userName);
+    @PostMapping(path = "/{userName}/{postId}/raise-score")
+    public String raise(@PathVariable long postId, @PathVariable String userName, @ModelAttribute Vote vote){
+        postService.raiseScore(postId, userName);
+//        postService.raiseScore(vote);
         return "redirect:/" + userName + "/list";
     }
 
-    @PostMapping(path = "/{userName}/{id}/decrease-score")
-    public String decrease(@PathVariable long id, @PathVariable String userName){
-        postService.decreaseScore(id, userName);
+    @PostMapping(path = "/{userName}/{postId}/decrease-score")
+    public String decrease(@PathVariable long postId, @PathVariable String userName){
+        postService.decreaseScore(postId, userName);
         return "redirect:/" + userName + "/list";
     }
 
