@@ -76,7 +76,7 @@ public class PostService {
                     newPost.setScore(newPost.getScore() - 1);
                     postRepository.save(newPost);
                 }
-            } else {
+            } else if (vote.get().getPlusOrMinus() == "+") {
                 Vote vote1 = new Vote(user.get(), post.get(), "-");
                 if (!vote.isPresent()) {
                     newPost.addVote(vote1);
