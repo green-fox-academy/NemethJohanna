@@ -45,15 +45,23 @@ public class PostService {
         Optional<Vote> vote = voteRepository.findByUserAndPost(user.get(), post.get());
         if (post.isPresent() && user.isPresent()) {
             Post newPost = post.get();
-            if (!newPost.getVoteList().contains(postId)) {
+            if (!newPost.getVoteList().contains(postId) || (vote.get().getPlusOrMinus() != "-")) {
                 Vote vote1 = new Vote(user.get(), post.get(), "+");
-                if (!vote.isPresent()){
+                if (!vote.isPresent()) {
                     newPost.addVote(vote1);
                     newPost.setScore(newPost.getScore() + 1);
                     postRepository.save(newPost);
-                } else {
-                    Vote vote2 = new Vote(user.get(), post.get(), "-");
-                    newPost.addVote(vote2);
+                }
+//                else {
+//                    Vote vote2 = new Vote(user.get(), post.get(), "-");
+//                    newPost.addVote(vote2);
+//                    newPost.setScore(newPost.getScore() + 2);
+//                    postRepository.save(newPost);
+//                }
+            } else if (vote.get().getPlusOrMinus() == "-") {
+                Vote vote1 = new Vote(user.get(), post.get(), "+");
+                if (!vote.isPresent()) {
+                    newPost.addVote(vote1);
                     newPost.setScore(newPost.getScore() + 2);
                     postRepository.save(newPost);
                 }
@@ -67,15 +75,23 @@ public class PostService {
         Optional<Vote> vote = voteRepository.findByUserAndPost(user.get(), post.get());
         if (post.isPresent() && user.isPresent()) {
             Post newPost = post.get();
-            if (!newPost.getVoteList().contains(postId)) {
+            if (!newPost.getVoteList().contains(postId) || (vote.get().getPlusOrMinus() != "+")) {
                 Vote vote1 = new Vote(user.get(), post.get(), "-");
-                if (!vote.isPresent()){
+                if (!vote.isPresent()) {
                     newPost.addVote(vote1);
                     newPost.setScore(newPost.getScore() - 1);
                     postRepository.save(newPost);
-                } else {
-                    Vote vote2 = new Vote(user.get(), post.get(), "+");
-                    newPost.addVote(vote2);
+                }
+//                else {
+//                    Vote vote2 = new Vote(user.get(), post.get(), "+");
+//                    newPost.addVote(vote2);
+//                    newPost.setScore(newPost.getScore() - 2);
+//                    postRepository.save(newPost);
+//                }
+            } else if (vote.get().getPlusOrMinus() == "+") {
+                Vote vote1 = new Vote(user.get(), post.get(), "-");
+                if (!vote.isPresent()) {
+                    newPost.addVote(vote1);
                     newPost.setScore(newPost.getScore() - 2);
                     postRepository.save(newPost);
                 }
