@@ -52,12 +52,6 @@ public class PostService {
                     newPost.setScore(newPost.getScore() + 1);
                     postRepository.save(newPost);
                 }
-//                else {
-//                    Vote vote2 = new Vote(user.get(), post.get(), "-");
-//                    newPost.addVote(vote2);
-//                    newPost.setScore(newPost.getScore() + 2);
-//                    postRepository.save(newPost);
-//                }
             } else if (vote.get().getPlusOrMinus() == "-") {
                 Vote vote1 = new Vote(user.get(), post.get(), "+");
                 if (!vote.isPresent()) {
@@ -82,13 +76,7 @@ public class PostService {
                     newPost.setScore(newPost.getScore() - 1);
                     postRepository.save(newPost);
                 }
-//                else {
-//                    Vote vote2 = new Vote(user.get(), post.get(), "+");
-//                    newPost.addVote(vote2);
-//                    newPost.setScore(newPost.getScore() - 2);
-//                    postRepository.save(newPost);
-//                }
-            } else if (vote.get().getPlusOrMinus() == "+") {
+            } else {
                 Vote vote1 = new Vote(user.get(), post.get(), "-");
                 if (!vote.isPresent()) {
                     newPost.addVote(vote1);

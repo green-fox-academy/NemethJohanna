@@ -55,7 +55,7 @@ public class PostController {
     }
 
     @PostMapping(path = "/{userName}/{postId}/raise-score")
-    public String raise(@PathVariable long postId, @PathVariable String userName, @ModelAttribute Vote vote){
+    public String raise(@PathVariable long postId, @PathVariable String userName){
         postService.raiseScore(postId, userName);
         return "redirect:/" + userName + "/list";
     }
