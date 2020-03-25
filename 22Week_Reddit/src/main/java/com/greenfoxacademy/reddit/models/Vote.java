@@ -15,10 +15,10 @@ public class Vote {
     private Post post;
     private Boolean increment;
 
-    public Vote(User user, Post post) {
+    public Vote(User user, Post post, Boolean increment) {
         this.user = user;
         this.post = post;
-        this.increment = false;
+        this.increment = increment;
     }
 
     public Vote() {

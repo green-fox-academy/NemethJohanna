@@ -22,7 +22,7 @@ public class Post {
     private List<Vote> voteList;
 
     public Post() {
-        this.score = 1;
+        this.score = 0;
         this.date = LocalDate.now();
         this.voteList = new ArrayList<>();
     }
@@ -30,7 +30,7 @@ public class Post {
     public Post(String title, String url, User user) {
         this.title = title;
         this.url = url;
-        this.score = 1;
+        this.score = 0;
         this.user = user;
         this.date = LocalDate.now();
         this.voteList = new ArrayList<>();

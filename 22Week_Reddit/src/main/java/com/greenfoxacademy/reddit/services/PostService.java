@@ -5,6 +5,7 @@ import com.greenfoxacademy.reddit.models.User;
 import com.greenfoxacademy.reddit.models.Vote;
 import com.greenfoxacademy.reddit.repositories.PostRepository;
 import com.greenfoxacademy.reddit.repositories.UserRepository;
+import com.greenfoxacademy.reddit.repositories.VoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,11 +17,13 @@ public class PostService {
 
     private PostRepository postRepository;
     private UserRepository userRepository;
+    private VoteRepository voteRepository;
 
     @Autowired
-    public PostService(PostRepository postRepository, UserRepository userRepository) {
+    public PostService(PostRepository postRepository, UserRepository userRepository, VoteRepository voteRepository) {
         this.postRepository = postRepository;
         this.userRepository = userRepository;
+        this.voteRepository = voteRepository;
     }
 
     public List<Post> list() {
@@ -36,39 +39,37 @@ public class PostService {
         }
     }
 
-//    public void raiseScore(Vote vote) {
-//        Optional<Post> post = postRepository.findById(vote.getPost().getId());
-//        Optional<User> user = userRepository.findByUserName(vote.getUser().getUserName());
-//        if (post.isPresent() && user.isPresent()) {
-//            Post newPost = post.get();
-//            if (!newPost.getVoteList().contains(vote)){
-//                newPost.addVote(vote);
-//                newPost.setScore(newPost.getScore() + 1);
-//                postRepository.save(newPost);
-//            }
-//        }
-//    }
-
     public void raiseScore(long postId, String userName) {
         Optional<Post> post = postRepository.findById(postId);
         Optional<User> user = userRepository.findByUserName(userName);
+        Optional<Vote> vote = voteRepository.findByUserAndPost(user.get(), post.get());
         if (post.isPresent() && user.isPresent()) {
             Post newPost = post.get();
             if (!newPost.getVoteList().contains(postId)) {
-                Vote vote = new Vote(user.get(), post.get());
-                newPost.addVote(vote);
-                newPost.setScore(newPost.getScore() + 1);
-//                postRepository.save(newPost);
+                Vote vote1 = new Vote(user.get(), post.get(), true);
+                if (!vote.isPresent()){
+                    newPost.addVote(vote1);
+                    newPost.setScore(newPost.getScore() + 1);
+                    postRepository.save(newPost);
+                }
             }
         }
     }
 
     public void decreaseScore(long postId, String userName) {
         Optional<Post> post = postRepository.findById(postId);
-        if (post.isPresent()) {
-            Post postScoreDecreasing = post.get();
-            postScoreDecreasing.setScore(postScoreDecreasing.getScore() - 1);
-            postRepository.save(postScoreDecreasing);
+        Optional<User> user = userRepository.findByUserName(userName);
+        Optional<Vote> vote = voteRepository.findByUserAndPost(user.get(), post.get());
+        if (post.isPresent() && user.isPresent()) {
+            Post newPost = post.get();
+            if (!newPost.getVoteList().contains(postId)) {
+                Vote vote1 = new Vote(user.get(), post.get(), false);
+                if (!vote.isPresent()){
+                    newPost.addVote(vote1);
+                    newPost.setScore(newPost.getScore() - 1);
+                    postRepository.save(newPost);
+                }
+            }
         }
     }
 
