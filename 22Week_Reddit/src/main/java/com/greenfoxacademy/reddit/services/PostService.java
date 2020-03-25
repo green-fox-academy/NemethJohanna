@@ -46,10 +46,15 @@ public class PostService {
         if (post.isPresent() && user.isPresent()) {
             Post newPost = post.get();
             if (!newPost.getVoteList().contains(postId)) {
-                Vote vote1 = new Vote(user.get(), post.get(), true);
+                Vote vote1 = new Vote(user.get(), post.get(), "+");
                 if (!vote.isPresent()){
                     newPost.addVote(vote1);
                     newPost.setScore(newPost.getScore() + 1);
+                    postRepository.save(newPost);
+                } else {
+                    Vote vote2 = new Vote(user.get(), post.get(), "-");
+                    newPost.addVote(vote2);
+                    newPost.setScore(newPost.getScore() + 2);
                     postRepository.save(newPost);
                 }
             }
@@ -63,10 +68,15 @@ public class PostService {
         if (post.isPresent() && user.isPresent()) {
             Post newPost = post.get();
             if (!newPost.getVoteList().contains(postId)) {
-                Vote vote1 = new Vote(user.get(), post.get(), false);
+                Vote vote1 = new Vote(user.get(), post.get(), "-");
                 if (!vote.isPresent()){
                     newPost.addVote(vote1);
                     newPost.setScore(newPost.getScore() - 1);
+                    postRepository.save(newPost);
+                } else {
+                    Vote vote2 = new Vote(user.get(), post.get(), "+");
+                    newPost.addVote(vote2);
+                    newPost.setScore(newPost.getScore() - 2);
                     postRepository.save(newPost);
                 }
             }

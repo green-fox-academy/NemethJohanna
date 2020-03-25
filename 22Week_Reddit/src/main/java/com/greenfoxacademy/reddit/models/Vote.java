@@ -13,12 +13,12 @@ public class Vote {
     private User user;
     @ManyToOne
     private Post post;
-    private Boolean increment;
+    private String plusOrMinus;
 
-    public Vote(User user, Post post, Boolean increment) {
+    public Vote(User user, Post post, String plusOrMinus) {
         this.user = user;
         this.post = post;
-        this.increment = increment;
+        this.plusOrMinus = plusOrMinus;
     }
 
     public Vote() {
@@ -48,11 +48,11 @@ public class Vote {
         this.post = post;
     }
 
-    public Boolean getIncrement() {
-        return increment;
+    public String getPlusOrMinus() {
+        return plusOrMinus;
     }
 
-    public void setIncrement(Boolean increment) {
-        this.increment = increment;
+    public void setPlusOrMinus(String plusOrMinus) {
+        this.plusOrMinus = plusOrMinus;
     }
 }
