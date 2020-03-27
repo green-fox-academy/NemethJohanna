@@ -45,14 +45,20 @@ public class PostService {
         Optional<Vote> vote = voteRepository.findByUserAndPost(user.get(), post.get());
         if (post.isPresent() && user.isPresent()) {
             Post newPost = post.get();
-            if (!newPost.getVoteList().contains(postId) || (vote.get().getPlusOrMinus() != "-")) {
+            if (!newPost.getVoteList().contains(userName)
+//                    || !newPost.getVoteList().contains(vote)
+            )
+//                    || (vote.get().getPlusOrMinus() == "+")
+            {
                 Vote vote1 = new Vote(user.get(), post.get(), "+");
                 if (!vote.isPresent()) {
                     newPost.addVote(vote1);
                     newPost.setScore(newPost.getScore() + 1);
                     postRepository.save(newPost);
                 }
-            } else if (vote.get().getPlusOrMinus() == "-") {
+            } else if (newPost.getVoteList().contains(vote) && vote.get().getPlusOrMinus() == "-")
+//                if (newPost.getVoteList().contains(postId) || (vote.get().getPlusOrMinus() == "-"))
+                {
                 Vote vote1 = new Vote(user.get(), post.get(), "+");
                 if (!vote.isPresent()) {
                     newPost.addVote(vote1);
@@ -69,14 +75,16 @@ public class PostService {
         Optional<Vote> vote = voteRepository.findByUserAndPost(user.get(), post.get());
         if (post.isPresent() && user.isPresent()) {
             Post newPost = post.get();
-            if (!newPost.getVoteList().contains(postId) || (vote.get().getPlusOrMinus() != "+")) {
+            if (!newPost.getVoteList().contains(userName)) {
                 Vote vote1 = new Vote(user.get(), post.get(), "-");
                 if (!vote.isPresent()) {
                     newPost.addVote(vote1);
                     newPost.setScore(newPost.getScore() - 1);
                     postRepository.save(newPost);
                 }
-            } else if (vote.get().getPlusOrMinus() == "+") {
+            } else if (newPost.getVoteList().contains(vote) && vote.get().getPlusOrMinus() == "+")
+//            (vote.get().getPlusOrMinus() == "+")
+            {
                 Vote vote1 = new Vote(user.get(), post.get(), "-");
                 if (!vote.isPresent()) {
                     newPost.addVote(vote1);
