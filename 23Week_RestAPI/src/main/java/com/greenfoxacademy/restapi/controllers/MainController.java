@@ -1,15 +1,13 @@
 package com.greenfoxacademy.restapi.controllers;
 
+import com.greenfoxacademy.restapi.models.AppendA;
 import com.greenfoxacademy.restapi.models.Doubling;
 import com.greenfoxacademy.restapi.models.ErrorMessage;
 import com.greenfoxacademy.restapi.models.WelcomeMessage;
 import com.sun.org.apache.regexp.internal.RE;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class MainController {
@@ -47,6 +45,17 @@ public class MainController {
         } else {
             return ResponseEntity.status(200).body(new WelcomeMessage(name, title));
         }
+    }
+
+    @GetMapping(path = "/appenda/{appendable}")
+    public ResponseEntity appendA(@PathVariable String appendable){
+        if (appendable == null){
+            return ResponseEntity.status(404).body(new ErrorMessage("No appendable provided!"));
+        } else {
+            AppendA append = new AppendA(appendable);
+            return ResponseEntity.status(200).body(append);
+        }
+
 
     }
 
