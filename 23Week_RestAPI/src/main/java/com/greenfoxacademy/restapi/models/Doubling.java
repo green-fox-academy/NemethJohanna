@@ -5,6 +5,11 @@ public class Doubling {
     private int received;
     private int result;
 
+    public Doubling(int received) {
+        this.received = received;
+        this.result = received * 2;
+    }
+
     public Doubling(int received, int result) {
         this.received = received;
         this.result = result;
