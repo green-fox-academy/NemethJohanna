@@ -1,9 +1,6 @@
 package com.greenfoxacademy.restapi.controllers;
 
-import com.greenfoxacademy.restapi.models.AppendA;
-import com.greenfoxacademy.restapi.models.Doubling;
-import com.greenfoxacademy.restapi.models.ErrorMessage;
-import com.greenfoxacademy.restapi.models.WelcomeMessage;
+import com.greenfoxacademy.restapi.models.*;
 import com.sun.org.apache.regexp.internal.RE;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -55,8 +52,19 @@ public class MainController {
             AppendA append = new AppendA(appendable);
             return ResponseEntity.status(200).body(append);
         }
-
-
     }
 
+    @PostMapping(path = "/dountil/{action}")
+    public ResponseEntity doUntil(@PathVariable String action, @RequestParam(required = false) Integer number){
+
+        if (number == null){
+            return ResponseEntity.status(404).body(new ErrorMessage("Please provide a number!"));
+        } else {
+            DoUntil doUntil = new DoUntil(action, number);
+            return ResponseEntity.status(202).body(doUntil);
+        }
+    }
+
+
 }
+
