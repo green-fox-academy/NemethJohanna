@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 @Service
 public class PostService {
@@ -45,26 +47,17 @@ public class PostService {
         Optional<Vote> vote = voteRepository.findByUserAndPost(user.get(), post.get());
         if (post.isPresent() && user.isPresent()) {
             Post newPost = post.get();
-            if (!newPost.getVoteList().contains(userName)
-//                    || !newPost.getVoteList().contains(vote)
-            )
-//                    || (vote.get().getPlusOrMinus() == "+")
-            {
+            if (newPost.getVoteList().size() == 0) {
                 Vote vote1 = new Vote(user.get(), post.get(), "+");
                 if (!vote.isPresent()) {
                     newPost.addVote(vote1);
                     newPost.setScore(newPost.getScore() + 1);
                     postRepository.save(newPost);
                 }
-            } else if (newPost.getVoteList().contains(vote) && vote.get().getPlusOrMinus() == "-")
-//                if (newPost.getVoteList().contains(postId) || (vote.get().getPlusOrMinus() == "-"))
-                {
-                Vote vote1 = new Vote(user.get(), post.get(), "+");
-                if (!vote.isPresent()) {
-                    newPost.addVote(vote1);
-                    newPost.setScore(newPost.getScore() + 2);
-                    postRepository.save(newPost);
-                }
+            } else if (newPost.getVoteList().stream().map(v -> v.getId()).collect(Collectors.toList()).contains(vote.get().getId()) && vote.get().getPlusOrMinus().equals("-")) {
+                vote.get().setPlusOrMinus("+");
+                newPost.setScore(newPost.getScore() + 2);
+                postRepository.save(newPost);
             }
         }
     }
@@ -72,27 +65,22 @@ public class PostService {
     public void decreaseScore(long postId, String userName) {
         Optional<Post> post = postRepository.findById(postId);
         Optional<User> user = userRepository.findByUserName(userName);
-        Optional<Vote> vote = voteRepository.findByUserAndPost(user.get(), post.get());
         if (post.isPresent() && user.isPresent()) {
+            Optional<Vote> vote = voteRepository.findByUserAndPost(user.get(), post.get());
             Post newPost = post.get();
-            if (!newPost.getVoteList().contains(userName)) {
+            if (newPost.getVoteList().size() == 0) {
                 Vote vote1 = new Vote(user.get(), post.get(), "-");
                 if (!vote.isPresent()) {
                     newPost.addVote(vote1);
                     newPost.setScore(newPost.getScore() - 1);
                     postRepository.save(newPost);
                 }
-            } else if (newPost.getVoteList().contains(vote) && vote.get().getPlusOrMinus() == "+")
-//            (vote.get().getPlusOrMinus() == "+")
-            {
-                Vote vote1 = new Vote(user.get(), post.get(), "-");
-                if (!vote.isPresent()) {
-                    newPost.addVote(vote1);
-                    newPost.setScore(newPost.getScore() - 2);
-                    postRepository.save(newPost);
-                }
+            } else if (newPost.getVoteList().stream().map(v -> v.getId()).collect(Collectors.toList()).contains(vote.get().getId()) && vote.get().getPlusOrMinus().equals("+")) {
+                vote.get().setPlusOrMinus("-");
+                newPost.setScore(newPost.getScore() - 2);
+                postRepository.save(newPost);
             }
         }
     }
-
 }
+
