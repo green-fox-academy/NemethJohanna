@@ -53,17 +53,5 @@ public class MainController {
         }
     }
 
-//    @PostMapping(path = "/dountil/{action}")
-//    public ResponseEntity doUntil(@PathVariable String action, @RequestBody DoUntil until){
-//        if (until == null){
-//            return ResponseEntity.status(404).body(new ErrorMessage("Please provide a number!"));
-//        } else if (action.equals("sum") || action.equals("factor")) {
-//            return ResponseEntity.status(202).body(restService.action(until, action));
-//        } else {
-//            return ResponseEntity.status(404).body(new ErrorMessage("Please provide an action!"));
-//        }
-//    }
-
-
 }
 
