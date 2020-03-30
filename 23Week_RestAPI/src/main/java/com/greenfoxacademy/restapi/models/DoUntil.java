@@ -2,39 +2,38 @@ package com.greenfoxacademy.restapi.models;
 
 public class DoUntil {
 
-    private String action;
-    private int number;
-    private int result;
+    private int until;
 
     public DoUntil() {
     }
 
-    public DoUntil(String action, int number) {
-        if (action.equals("sum")){
-            for (int i = 1; i <= number; i++) {
-                this.result += i;
-            }
-        } else if (action.equals("factor")){
-            for (int i = 1; i <= number; i++) {
-                this.result *= i;
-            }
+    public DoUntil(int number) {
+        this.until = number;
+    }
+
+    public int sum(){
+        int result = 0;
+        for (int i = 1; i <= until; i++) {
+            result += i;
         }
+        return result;
     }
 
-    public String getAction() {
-        return action;
+    public int factor(){
+        int result = 1;
+        for (int i = 1; i <= until; i++) {
+            result *= i;
+        }
+        return result;
     }
 
-    public void setAction(String action) {
-        this.action = action;
+    public int getUntil() {
+        return until;
     }
 
-    public int getNumber() {
-        return number;
+    public void setUntil(int until) {
+        this.until = until;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
-    }
 }
 

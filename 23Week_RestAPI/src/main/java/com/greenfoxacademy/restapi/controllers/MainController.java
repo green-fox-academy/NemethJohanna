@@ -1,7 +1,7 @@
 package com.greenfoxacademy.restapi.controllers;
 
+import com.greenfoxacademy.restapi.services.RestService;
 import com.greenfoxacademy.restapi.models.*;
-import com.sun.org.apache.regexp.internal.RE;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -9,12 +9,11 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class MainController {
 
-//    private Services service;
-//
-//    public MainController(Services service) {
-//        this.service = service;
-//    }
+    private RestService restService;
 
+    public MainController(RestService restService) {
+        this.restService = restService;
+    }
 
     @GetMapping(value = "/")
     public String renderIndex() {
@@ -54,16 +53,16 @@ public class MainController {
         }
     }
 
-    @PostMapping(path = "/dountil/{action}")
-    public ResponseEntity doUntil(@PathVariable String action, @RequestParam(required = false) Integer number){
-
-        if (number == null){
-            return ResponseEntity.status(404).body(new ErrorMessage("Please provide a number!"));
-        } else {
-            DoUntil doUntil = new DoUntil(action, number);
-            return ResponseEntity.status(202).body(doUntil);
-        }
-    }
+//    @PostMapping(path = "/dountil/{action}")
+//    public ResponseEntity doUntil(@PathVariable String action, @RequestBody DoUntil until){
+//        if (until == null){
+//            return ResponseEntity.status(404).body(new ErrorMessage("Please provide a number!"));
+//        } else if (action.equals("sum") || action.equals("factor")) {
+//            return ResponseEntity.status(202).body(restService.action(until, action));
+//        } else {
+//            return ResponseEntity.status(404).body(new ErrorMessage("Please provide an action!"));
+//        }
+//    }
 
 
 }
