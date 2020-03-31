@@ -1,10 +1,7 @@
 package com.greenfoxacademy.restapi.controllers;
 
 
-import com.greenfoxacademy.restapi.models.Arrays;
-import com.greenfoxacademy.restapi.models.DoUntil;
-import com.greenfoxacademy.restapi.models.ErrorMessage;
-import com.greenfoxacademy.restapi.models.Result;
+import com.greenfoxacademy.restapi.models.*;
 import com.greenfoxacademy.restapi.services.RestService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -33,15 +30,16 @@ public class RestControll {
     }
 
     @PostMapping(path = "/arrays")
-    public ResponseEntity arrays(@RequestBody Arrays numbers, @RequestBody String what){
-        if (numbers == null || what == null){
-            return ResponseEntity.status(404).body(new ErrorMessage("Please provide what to do with the numbers!"));
-        } else if (what.equals("sum") || what.equals("multiply") || what.equals("double")){
-            return ResponseEntity.status(200).body(new Result(restService.arrayHandler(what, numbers)));
-        } else {
+    public ResponseEntity arrays(@RequestBody Arrays numbers){
+        if (numbers == null){
             return ResponseEntity.status(404).body(new ErrorMessage("Please provide what to do with the numbers!"));
         }
+        else if (numbers.getWhat().equals("double")){
+            return ResponseEntity.status(200).body(new ResultArray(restService.doubleList(numbers)));
+        }
+        else {
+            return ResponseEntity.status(200).body(new Result(restService.sumOrMultiply(numbers.getWhat(), numbers)));
+        }
     }
-
 
 }
