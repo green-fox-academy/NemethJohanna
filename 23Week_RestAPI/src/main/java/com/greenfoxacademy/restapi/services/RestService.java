@@ -2,10 +2,23 @@ package com.greenfoxacademy.restapi.services;
 
 import com.greenfoxacademy.restapi.models.Arrays;
 import com.greenfoxacademy.restapi.models.DoUntil;
+import com.greenfoxacademy.restapi.models.Log;
+import com.greenfoxacademy.restapi.repositories.LogRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class RestService {
+
+    private LogRepository logRepository;
+
+    @Autowired
+    public RestService(LogRepository logRepository) {
+        this.logRepository = logRepository;
+    }
 
     public RestService() {
     }
@@ -33,5 +46,18 @@ public class RestService {
     public int[] doubleList(Arrays numbers){
         return numbers.doubleNumbers();
     }
+
+    public void saveLog(Log log){
+        logRepository.save(log);
+    }
+
+    public List<Log> listLogs(){
+        return (List<Log>) logRepository.findAll();
+    }
+
+    public int logCount(){
+        return (int) logRepository.count();
+    }
+
 
 }
