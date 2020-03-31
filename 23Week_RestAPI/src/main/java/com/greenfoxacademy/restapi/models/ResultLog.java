@@ -7,9 +7,9 @@ public class ResultLog {
     private List<Log> entries;
     private int entry_count;
 
-    public ResultLog(List<Log> entries, int entry_count) {
+    public ResultLog(List<Log> entries) {
         this.entries = entries;
-        this.entry_count = entry_count;
+        this.entry_count = entries.size();
     }
 
     public ResultLog() {

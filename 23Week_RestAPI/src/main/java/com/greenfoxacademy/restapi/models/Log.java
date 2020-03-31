@@ -1,5 +1,7 @@
 package com.greenfoxacademy.restapi.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -10,6 +12,7 @@ public class Log {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @JsonIgnore
     private LocalDateTime createdAt;
     private String endPoint;
     private String data;
@@ -45,5 +48,13 @@ public class Log {
 
     public void setData(String data) {
         this.data = data;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

@@ -2,8 +2,6 @@ package com.greenfoxacademy.restapi.models;
 
 public class WelcomeMessage {
 
-    private String name;
-    private String title;
     private String welcome_message;
 
     public WelcomeMessage(String name, String title) {
@@ -11,22 +9,6 @@ public class WelcomeMessage {
     }
 
     public WelcomeMessage() {
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public String getWelcome_message() {

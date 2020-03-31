@@ -30,7 +30,7 @@ public class RestControll {
 
     @GetMapping(path = "/greeter")
     public ResponseEntity greeting(@RequestParam(required = false) String name, @RequestParam(required = false) String title){
-        restService.saveLog(new Log("/greeter", "name: " + name));
+        restService.saveLog(new Log("/greeter", "name: " + name + ", title: " + title));
         if (name == null && title == null){
             return ResponseEntity.status(400).body(new ErrorMessage("Please provide a name and a title!"));
         } else if (name == null){
@@ -78,9 +78,9 @@ public class RestControll {
     }
 
     @GetMapping(path = "/log")
-    public ResponseEntity log(@RequestParam Log log){
-        ResultLog result = new ResultLog(restService.listLogs(), restService.logCount());
-        if (result != null){
+    public ResponseEntity log(){
+        ResultLog result = new ResultLog(restService.listLogs());
+        if (result.getEntries().size() > 0){
             return ResponseEntity.status(200).body(result);
         } else {
             return ResponseEntity.status(404).body(new ErrorMessage("Logs are empty!"));
