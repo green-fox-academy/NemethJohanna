@@ -56,9 +56,7 @@ public class RestControll {
     @PostMapping(path = "/dountil/{action}")
     public ResponseEntity doUntil(@PathVariable String action, @RequestBody DoUntil until){
         restService.saveLog(new Log("/dountil/" + action, "until: " + until.getUntil()));
-        if (until == null){
-            return ResponseEntity.status(404).body(new ErrorMessage("Please provide a number!"));
-        } else if (action.equals("sum") || action.equals("factor")) {
+        if (action.equals("sum") || action.equals("factor")) {
             return ResponseEntity.status(200).body(new Result(restService.action(until, action)));
         } else {
             return ResponseEntity.status(404).body(new ErrorMessage("Please provide an action!"));
