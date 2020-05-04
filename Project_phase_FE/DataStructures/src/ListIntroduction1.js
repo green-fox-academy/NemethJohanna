@@ -37,12 +37,7 @@ for(var i = 0; i < names.length; i++){
 }
 
 // Remove the 2nd element
-function remove(elementNumber){
-    var removeName = names.indexOf(elementNumber);
-    return removeName;
-}
-remove(2);
-names.pop();
+names.slice(1, 1);
 
 // Iterate through the list in a reversed order and print out each name
 for(var i = names.length - 1; i >= 0; i--){
