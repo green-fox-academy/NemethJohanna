@@ -1,4 +1,4 @@
-// 1)  Fill every paragraph with the last one's content.
+// 1)  Fill every paragraph with the last one's content.(innerHTML)
 var lastOne = document.querySelector('.animals');
 var apple = document.querySelector('.apple');
 apple.innerHTML = lastOne ;
