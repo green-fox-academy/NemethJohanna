@@ -69,7 +69,8 @@ console.log("-----------------");
 // -  Add all elements an `"a"` at the end
 let animals = ["koal", "pand", "zebr"];
 let newArr = animals.map(function (item) {
-    return item + "a";
+    // return item + "a";
+    return `${animals}a`;
 })
 console.log(newArr);
 console.log("-----------------");
@@ -103,7 +104,7 @@ console.log("-----------------");
 // -  Log the sum of the elements in `numbers` to the console
 
 let numbers6 = [3, 4, 5, 6, 7];
-console.log(numbers6.reduce((a, b) => a + b, 0));
+console.log(numbers6.reduce((sum, current) => sum + current, 0));
 console.log("-----------------");
 
 // -  Create (dynamically*) a two dimensional list
@@ -118,16 +119,21 @@ console.log("-----------------");
 //
 // * size should depend on a variable
 // ** Relax, a matrix is just like an array
-// let size = 4;
-// for (i in size) {
-//     for (j in size) {
-//         if (i === j) {
-//             console.log("1");
-//         } else {
-//             console.log("0");
-//         }
-//     }
-// }
+let size = 4;
+let matrixArray = [];
+for (let i = 0; i < size; i++) {
+    // if (!matrixArray[i]){
+    if (matrixArray[i] == null) {
+        matrixArray[i] = [];
+    }
+    for (let j = 0; j < size; j++) {
+        if (i === (size - 1 - j)) {
+            matrixArray[i][j] = 1;
+        } else {
+            matrixArray[i][j] = 0;
+        }
+    }
+}
 console.log("-----------------");
 
 
