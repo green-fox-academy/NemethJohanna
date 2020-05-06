@@ -1,14 +1,16 @@
 // 1)  Fill every paragraph with the last one's content.(innerHTML)
-let apple = document.getElementsByClassName("apple")[0];
-let balloon = document.getElementsByClassName("balloon")[0];
-let cat = document.getElementsByClassName("cat")[0];
-let animal = document.getElementsByClassName("animals")[0];
+let classNames = ["apple", "balloon", "cat", "animals"];
+let variables = [];
+for(let i = 0; i < classNames.length; i++){
+    let currentVariable = document.getElementsByClassName(classNames[i]);
+    if (currentVariable[0] != null){
+        variables[i] = currentVariable[0];
+    }
+}
 
-let getContent = animal.innerHTML; //goat rabbit <strong>cat</strong> dog
-
-apple.innerHTML = getContent;
-balloon.innerHTML = getContent;
-cat.innerHTML = getContent;
+let getContent = variables[variables.length - 1].innerHTML;
+for (let i = 0; i < variables.length - 1; i++) {
+    variables[i].innerHTML = getContent;
+}
 
 // 2)  Do the same again, but you should keep the cat strong.
-
